@@ -1,0 +1,71 @@
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgb(0, 183, 210);
+  border-radius: 50%;
+  animation: 1s ease-in-out 0s infinite alternate none running animation-load;
+}
+
+.dot:nth-of-type(1) {
+  top: calc(15% - 2.5px);
+  left: calc(50% - 2.5px);
+}
+
+.dot:nth-of-type(2) {
+  top: calc(25% - 2.5px);
+  right: calc(25% - 2.5px);
+  animation-delay: 125ms;
+}
+
+.dot:nth-of-type(3) {
+  top: calc(50% - 2.5px);
+  right: calc(15% - 2.5px);
+  animation-delay: 250ms;
+}
+
+.dot:nth-of-type(4) {
+  bottom: calc(25% - 2.5px);
+  right: calc(25% - 2.5px);
+  animation-delay: 375ms;
+}
+
+.dot:nth-of-type(5) {
+  bottom: calc(15% - 2.5px);
+  right: calc(50% - 2.5px);
+  animation-delay: 500ms;
+}
+
+.dot:nth-of-type(6) {
+  left: calc(25% - 2.5px);
+  bottom: calc(25% - 2.5px);
+  animation-delay: 625ms;
+}
+
+.dot:nth-of-type(7) {
+  top: calc(50% - 2.5px);
+  left: calc(15% - 2.5px);
+  animation-delay: 750ms;
+}
+
+.dot:nth-of-type(8) {
+  top: calc(25% - 2.5px);
+  left: calc(25% - 2.5px);
+  animation-delay: 875ms;
+}
+
+@keyframes animation-load {
+  0%,
+  30%,
+  70%,
+  100% {
+    transform: rotate(45deg);
+    border-radius: 50%;
+  }
+
+  50%,
+  55% {
+    transform: rotate(45deg) scale(1.8);
+    border-radius: 40%;
+  }
+}

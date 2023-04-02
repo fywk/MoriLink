@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Passport",
+    "url": "/passport",
+    "icon": "Passport.png",
+    "bgColour": "#80bf8c"
+  },
+  {
+    "name": "Blog",
+    "url": "/blog",
+    "icon": "Blog.png",
+    "bgColour": "#ccd85d"
+  },
+  {
+    "name": "Gallery",
+    "url": "/gallery",
+    "icon": "Gallery.png",
+    "bgColour": "#b79dca"
+  },
+  {
+    "name": "Designs",
+    "url": "/designs",
+    "icon": "Custom_Design.png",
+    "bgColour": "#f6afb3"
+  },
+  {
+    "name": "Map",
+    "url": "/map",
+    "icon": "Map.png",
+    "bgColour": "#7fd5ba"
+  },
+  {
+    "name": "Music",
+    "url": "/music",
+    "icon": "Music.png",
+    "bgColour": "#c1ea75"
+  },
+  {
+    "name": "About",
+    "url": "/about",
+    "icon": "About.png",
+    "bgColour": "#9c835c"
+  }
+]

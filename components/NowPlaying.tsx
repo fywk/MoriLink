@@ -26,16 +26,21 @@ export default function NowPlaying() {
         >
           <MusicIcon />
         </div>
-        <a href={`#${urlize(audioTitle)}`}>
-          <h2
-            className={clsx(
-              "-mb-0.5 text-xl/none font-bold opacity-0 transition-opacity duration-200",
-              audioTitle && "opacity-100"
-            )}
+        {audioTitle && (
+          <a
+            href={`#${urlize(audioTitle)}`}
+            className="focus:outline-none focus-visible:outline-dotted focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-tiffany-blue/90"
           >
-            {isPlaying ? audioTitle : audioTitle && "Loading..."}
-          </h2>
-        </a>
+            <h2
+              className={clsx(
+                "-mb-0.5 text-xl/none font-bold opacity-0 transition-opacity duration-200",
+                audioTitle && "opacity-100"
+              )}
+            >
+              {isPlaying ? audioTitle : audioTitle && "Loading..."}
+            </h2>
+          </a>
+        )}
       </div>
     </div>
   );

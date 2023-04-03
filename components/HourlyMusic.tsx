@@ -1,29 +1,53 @@
 "use client";
 
 import clsx from "clsx";
+import { useEffect, useState } from "react";
 
+import hourlyMusic from "@/data/music/hourly.json";
 import { useMusicContext } from "@/lib/hooks";
-import { Audio } from "@/lib/types";
-import { urlize } from "@/lib/utils";
+import { isWinter, urlize } from "@/lib/utils";
 
 type Props = {
-  music: Audio;
-  badge: React.ReactNode;
+  playingBadge: React.ReactNode;
   children: React.ReactNode;
 };
 
-export default function HourlyMusic({ music, badge, children }: Props) {
+export default function HourlyMusic({ playingBadge, children }: Props) {
   const { audioTitle, setAudioTitle, setAudioSrc, setAudioImage, isPlaying } =
     useMusicContext();
+  const [time, setTime] = useState("");
+  const [musicTitle, setMusicTitle] = useState(" ");
+  const [musicSource, setMusicSource] = useState("");
+
+  useEffect(() => {
+    const now = new Date();
+
+    // Convert time to 12-hour format
+    const currentHour12 = now.toLocaleString("en-US", {
+      hour: "numeric",
+      hour12: true,
+    });
+
+    // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
+    // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
+    const weather = isWinter(now.getMonth() + 1) ? "Snowy" : "Sunny";
+    const currentHourMusic = hourlyMusic.find(
+      (e) => e.hour === now.getHours() && e.weather === weather
+    );
+
+    setTime(currentHour12);
+    setMusicTitle(`${currentHour12} (${weather})`);
+    setMusicSource(currentHourMusic!.musicSrc);
+  }, []);
 
   const handleClick = () => {
-    if (music.title === audioTitle) {
+    if (musicTitle === audioTitle) {
       setAudioTitle("");
       setAudioSrc("");
       setAudioImage("");
     } else {
-      setAudioTitle(music.title);
-      music.src && setAudioSrc(music.src);
+      setAudioTitle(musicTitle);
+      musicSource && setAudioSrc(musicSource);
       setAudioImage("");
     }
   };
@@ -32,16 +56,24 @@ export default function HourlyMusic({ music, badge, children }: Props) {
     <button
       type="button"
       onClick={() => handleClick()}
-      id={urlize(music.title)}
+      id={urlize(musicTitle)}
       className={clsx(
-        "group relative m-auto flex h-full max-h-[7.25rem] w-full max-w-[7.25rem] scroll-mt-44 flex-col items-center justify-center gap-y-3 rounded-3xl bg-[#f3fede] text-dark-bronze-coin focus:outline-none",
-        audioTitle === music.title
+        "group relative m-auto h-full max-h-[7.25rem] w-full max-w-[7.25rem] scroll-mt-44 rounded-3xl bg-[#f3fede] focus:outline-none",
+        audioTitle === musicTitle
           ? "ring-5 ring-[#48c058]"
           : "focus-visible:ring-4 focus-visible:ring-tiffany-blue/90"
       )}
     >
-      {isPlaying && audioTitle === music.title && badge}
-      {children}
+      {isPlaying && audioTitle === musicTitle && playingBadge}
+      <div
+        className={clsx(
+          "flex flex-col items-center justify-center gap-y-3 text-dark-bronze-coin transition-opacity",
+          !time ? "opacity-0" : "opacity-100"
+        )}
+      >
+        {children}
+        <p className="text-xl/none font-[750]">{time}</p>
+      </div>
     </button>
   );
 }

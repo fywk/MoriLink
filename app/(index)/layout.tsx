@@ -1,15 +1,12 @@
+import DateString from "@/components/DateString";
 import Logo from "@/components/Logo";
 import { player } from "@/lib/config";
-
-export const dynamic = "force-dynamic";
 
 export default function HomePageLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const now = new Date();
-
   return (
     <div className="flex h-full min-h-[100dvh] w-full items-center justify-center bg-dutch-white bg-[radial-gradient(#f4ecca_15%,_transparent_15%),_radial-gradient(#f4ecca_14%,_transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat">
       <div className="m-auto grid w-full max-w-[25rem] grid-cols-1 gap-y-3 px-5 py-8">
@@ -36,9 +33,7 @@ export default function HomePageLayout({
                 <span>{player.name}</span>
               </div>
               <div className="flex-none">
-                <span className="place-self-end">
-                  {`${now.getDate()}/${now.getMonth() + 1}`}
-                </span>
+                <span className="place-self-end">{<DateString />}</span>
               </div>
             </div>
             <main className="min-h-[22.5rem] px-7.5" id="content">

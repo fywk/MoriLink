@@ -6,14 +6,10 @@ import KKMusic from "@/components/KKMusic";
 import NowPlaying from "@/components/NowPlaying";
 import PageLayout from "@/components/PageLayout";
 import Tooltips from "@/components/Tooltips";
-import hourlyMusic from "@/data/music/hourly.json";
 import kkSongs from "@/data/music/kk_slider.json";
-import { isWinter } from "@/lib/utils";
 import { IconClockPlay, IconPlayerPlayFilled } from "@tabler/icons-react";
 
 const TITLE = "Music";
-
-export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -21,21 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function MusicPage() {
-  const now = new Date();
-
-  // Convert time to 12-hour format
-  const currentHour12 = now.toLocaleString([], {
-    hour: "numeric",
-    hour12: true,
-  });
-
-  // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
-  // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
-  const weather = isWinter(now.getMonth() + 1) ? "Snowy" : "Sunny";
-  const currentHourMusic = hourlyMusic.find(
-    (e) => e.hour === now.getHours() && e.weather === weather
-  );
-
   return (
     <PageLayout
       title={TITLE}
@@ -45,20 +26,9 @@ export default function MusicPage() {
       <NowPlaying />
       <div className="mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem]">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-          <HourlyMusic
-            music={{
-              title: `${currentHour12} (${weather})`,
-              src: currentHourMusic!.musicSrc,
-            }}
-            badge={
-              <div className="absolute -left-2.5 -top-2.5 z-10 flex h-5.5 w-9 items-center justify-center rounded-full bg-[#f96549] text-[#f8ee8f]">
-                <IconPlayerPlayFilled className="h-4 w-4" />
-              </div>
-            }
-          >
+          <HourlyMusic playingBadge={<HourlyPlayingBadge />}>
             <Tooltips>Hourly Music</Tooltips>
             <IconClockPlay width={52} height={52} stroke={1.5} />
-            <p className="text-xl/none font-[750]">{currentHour12}</p>
           </HourlyMusic>
           {kkSongs.map((song, index) => (
             <KKMusic
@@ -67,11 +37,7 @@ export default function MusicPage() {
                 src: song.music.src,
                 image: song.albumArt.src,
               }}
-              badge={
-                <div className="absolute -left-1 -top-1 z-10 flex h-5.5 w-9 items-center justify-center rounded-br-2xl rounded-tl-xl bg-[#48c058] text-alabaster">
-                  <IconPlayerPlayFilled className="h-4 w-4" />
-                </div>
-              }
+              playingBadge={<KKPlayingBadge />}
               key={song.id}
             >
               <Tooltips>{song.name}</Tooltips>
@@ -91,5 +57,21 @@ export default function MusicPage() {
         </div>
       </div>
     </PageLayout>
+  );
+}
+
+function HourlyPlayingBadge() {
+  return (
+    <div className="absolute -left-2.5 -top-2.5 z-10 flex h-5.5 w-9 items-center justify-center rounded-full bg-[#f96549] text-[#f8ee8f]">
+      <IconPlayerPlayFilled className="h-4 w-4" />
+    </div>
+  );
+}
+
+function KKPlayingBadge() {
+  return (
+    <div className="absolute -left-1 -top-1 z-10 flex h-5.5 w-9 items-center justify-center rounded-br-2xl rounded-tl-xl bg-[#48c058] text-alabaster">
+      <IconPlayerPlayFilled className="h-4 w-4" />
+    </div>
   );
 }

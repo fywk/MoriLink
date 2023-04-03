@@ -8,11 +8,11 @@ import { urlize } from "@/lib/utils";
 
 type Props = {
   music: Audio;
-  badge: React.ReactNode;
+  playingBadge: React.ReactNode;
   children: React.ReactNode;
 };
 
-export default function KKMusic({ music, badge, children }: Props) {
+export default function KKMusic({ music, playingBadge, children }: Props) {
   const { isPlaying, audioTitle, setAudioTitle, setAudioSrc, setAudioImage } =
     useMusicContext();
 
@@ -42,7 +42,7 @@ export default function KKMusic({ music, badge, children }: Props) {
           : "ring-tiffany-blue/90 focus-visible:ring-4"
       )}
     >
-      {isPlaying && audioTitle === music.title && badge}
+      {isPlaying && audioTitle === music.title && playingBadge}
       {children}
     </button>
   );

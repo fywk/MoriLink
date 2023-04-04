@@ -14,7 +14,7 @@ export default function DynamicLink({
 }) {
   const { audioTitle } = useMusicContext();
   const url =
-    audioTitle && href === "/Music" ? `${href}\#${urlize(audioTitle)}` : href;
+    audioTitle && href === "/music" ? `${href}\#${urlize(audioTitle)}` : href;
 
   return <Link href={url}>{children}</Link>;
 }

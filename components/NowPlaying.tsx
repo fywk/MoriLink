@@ -14,7 +14,7 @@ export default function NowPlaying() {
     <div className="fixed inset-x-0 top-[4.5rem] z-20 mx-auto max-w-[52rem] px-5">
       <div
         className={clsx(
-          "flex max-w-lg items-center gap-x-1.5 rounded-full bg-white px-3.5 py-2 shadow-sm",
+          "flex max-w-lg items-center gap-x-2 rounded-full bg-white px-3.5 py-2 shadow-sm",
           isPlaying ? "text-tiffany-blue" : "text-tiffany-blue/25"
         )}
       >

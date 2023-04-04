@@ -5,7 +5,7 @@ import { IconChevronLeft } from "@tabler/icons-react";
 
 type Props = {
   title: string;
-  bgClass: string;
+  bgClass: React.HTMLProps<HTMLElement>["className"];
   parentPage?: string;
 };
 

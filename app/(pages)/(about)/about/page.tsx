@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageLayout title={TITLE} navbarBgClass="bg-[#dacca7]">
-      <div className="mx-auto flex h-full max-w-xl flex-col justify-between px-5 pt-6 pb-12">
+      <div className="mx-auto flex h-full max-w-xl flex-col justify-between px-5 pb-12 pt-6">
         <div className="flex flex-col divide-y-2 divide-dashed divide-bone">
           <Link
             href="/copyrights"

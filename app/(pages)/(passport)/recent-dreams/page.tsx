@@ -43,10 +43,11 @@ export default function RecentDreamsPage() {
                   height={256}
                   alt=""
                   quality={100}
+                  priority
                   draggable={false}
                   className="h-auto w-16"
                 />
-                <div className="absolute right-2 bottom-0.5 h-7.5 w-7.5 rounded-full bg-alabaster p-[3px]">
+                <div className="absolute bottom-0.5 right-2 h-7.5 w-7.5 rounded-full bg-alabaster p-[3px]">
                   <div className="h-full w-full rounded-full bg-[rgb(var(--star-sign-colour))]"></div>
                 </div>
               </div>
@@ -75,6 +76,7 @@ export default function RecentDreamsPage() {
               height={100}
               alt=""
               quality={100}
+              priority
               draggable={false}
               className="h-5 w-5"
             />
@@ -99,7 +101,7 @@ function IslandDreamModal({ starSignColour }: { starSignColour: string }) {
 
   return (
     <div
-      className="flex flex-col items-center gap-y-4 pb-10 text-center"
+      className="flex flex-col items-center gap-y-4 text-center"
       style={{ ["--star-sign-colour" as any]: starSignColour }}
     >
       <div className="flex items-center gap-x-2">

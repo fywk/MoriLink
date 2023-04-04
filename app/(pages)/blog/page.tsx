@@ -14,7 +14,7 @@ export default function BlogPage() {
     <PageLayout
       title={TITLE}
       navbarBgClass="bg-[#e6ec8d]"
-      bgClass="bg-[#e6ec8d]"
+      mainBgClass="bg-[#e6ec8d]"
     >
       test
     </PageLayout>

@@ -25,7 +25,7 @@ export default function PassportPage() {
     <PageLayout
       title={TITLE}
       navbarBgClass="bg-[#b4e4b5]"
-      bgClass="bg-[repeating-linear-gradient(#f5f0e3,_#f5f0e3_10px,_#f2eedd_10px,_#f2eedd_17px)] bg-fixed"
+      mainBgClass="bg-[repeating-linear-gradient(#f5f0e3,_#f5f0e3_10px,_#f2eedd_10px,_#f2eedd_17px)] bg-fixed"
     >
       <div className="mx-auto max-w-xl px-3 pb-16">
         <CardSection />
@@ -263,7 +263,7 @@ function ResidentModal({ name }: { name: string }) {
   const birthday = `${birth[1]}/${birth[0]}`;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-y-3 pb-10 tracking-tight">
+    <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
       <div className="flex aspect-square max-w-[7.5rem] items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
         <Image
           src={villager!.iconImage}

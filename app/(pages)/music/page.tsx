@@ -21,7 +21,7 @@ export default function MusicPage() {
     <PageLayout
       title={TITLE}
       navbarBgClass="bg-[#def4b9]"
-      bgClass="bg-[#def4b9]"
+      mainBgClass="bg-[#def4b9]"
     >
       <NowPlaying />
       <div className="scroll-behaviour-smooth mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem]">

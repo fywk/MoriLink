@@ -1,16 +1,13 @@
-import React from "react";
-
 import { Dialog } from "@headlessui/react";
 import { IconX } from "@tabler/icons-react";
 
 type Props = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  title?: string;
   children: React.ReactNode;
 };
 
-export default function Modal({ isOpen, setIsOpen, title, children }: Props) {
+export default function Modal({ isOpen, setIsOpen, children }: Props) {
   return (
     <Dialog
       open={isOpen}
@@ -26,7 +23,7 @@ export default function Modal({ isOpen, setIsOpen, title, children }: Props) {
       {/* Container for dialog */}
       <div className="fixed inset-0 flex items-center justify-center px-5 py-8">
         {/* Actual dialog panel */}
-        <Dialog.Panel className="grid w-full max-w-xl grid-flow-row rounded-[2.75rem] bg-alabaster p-5 shadow-md">
+        <Dialog.Panel className="grid w-full max-w-xl grid-rows-[auto_auto_45px] rounded-[2.75rem] bg-alabaster p-5 shadow-md">
           <button
             type="button"
             onClick={() => setIsOpen(false)}
@@ -34,7 +31,6 @@ export default function Modal({ isOpen, setIsOpen, title, children }: Props) {
           >
             <IconX size={29} stroke={2.375} className="text-beaver" />
           </button>
-          {title && <Dialog.Title>{title}</Dialog.Title>}
           {children}
         </Dialog.Panel>
       </div>

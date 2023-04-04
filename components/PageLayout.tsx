@@ -1,9 +1,11 @@
+import clsx from "clsx";
+
 import Navbar from "./Navbar";
 
 type Props = {
   title: string;
-  navbarBgClass: string;
-  bgClass?: string;
+  navbarBgClass: React.HTMLProps<HTMLElement>["className"];
+  mainBgClass?: React.HTMLProps<HTMLElement>["className"];
   parentPage?: string;
   children: React.ReactNode;
 };
@@ -11,15 +13,15 @@ type Props = {
 export default function PageLayout({
   title,
   navbarBgClass,
-  bgClass = "bg-alabaster",
+  mainBgClass = "bg-alabaster",
   parentPage,
   children,
 }: Props) {
   return (
     <>
       <Navbar title={title} bgClass={navbarBgClass} parentPage={parentPage} />
-      <main className={bgClass} id="content">
-        <div className="h-full w-full">{children}</div>
+      <main className={clsx("h-full w-full", mainBgClass)} id="content">
+        {children}
       </main>
     </>
   );

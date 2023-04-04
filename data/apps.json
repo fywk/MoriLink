@@ -12,9 +12,9 @@
     "bgColour": "#ccd85d"
   },
   {
-    "name": "Gallery",
-    "url": "/gallery",
-    "icon": "Gallery.png",
+    "name": "Photos",
+    "url": "/photos",
+    "icon": "Photos.png",
     "bgColour": "#b79dca"
   },
   {

@@ -2,14 +2,14 @@ import { Metadata } from "next";
 
 import PageLayout from "@/components/PageLayout";
 
-const TITLE = "Gallery";
+const TITLE = "Photos";
 
 export const metadata: Metadata = {
   title: TITLE,
   themeColor: "#c4bced",
 };
 
-export default function GalleryPage() {
+export default function PhotosPage() {
   return (
     <PageLayout
       title={TITLE}

@@ -43,7 +43,7 @@ export default async function PatternPage({ params }: Params) {
       parentPage="/designs"
     >
       <div className="flex h-full flex-col justify-between gap-y-10">
-        <div className="mx-auto flex max-w-2xl flex-col gap-y-5 px-5 pt-8">
+        <div className="mx-auto flex max-w-xl flex-col gap-y-5 px-5 pt-8">
           <div className="flex items-center justify-between gap-x-2.5">
             <div className="flex flex-col gap-y-2">
               <h2 className="text-[22px]/none font-[750] text-dark-bronze-coin">
@@ -61,6 +61,7 @@ export default async function PatternPage({ params }: Params) {
                 alt=""
                 quality={100}
                 loading="eager"
+                className="bg-[#fecad1]"
               />
             </div>
           </div>
@@ -71,7 +72,7 @@ export default async function PatternPage({ params }: Params) {
             alt=""
             quality={90}
             priority
-            className="rounded-xl"
+            className="rounded-xl bg-[#fecad1]"
           />
           {Array.isArray(pattern.pictures) && pattern.pictures.length
             ? pattern.pictures.map((picture, index) => (

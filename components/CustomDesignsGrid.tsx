@@ -30,6 +30,7 @@ export default function PatternsGrid({ category }: Props) {
             quality={100}
             loading={index + 1 > 5 ? "lazy" : "eager"}
             draggable={false}
+            className="bg-[#fecad1]"
           />
         </Link>
       ))}

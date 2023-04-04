@@ -6,16 +6,12 @@ const TITLE = "Photos";
 
 export const metadata: Metadata = {
   title: TITLE,
-  themeColor: "#c4bced",
+  themeColor: "#ffd0ae",
 };
 
 export default function PhotosPage() {
   return (
-    <PageLayout
-      title={TITLE}
-      navbarBgClass="bg-[#c4bced]"
-      bgClass="bg-[#d7d2f3]"
-    >
+    <PageLayout title={TITLE} navbarBgClass="bg-[#ffd0ae]">
       test
     </PageLayout>
   );

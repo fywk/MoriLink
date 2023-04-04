@@ -24,7 +24,7 @@ export default function MusicPage() {
       bgClass="bg-[#def4b9]"
     >
       <NowPlaying />
-      <div className="mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem]">
+      <div className="scroll-behaviour-smooth mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem]">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           <HourlyMusic playingBadge={<HourlyPlayingBadge />}>
             <Tooltips>Hourly Music</Tooltips>

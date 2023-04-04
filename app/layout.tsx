@@ -38,7 +38,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(nunito.className, "scroll-smooth bg-alabaster")}
+      className={clsx(
+        nunito.className,
+        "bg-alabaster [&:has(.scroll-behaviour-smooth)]:scroll-smooth"
+      )}
     >
       <body>
         <MusicProvider>{children}</MusicProvider>

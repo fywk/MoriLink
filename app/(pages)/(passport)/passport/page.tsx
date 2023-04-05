@@ -275,7 +275,16 @@ function ResidentModal({ name }: { name: string }) {
           className="rounded-full bg-pearl"
         />
       </div>
-      <h1 className="text-[22px] font-bold text-dark-bronze-coin">{name}</h1>
+      <h1>
+        <a
+          href={`https://nookipedia.com/wiki/${name}`}
+          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 hover:underline"
+          title={`Nookipedia: ${name}`}
+          target="_blank"
+        >
+          {name}
+        </a>
+      </h1>
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>

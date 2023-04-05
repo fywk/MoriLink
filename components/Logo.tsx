@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import { site } from "@/lib/config";
+import { site } from "@/lib/site";
 import nookLeaf from "@/public/images/Nook_Inc.svg";
 
 export default function Logo({ size }: { size?: "md" }) {

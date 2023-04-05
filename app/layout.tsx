@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
-import { site } from "@/lib/config";
+import { site } from "@/lib/site";
 
 import MusicProvider from "./music-provider";
 

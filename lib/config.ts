@@ -1,11 +1,5 @@
 import { IslandConfig, PlayerConfig } from "./types";
 
-export const site = {
-  title: "Nook++",
-  description: "My ACNH Wiki",
-  themeColor: "#82d7aa",
-};
-
 export const player: PlayerConfig = {
   name: "Francis",
   birth: {
@@ -18,7 +12,6 @@ export const player: PlayerConfig = {
   creatorID: "MA-3831-5858-5426",
   // happyHomeNetworkID: "",
   isResidentRep: true,
-  passportPhoto: "passport.png",
 };
 
 export const island: IslandConfig = {
@@ -26,8 +19,10 @@ export const island: IslandConfig = {
   hemisphere: "Northern",
   nativeFruit: "Oranges",
   islandRating: 4,
-  // weatherSeed: "620746543",
   residents: {
+    // You can sort villagers in any order you want.
+    // The default order is based on the order that they arrived on your island.
+    // Note: The order you listed here will be the order they appeared in the app.
     current: [
       "Dizzy",
       "Sprinkle",

@@ -23,7 +23,6 @@ export type IslandConfig = {
   hemisphere: "Northern" | "Southern";
   nativeFruit: NativeFruit;
   islandRating: 1 | 2 | 3 | 4 | 5 | null;
-  weatherSeed?: string;
   residents: {
     current: string[];
     former?: string[];
@@ -33,7 +32,6 @@ export type IslandConfig = {
     updated: { date: string; time: string };
   };
 };
-
 
 export type NativeFruit =
   | "Apples"
@@ -54,5 +52,4 @@ export type PlayerConfig = {
   creatorID?: string;
   happyHomeNetworkID?: string;
   isResidentRep: boolean;
-  passportPhoto: string;
 };

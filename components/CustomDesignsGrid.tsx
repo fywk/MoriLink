@@ -7,14 +7,14 @@ type Props = {
   category: "normal" | "pro";
 };
 
-const MINIMUM_EMPTY_SLOTS = 30;
+const MINIMUM_EMPTY_SLOTS = 28;
 
 export default function PatternsGrid({ category }: Props) {
   // Filtering patterns array to include only objects that have a same category to the category prop
   const filteredPatterns = patterns.filter((obj) => obj.category === category);
 
   return (
-    <div className="grid grid-cols-5 gap-4 md:grid-cols-6">
+    <div className="grid grid-cols-4 gap-4 md:grid-cols-7">
       {filteredPatterns.map((pattern, index) => (
         <Link
           href={`/designs/${pattern.id}`}
@@ -30,7 +30,6 @@ export default function PatternsGrid({ category }: Props) {
             quality={100}
             loading={index + 1 > 5 ? "lazy" : "eager"}
             draggable={false}
-            className="bg-[#fecad1]"
           />
         </Link>
       ))}

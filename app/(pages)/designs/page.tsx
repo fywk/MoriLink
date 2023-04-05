@@ -16,7 +16,7 @@ export default async function CustomDesignsPage() {
   return (
     <PageLayout title={TITLE} navbarBgClass="bg-[#fecad1]">
       <div className="flex h-full flex-col justify-between gap-y-16">
-        <div className="mx-auto w-full max-w-xl px-5 pt-8">
+        <div className="mx-auto w-full max-w-2xl px-5 pt-8">
           <CustomDesingsTabs
             normalPanel={<CustomDesignsGrid category="normal" />}
             proPanel={<CustomDesignsGrid category="pro" />}

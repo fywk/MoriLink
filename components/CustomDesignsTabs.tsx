@@ -14,7 +14,7 @@ type Props = {
 export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
   return (
     <Tab.Group>
-      <Tab.List className="flex flex-col gap-3 font-bold leading-none sm:flex-row">
+      <Tab.List className="flex gap-3 font-bold leading-none">
         <Tab
           className={({ selected }) =>
             clsx(

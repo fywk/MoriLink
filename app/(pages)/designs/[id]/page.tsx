@@ -74,10 +74,10 @@ export default async function PatternPage({ params }: Params) {
             priority
             className="rounded-xl bg-[#fecad1]"
           />
-          {Array.isArray(pattern.pictures) && pattern.pictures.length
-            ? pattern.pictures.map((picture, index) => (
+          {Array.isArray(pattern.screenshots) && pattern.screenshots.length
+            ? pattern.screenshots.map((screenshot, index) => (
                 <Image
-                  src={picture}
+                  src={screenshot}
                   width={1280}
                   height={720}
                   alt=""

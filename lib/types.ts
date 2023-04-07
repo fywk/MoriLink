@@ -26,10 +26,10 @@ export type IslandConfig = {
 type NativeFruit = "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
 
 export type Pattern = {
-  id: string;
+  id: string; // same as Cloudinary image name w/o the folder name and file extensions ==> "folder/placeholder.jpg" === "placeholder"
   name: string;
   category: "normal" | "pro";
-  screenshots?: string[];
+  pictures?: string[];
 };
 
 export type PatternsConfig = Pattern[];

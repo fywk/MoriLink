@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getPatternThumbnailURL } from "@/lib/cloudinary";
 import { patterns } from "@/lib/config";
 import { Pattern } from "@/lib/types";
 
@@ -19,18 +20,20 @@ export default function PatternsGrid({ category }: Props) {
       {filteredPatterns.map((pattern, index) => (
         <Link
           href={`/designs/${pattern.id}`}
-          className="flex aspect-square h-full w-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105 focus-visible:ring-4"
+          className="relative flex aspect-square h-full w-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105 focus-visible:ring-4"
           title={pattern.name}
           key={pattern.id}
         >
+          <div className="aspect-square h-5.5 w-5.5 rounded-full bg-bone"></div>
           <Image
-            src={`/images/patterns/${pattern.id}/thumbnail.jpg`}
+            src={getPatternThumbnailURL(`patterns/${pattern.id}`)}
             width={154}
             height={154}
             alt=""
-            quality={100}
+            quality={95}
             loading={index + 1 > 5 ? "lazy" : "eager"}
             draggable={false}
+            className="absolute"
           />
         </Link>
       ))}

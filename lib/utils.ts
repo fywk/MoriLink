@@ -52,7 +52,7 @@ export function getStarSign(month: number, day: number): StarSign {
   return signs[signIndex];
 }
 
-export function isWinter(month: number) {
+export function isWinter(month: number): boolean {
   const winterMonths =
     island.hemisphere === "Northern"
       ? WINTER_NORTHERN_HEMISPHERE

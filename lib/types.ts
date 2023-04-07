@@ -1,22 +1,12 @@
+import { STAR_SIGNS } from "./constants";
+
 export type Audio = {
   title: string;
   src: string;
   image?: string;
 };
 
-export type StarSign =
-  | "Capricorn"
-  | "Aquarius"
-  | "Pisces"
-  | "Aries"
-  | "Taurus"
-  | "Gemini"
-  | "Cancer"
-  | "Leo"
-  | "Virgo"
-  | "Libra"
-  | "Scorpio"
-  | "Sagittarius";
+export type StarSign = (typeof STAR_SIGNS)[number];
 
 export type IslandConfig = {
   name: string;
@@ -33,12 +23,16 @@ export type IslandConfig = {
   };
 };
 
-export type NativeFruit =
-  | "Apples"
-  | "Cherries"
-  | "Oranges"
-  | "Peaches"
-  | "Pears";
+type NativeFruit = "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
+
+export type Pattern = {
+  id: string;
+  name: string;
+  category: "normal" | "pro";
+  screenshots?: string[];
+};
+
+export type PatternsConfig = Pattern[];
 
 export type PlayerConfig = {
   name: string;

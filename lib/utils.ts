@@ -1,4 +1,10 @@
 import { island } from "./config";
+import {
+  STAR_SIGN_BOUNDARIES,
+  STAR_SIGNS,
+  WINTER_NORTHERN_HEMISPHERE,
+  WINTER_SOUTHERN_HEMISPHERE,
+} from "./constants";
 import { StarSign } from "./types";
 
 export function getStarSignColour(sign: StarSign): string {
@@ -31,27 +37,13 @@ export function getStarSignColour(sign: StarSign): string {
 }
 
 export function getStarSign(month: number, day: number): StarSign {
-  const boundary = [19, 18, 20, 19, 20, 21, 22, 22, 22, 22, 22, 21] as const;
-
-  const signs: Readonly<Array<StarSign>> = [
-    "Capricorn",
-    "Aquarius",
-    "Pisces",
-    "Aries",
-    "Taurus",
-    "Gemini",
-    "Cancer",
-    "Leo",
-    "Virgo",
-    "Libra",
-    "Scorpio",
-    "Sagittarius",
-  ] as const;
+  const signs = STAR_SIGNS;
+  const boundaries = STAR_SIGN_BOUNDARIES;
 
   let signIndex: number;
   const monthIndex = month - 1;
 
-  if (day <= boundary[monthIndex]) {
+  if (day <= boundaries[monthIndex]) {
     signIndex = monthIndex;
   } else {
     signIndex = month % 12; // mod 12 to loop around to January index
@@ -61,14 +53,14 @@ export function getStarSign(month: number, day: number): StarSign {
 }
 
 export function isWinter(month: number) {
+  const winterMonths =
+    island.hemisphere === "Northern"
+      ? WINTER_NORTHERN_HEMISPHERE
+      : WINTER_SOUTHERN_HEMISPHERE;
+
   return winterMonths.includes(month);
 }
 
 export function urlize(input: string): string {
   return input.replace(/\s+/g, "-").toLowerCase();
 }
-
-const winterMonths =
-  island.hemisphere === "Northern"
-    ? ([12, 1, 2] as const)
-    : ([6, 7, 8] as const);

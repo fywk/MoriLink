@@ -1,4 +1,4 @@
-import { IslandConfig, PlayerConfig } from "./types";
+import { IslandConfig, PatternsConfig, PlayerConfig } from "./types";
 
 export const player: PlayerConfig = {
   name: "Francis",
@@ -42,3 +42,11 @@ export const island: IslandConfig = {
     updated: { date: "25/3/2023", time: "4:30 PM" },
   },
 };
+
+export const patterns: PatternsConfig = [
+  {
+    id: "MO-Y67L-TS75-2D0R",
+    name: "Bicycle Sign",
+    category: "normal",
+  },
+];

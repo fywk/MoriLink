@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import PageLayout from "@/components/PageLayout";
-import patterns from "@/data/patterns.json";
+import { patterns } from "@/lib/config";
 
 type Params = {
   params: { id: string };

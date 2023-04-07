@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import patterns from "@/data/patterns.json";
+import { patterns } from "@/lib/config";
+import { Pattern } from "@/lib/types";
 
 type Props = {
-  category: "normal" | "pro";
+  category: Pattern["category"];
 };
 
 const MINIMUM_EMPTY_SLOTS = 28;

@@ -36,13 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={clsx(
-        nunito.className,
-        "bg-alabaster [&:has(.scroll-behaviour-smooth)]:scroll-smooth"
-      )}
-    >
+    <html lang="en" className={clsx(nunito.className, "bg-alabaster")}>
       <body>
         <MusicProvider>{children}</MusicProvider>
       </body>

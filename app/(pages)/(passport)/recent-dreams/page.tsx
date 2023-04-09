@@ -42,8 +42,8 @@ export default function RecentDreamsPage() {
                   width={192}
                   height={256}
                   alt=""
-                  quality={100}
                   priority
+                  unoptimized
                   draggable={false}
                   className="h-auto w-16"
                 />
@@ -75,8 +75,8 @@ export default function RecentDreamsPage() {
               width={100}
               height={100}
               alt=""
-              quality={100}
               priority
+              unoptimized
               draggable={false}
               className="h-5 w-5"
             />
@@ -110,7 +110,7 @@ function IslandDreamModal({ starSignColour }: { starSignColour: string }) {
           width={100}
           height={100}
           alt=""
-          quality={100}
+          unoptimized
           draggable={false}
           className="h-9 w-9"
         />

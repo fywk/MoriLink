@@ -7,6 +7,7 @@ import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
 import { getStarSign, getStarSignColour } from "@/lib/utils";
+import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
 import {
   IconChevronLeft,
   IconChevronRight,
@@ -80,6 +81,7 @@ function CardSection() {
                     width={64}
                     height={64}
                     alt=""
+                    unoptimized
                     draggable={false}
                   />
                 </div>
@@ -92,6 +94,7 @@ function CardSection() {
                     width={64}
                     height={64}
                     alt=""
+                    unoptimized
                     draggable={false}
                   />
                 </div>
@@ -114,6 +117,7 @@ function CardSection() {
                   width={80}
                   height={80}
                   alt=""
+                  unoptimized
                   draggable={false}
                 />
               </div>
@@ -122,7 +126,7 @@ function CardSection() {
           </div>
           <div className="absolute bottom-2 right-2 aspect-square w-1/4 opacity-[0.125]">
             <Image
-              src="/images/Nook_Inc.svg"
+              src={nookLeaf}
               width={180}
               height={180}
               alt=""
@@ -245,7 +249,7 @@ function ResidentAvatar({ name }: { name: string }) {
           width={128}
           height={128}
           alt=""
-          quality={100}
+          unoptimized
           draggable={false}
           className="rounded-full bg-pearl"
         />
@@ -270,7 +274,7 @@ function ResidentModal({ name }: { name: string }) {
           width={128}
           height={128}
           alt=""
-          quality={100}
+          unoptimized
           draggable={false}
           className="rounded-full bg-pearl"
         />

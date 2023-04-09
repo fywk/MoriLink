@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 
 import { site } from "@/lib/site";
-import nookLeaf from "@/public/images/Nook_Inc.svg";
+import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
 
 export default function Logo({ size }: { size?: "md" }) {
   return (

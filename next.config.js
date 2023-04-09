@@ -9,10 +9,6 @@ const nextConfig = {
       { protocol: "https", hostname: "res.cloudinary.com" },
       {
         protocol: "https",
-        hostname: "acnhcdn.com",
-      },
-      {
-        protocol: "https",
         hostname: "dodo.ac",
         port: "",
         pathname: "/np/images/**",

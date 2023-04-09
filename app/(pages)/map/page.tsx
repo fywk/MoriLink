@@ -13,19 +13,20 @@ export const metadata: Metadata = {
 };
 
 export default async function MapPage() {
+  const dreamAddress = island.dream?.address ?? "---- ---- ---- ---- ----";
+
   return (
     <PageLayout
       title={TITLE}
       navbarBgClass="bg-[#79d7c5]"
       mainBgClass="bg-[#79d7c5]"
     >
-      <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-y-9 px-5 pb-10 pt-5 tracking-tight">
-        <div className="rounded-sm bg-[#faea4a] px-5 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 shadow-md sm:text-[1.375rem]/none md:px-6 md:py-3 md:text-2xl/none">
-          {island.name}
+      <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-y-9 px-5 pb-10 tracking-tight">
+        <div className="relative px-6 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 before:absolute before:inset-0 before:[border-left:0.1875rem_solid_transparent] before:[border-right:0.1875rem_solid_transparent] before:[border-top:40px_solid_#faea4a] sm:text-[1.375rem]/none sm:before:[border-top:42px_solid_#faea4a] md:px-8 md:py-3 md:text-2xl/none md:before:[border-top:48px_solid_#faea4a]">
+          <span className="relative">{island.name}</span>
         </div>
         <Image
           src={getImageURL("map", {
-            quality: 100,
             width: 640,
             height: 535,
             x: 330,
@@ -37,13 +38,12 @@ export default async function MapPage() {
           alt=""
           quality={85}
           priority
-          draggable={false}
           className="mx-auto w-full"
         />
 
-        <div className="font-bold text-[#23776c] sm:text-lg md:text-xl">{`Dream Address : ${
-          island.dream?.address ?? "---- ---- ---- ---- ----"
-        }`}</div>
+        <div className="mx-auto w-full max-w-sm border-b-2 border-dashed border-white/50 text-center text-[17px] font-bold text-[#23776c] sm:text-lg md:text-xl">
+          {`Dream Address : ${dreamAddress}`}
+        </div>
       </div>
     </PageLayout>
   );

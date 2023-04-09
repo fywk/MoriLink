@@ -15,7 +15,7 @@ type Props = {
 export default function HourlyMusic({ playingBadge, children }: Props) {
   const { audioTitle, setAudioTitle, setAudioSrc, setAudioImage, isPlaying } =
     useMusicContext();
-  const [time, setTime] = useState("");
+  const [currentHour, setCurrentHour] = useState("");
   const [musicTitle, setMusicTitle] = useState(" ");
   const [musicSource, setMusicSource] = useState("");
 
@@ -23,7 +23,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     const now = new Date();
 
     // Convert time to 12-hour format
-    const currentHour12 = now.toLocaleString("en-US", {
+    const formattedHour = now.toLocaleString("en-US", {
       hour: "numeric",
       hour12: true,
     });
@@ -35,8 +35,8 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
       (e) => e.hour === now.getHours() && e.weather === weather
     );
 
-    setTime(currentHour12);
-    setMusicTitle(`${currentHour12} (${weather})`);
+    setCurrentHour(formattedHour);
+    setMusicTitle(`${formattedHour} (${weather})`);
     setMusicSource(currentHourMusic!.musicSrc);
   }, []);
 
@@ -68,11 +68,11 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
       <div
         className={clsx(
           "flex flex-col items-center justify-center gap-y-3 text-dark-bronze-coin transition-opacity",
-          !time ? "opacity-0" : "opacity-100"
+          !currentHour ? "opacity-0" : "opacity-100"
         )}
       >
         {children}
-        <p className="text-xl/none font-[750]">{time}</p>
+        <p className="text-xl/none font-[750]">{currentHour}</p>
       </div>
     </button>
   );

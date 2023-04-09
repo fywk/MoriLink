@@ -70,7 +70,7 @@ function CardSection() {
             )}
           </div>
           <div className="flex flex-grow flex-col gap-y-2">
-            <p className="w-fit rounded-full bg-[#faf7da] px-2.5 py-1.5 text-[13px]/none font-bold text-dark-bronze-coin/70">
+            <p className="w-fit max-w-[24ch] overflow-hidden text-ellipsis whitespace-nowrap rounded-full bg-[#faf7da] px-2.5 py-1.5 text-[13px]/none font-bold text-dark-bronze-coin/70">
               {player.comment}
             </p>
             <div className="flex text-xs/none font-bold">

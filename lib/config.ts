@@ -7,7 +7,7 @@ export const player: PlayerConfig = {
     day: 8,
   },
   comment: "Nothing ever last forever",
-  title: "Hobby-Level Photographer",
+  title: "Inexperienced Problem Solver",
   registrationDate: "20/3/2020",
   creatorID: "MA-3831-5858-5426",
   // happyHomeNetworkID: "",

@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { useEffect } from "react";
 
 import { useMusicContext } from "@/lib/hooks";
 import { urlize } from "@/lib/utils";
@@ -9,6 +10,16 @@ import { MusicIcon } from "./Icons";
 
 export default function NowPlaying() {
   const { audioTitle, isPlaying } = useMusicContext();
+
+  useEffect(() => {
+    if (audioTitle && isPlaying) {
+      document
+        .getElementById(urlize(audioTitle))
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+    // NOTE: Run effect once on component mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="fixed inset-x-0 top-[4.5rem] z-20 mx-auto max-w-[52rem] px-5">
@@ -28,12 +39,16 @@ export default function NowPlaying() {
         </div>
         <h2 className="-mb-0.5 text-xl/none font-bold">
           {audioTitle && isPlaying ? (
-            <a
-              href={`#${urlize(audioTitle)}`}
+            <button
+              onClick={() =>
+                document
+                  .getElementById(urlize(audioTitle))
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="focus:outline-none focus-visible:outline-dotted focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-tiffany-blue/90"
             >
               {audioTitle}
-            </a>
+            </button>
           ) : (
             audioTitle && "Loading..."
           )}

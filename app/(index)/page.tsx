@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import DynamicLink from "@/components/DynamicLink";
 import apps from "@/data/apps.json";
 
 export default async function HomePage() {
@@ -9,7 +9,7 @@ export default async function HomePage() {
   return (
     <div className="grid grid-cols-3 gap-4 text-dark-bronze-coin">
       {apps.map((app) => (
-        <DynamicLink href={app.url} key={app.name}>
+        <Link href={app.url} key={app.name}>
           <div className="group flex flex-col items-center gap-y-2 focus:outline-none">
             <Image
               src={`/images/appicons/${app.icon}`}
@@ -25,7 +25,7 @@ export default async function HomePage() {
               {app.name}
             </span>
           </div>
-        </DynamicLink>
+        </Link>
       ))}
     </div>
   );

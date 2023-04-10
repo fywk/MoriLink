@@ -1,6 +1,6 @@
 import cloudinary, {
   ConfigAndUrlOptions,
-  TransformationOptions
+  TransformationOptions,
 } from "cloudinary";
 
 cloudinary.v2.config({
@@ -25,7 +25,6 @@ export function getImageURL(
 
 export function getPatternThumbnailURL(path: string): string {
   const transformations = {
-    quality: 100,
     width: 154,
     height: 154,
     x: 1013,
@@ -33,5 +32,5 @@ export function getPatternThumbnailURL(path: string): string {
     crop: "crop",
   };
 
-  return cloudinary.v2.url(`${cloudinaryFolder}/${path}`, transformations);
+  return getImageURL(path, transformations);
 }

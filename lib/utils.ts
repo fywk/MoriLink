@@ -1,11 +1,11 @@
 import { island } from "./config";
 import {
+  NORTHERN_HEMISPHERE_WINTER_MONTHS,
+  SOUTHERN_HEMISPHERE_WINTER_MONTHS,
   STAR_SIGN_BOUNDARIES,
   STAR_SIGNS,
-  WINTER_NORTHERN_HEMISPHERE,
-  WINTER_SOUTHERN_HEMISPHERE,
 } from "./constants";
-import { StarSign } from "./types";
+import { Day, Month, StarSign } from "./types";
 
 export function getStarSignColour(sign: StarSign): string {
   switch (sign) {
@@ -36,7 +36,7 @@ export function getStarSignColour(sign: StarSign): string {
   }
 }
 
-export function getStarSign(month: number, day: number): StarSign {
+export function getStarSign(month: Month, day: Day): StarSign {
   const signs = STAR_SIGNS;
   const boundaries = STAR_SIGN_BOUNDARIES;
 
@@ -52,11 +52,11 @@ export function getStarSign(month: number, day: number): StarSign {
   return signs[signIndex];
 }
 
-export function isWinter(month: number): boolean {
+export function isWinter(month: Month): boolean {
   const winterMonths =
     island.hemisphere === "Northern"
-      ? WINTER_NORTHERN_HEMISPHERE
-      : WINTER_SOUTHERN_HEMISPHERE;
+      ? NORTHERN_HEMISPHERE_WINTER_MONTHS
+      : SOUTHERN_HEMISPHERE_WINTER_MONTHS;
 
   return winterMonths.includes(month);
 }

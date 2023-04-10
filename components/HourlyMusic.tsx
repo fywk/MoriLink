@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import hourlyMusic from "@/data/music/hourly.json";
 import { useMusicContext } from "@/lib/hooks";
+import { Month } from "@/lib/types";
 import { isWinter, urlize } from "@/lib/utils";
 
 type Props = {
@@ -30,7 +31,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
 
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
-    const weather = isWinter(now.getMonth() + 1) ? "Snowy" : "Sunny";
+    const weather = isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Sunny";
     const currentHourMusic = hourlyMusic.find(
       (e) => e.hour === now.getHours() && e.weather === weather
     );

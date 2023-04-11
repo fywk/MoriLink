@@ -22,7 +22,7 @@ export default function NowPlaying() {
   }, []);
 
   return (
-    <div className="fixed inset-x-0 top-[4.5rem] z-20 mx-auto max-w-[52rem] px-5">
+    <div className="fixed inset-x-0 top-[4.5rem] z-20 mx-auto max-w-3xl pl-[max(1.25rem,_env(safe-area-inset-left))] pr-[max(1.25rem,_env(safe-area-inset-right))]">
       <div
         className={clsx(
           "flex max-w-lg items-center gap-x-2 rounded-full bg-white px-3.5 py-2 shadow-sm",
@@ -49,8 +49,10 @@ export default function NowPlaying() {
             >
               {audioTitle}
             </button>
+          ) : audioTitle && !isPlaying ? (
+            "Loading..."
           ) : (
-            audioTitle && "Loading..."
+            audioTitle && isPlaying && audioTitle
           )}
         </h2>
       </div>

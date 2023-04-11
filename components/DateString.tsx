@@ -10,5 +10,5 @@ export default function DateString() {
     setDate(`${now.getDate()}/${now.getMonth() + 1}`);
   }, []);
 
-  return <>{date}</>;
+  return <span className="place-self-end">{date}</span>;
 }

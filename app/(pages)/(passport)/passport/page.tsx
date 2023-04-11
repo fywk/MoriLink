@@ -28,7 +28,7 @@ export default function PassportPage() {
       navbarBgClass="bg-[#b4e4b5]"
       mainBgClass="bg-[repeating-linear-gradient(#f5f0e3,_#f5f0e3_10px,_#f2eedd_10px,_#f2eedd_17px)] bg-fixed"
     >
-      <div className="mx-auto max-w-xl px-3 pb-16">
+      <div className="mx-auto max-w-xl px-3 pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
         <CardSection />
         <MiddleSection />
         <ResidentsSection />

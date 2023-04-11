@@ -23,37 +23,43 @@ export default function MusicPage() {
       navbarBgClass="bg-[#def4b9]"
       mainBgClass="bg-[#def4b9]"
     >
-      <NowPlaying />
-      <div className="mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem]">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-          <HourlyMusic playingBadge={<HourlyPlayingBadge />}>
-            <Tooltips>Hourly Music</Tooltips>
-            <IconClockPlay width={52} height={52} stroke={1.5} />
-          </HourlyMusic>
-          {kkSongs.map((song, index) => (
-            <KKMusic
-              music={{
-                title: song.name,
-                src: song.music.src,
-                image: song.albumArt.src,
-              }}
-              playingBadge={<KKPlayingBadge />}
-              key={song.id}
-            >
-              <Tooltips>{song.name}</Tooltips>
-              <Image
-                src={song.albumArt.src}
-                width={512}
-                height={512}
-                alt=""
-                quality={80}
-                priority={index < 2}
-                draggable={false}
-                className="rounded"
-                style={{ backgroundColor: song.albumArt.colour }}
-              />
-            </KKMusic>
-          ))}
+      <div className="px-safe pb-safe">
+        <NowPlaying />
+        <div className="mx-auto max-w-3xl gap-y-6 px-7 pb-14 pt-[5.5rem] sm:px-9 md:px-11">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+            <HourlyMusic playingBadge={<HourlyPlayingBadge />}>
+              <Tooltips>Hourly Music</Tooltips>
+              <IconClockPlay width={52} height={52} stroke={1.5} />
+            </HourlyMusic>
+            {kkSongs.map((song, index) => (
+              <KKMusic
+                music={{
+                  title: song.name,
+                  src: song.music.src,
+                  image: song.albumArt.src,
+                }}
+                playingBadge={<KKPlayingBadge />}
+                key={song.id}
+              >
+                <Tooltips>{song.name}</Tooltips>
+                <picture
+                  className="rounded"
+                  style={{ backgroundColor: song.albumArt.colour }}
+                >
+                  <Image
+                    src={song.albumArt.src}
+                    width={512}
+                    height={512}
+                    alt=""
+                    quality={80}
+                    priority={index < 2}
+                    draggable={false}
+                    className="rounded"
+                  />
+                </picture>
+              </KKMusic>
+            ))}
+          </div>
         </div>
       </div>
     </PageLayout>

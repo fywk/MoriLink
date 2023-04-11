@@ -37,6 +37,11 @@ export default function MusicProvider({
       setAudioSrc("");
       setAudioImage("");
     });
+    audio?.addEventListener("error", () => {
+      setAudioTitle("");
+      setAudioSrc("");
+      setAudioImage("");
+    });
   }, [audio, setAudioTitle, setAudioSrc, setIsPlaying]);
 
   useEffect(() => {
@@ -47,7 +52,7 @@ export default function MusicProvider({
         title: audioTitle,
         artist: audioSrc.includes("hourly") ? "Kazumi Totaka" : "K.K. Slider",
         album: "Animal Crossing: New Horizons",
-        artwork: [{ src: audioImage, sizes: "512x512", type: "image/png" }],
+        artwork: [{ src: audioImage, sizes: "512x512" }],
       });
     }
   }, [audioTitle, audioSrc, audioImage, isPlaying]);

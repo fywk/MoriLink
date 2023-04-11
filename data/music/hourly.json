@@ -4,503 +4,503 @@
     "fileName": "BGM_24Hour_00_Rainy",
     "hour": 0,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/1"
+    "src": "https://dodo.ac/np/images/d/d3/NH_12_AM_%28Rainy%29.flac"
   },
   {
     "id": 2,
     "fileName": "BGM_24Hour_00_Snowy",
     "hour": 0,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/2"
+    "src": "https://dodo.ac/np/images/2/20/NH_12_AM_%28Snowy%29.flac"
   },
   {
     "id": 3,
     "fileName": "BGM_24Hour_00_Sunny",
     "hour": 0,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/3"
+    "src": "https://dodo.ac/np/images/6/6e/NH_12_AM.flac"
   },
   {
     "id": 4,
     "fileName": "BGM_24Hour_01_Rainy",
     "hour": 1,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/4"
+    "src": "https://dodo.ac/np/images/3/36/NH_1_AM_%28Rainy%29.flac"
   },
   {
     "id": 5,
     "fileName": "BGM_24Hour_01_Snowy",
     "hour": 1,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/5"
+    "src": "https://dodo.ac/np/images/d/d6/NH_1_AM_%28Snowy%29.flac"
   },
   {
     "id": 6,
     "fileName": "BGM_24Hour_01_Sunny",
     "hour": 1,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/6"
+    "src": "https://dodo.ac/np/images/f/f4/NH_1_AM.flac"
   },
   {
     "id": 7,
     "fileName": "BGM_24Hour_02_Rainy",
     "hour": 2,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/7"
+    "src": "https://dodo.ac/np/images/f/f0/NH_2_AM_%28Rainy%29.flac"
   },
   {
     "id": 8,
     "fileName": "BGM_24Hour_02_Snowy",
     "hour": 2,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/8"
+    "src": "https://dodo.ac/np/images/7/70/NH_2_AM_%28Snowy%29.flac"
   },
   {
     "id": 9,
     "fileName": "BGM_24Hour_02_Sunny",
     "hour": 2,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/9"
+    "src": "https://dodo.ac/np/images/1/11/NH_2_AM.flac"
   },
   {
     "id": 10,
     "fileName": "BGM_24Hour_03_Rainy",
     "hour": 3,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/10"
+    "src": "https://dodo.ac/np/images/0/0f/NH_3_AM_%28Rainy%29.flac"
   },
   {
     "id": 11,
     "fileName": "BGM_24Hour_03_Snowy",
     "hour": 3,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/11"
+    "src": "https://dodo.ac/np/images/b/b1/NH_3_AM_%28Snowy%29.flac"
   },
   {
     "id": 12,
     "fileName": "BGM_24Hour_03_Sunny",
     "hour": 3,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/12"
+    "src": "https://dodo.ac/np/images/f/ff/NH_3_AM.flac"
   },
   {
     "id": 13,
     "fileName": "BGM_24Hour_04_Rainy",
     "hour": 4,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/13"
+    "src": "https://dodo.ac/np/images/c/cf/NH_4_AM_%28Rainy%29.flac"
   },
   {
     "id": 14,
     "fileName": "BGM_24Hour_04_Snowy",
     "hour": 4,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/14"
+    "src": "https://dodo.ac/np/images/b/b2/NH_4_AM_%28Snowy%29.flac"
   },
   {
     "id": 15,
     "fileName": "BGM_24Hour_04_Sunny",
     "hour": 4,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/15"
+    "src": "https://dodo.ac/np/images/0/02/NH_4_AM.flac"
   },
   {
     "id": 16,
     "fileName": "BGM_24Hour_05_Rainy",
     "hour": 5,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/16"
+    "src": "https://dodo.ac/np/images/b/bf/NH_5_AM_%28Rainy%29.flac"
   },
   {
     "id": 17,
     "fileName": "BGM_24Hour_05_Snowy",
     "hour": 5,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/17"
+    "src": "https://dodo.ac/np/images/8/83/NH_5_AM_%28Snowy%29.flac"
   },
   {
     "id": 18,
     "fileName": "BGM_24Hour_05_Sunny",
     "hour": 5,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/18"
+    "src": "https://dodo.ac/np/images/4/45/NH_5_AM.flac"
   },
   {
     "id": 19,
     "fileName": "BGM_24Hour_06_Rainy",
     "hour": 6,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/19"
+    "src": "https://dodo.ac/np/images/f/fb/NH_6_AM_%28Rainy%29.flac"
   },
   {
     "id": 20,
     "fileName": "BGM_24Hour_06_Snowy",
     "hour": 6,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/20"
+    "src": "https://dodo.ac/np/images/0/02/NH_6_AM_%28Snowy%29.flac"
   },
   {
     "id": 21,
     "fileName": "BGM_24Hour_06_Sunny",
     "hour": 6,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/21"
+    "src": "https://dodo.ac/np/images/4/4f/NH_6_AM.flac"
   },
   {
     "id": 22,
     "fileName": "BGM_24Hour_07_Rainy",
     "hour": 7,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/22"
+    "src": "https://dodo.ac/np/images/5/51/NH_7_AM_%28Rainy%29.flac"
   },
   {
     "id": 23,
     "fileName": "BGM_24Hour_07_Snowy",
     "hour": 7,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/23"
+    "src": "https://dodo.ac/np/images/d/dc/NH_7_AM_%28Snowy%29.flac"
   },
   {
     "id": 24,
     "fileName": "BGM_24Hour_07_Sunny",
     "hour": 7,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/24"
+    "src": "https://dodo.ac/np/images/4/4d/NH_7_AM.flac"
   },
   {
     "id": 25,
     "fileName": "BGM_24Hour_08_Rainy",
     "hour": 8,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/25"
+    "src": "https://dodo.ac/np/images/7/78/NH_8_AM_%28Rainy%29.flac"
   },
   {
     "id": 26,
     "fileName": "BGM_24Hour_08_Snowy",
     "hour": 8,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/26"
+    "src": "https://dodo.ac/np/images/6/60/NH_8_AM_%28Snowy%29.flac"
   },
   {
     "id": 27,
     "fileName": "BGM_24Hour_08_Sunny",
     "hour": 8,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/27"
+    "src": "https://dodo.ac/np/images/5/58/NH_8_AM.flac"
   },
   {
     "id": 28,
     "fileName": "BGM_24Hour_09_Rainy",
     "hour": 9,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/28"
+    "src": "https://dodo.ac/np/images/8/87/NH_9_AM_%28Rainy%29.flac"
   },
   {
     "id": 29,
     "fileName": "BGM_24Hour_09_Snowy",
     "hour": 9,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/29"
+    "src": "https://dodo.ac/np/images/2/23/NH_9_AM_%28Snowy%29.flac"
   },
   {
     "id": 30,
     "fileName": "BGM_24Hour_09_Sunny",
     "hour": 9,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/30"
+    "src": "https://dodo.ac/np/images/f/fd/NH_9_AM.flac"
   },
   {
     "id": 31,
     "fileName": "BGM_24Hour_10_Rainy",
     "hour": 10,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/31"
+    "src": "https://dodo.ac/np/images/c/c3/NH_10_AM_%28Rainy%29.flac"
   },
   {
     "id": 32,
     "fileName": "BGM_24Hour_10_Snowy",
     "hour": 10,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/32"
+    "src": "https://dodo.ac/np/images/a/ae/NH_10_AM_%28Snowy%29.flac"
   },
   {
     "id": 33,
     "fileName": "BGM_24Hour_10_Sunny",
     "hour": 10,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/33"
+    "src": "https://dodo.ac/np/images/0/08/NH_10_AM.flac"
   },
   {
     "id": 34,
     "fileName": "BGM_24Hour_11_Rainy",
     "hour": 11,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/34"
+    "src": "https://dodo.ac/np/images/8/83/NH_11_AM_%28Rainy%29.flac"
   },
   {
     "id": 35,
     "fileName": "BGM_24Hour_11_Snowy",
     "hour": 11,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/35"
+    "src": "https://dodo.ac/np/images/d/d9/NH_11_AM_%28Snowy%29.flac"
   },
   {
     "id": 36,
     "fileName": "BGM_24Hour_11_Sunny",
     "hour": 11,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/36"
+    "src": "https://dodo.ac/np/images/d/da/NH_11_AM.flac"
   },
   {
     "id": 37,
     "fileName": "BGM_24Hour_12_Rainy",
     "hour": 12,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/37"
+    "src": "https://dodo.ac/np/images/3/37/NH_12_PM_%28Rainy%29.flac"
   },
   {
     "id": 38,
     "fileName": "BGM_24Hour_12_Snowy",
     "hour": 12,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/38"
+    "src": "https://dodo.ac/np/images/0/06/NH_12_PM_%28Snowy%29.flac"
   },
   {
     "id": 39,
     "fileName": "BGM_24Hour_12_Sunny",
     "hour": 12,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/39"
+    "src": "https://dodo.ac/np/images/b/bc/NH_12_PM.flac"
   },
   {
     "id": 40,
     "fileName": "BGM_24Hour_13_Rainy",
     "hour": 13,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/40"
+    "src": "https://dodo.ac/np/images/1/10/NH_1_PM_%28Rainy%29.flac"
   },
   {
     "id": 41,
     "fileName": "BGM_24Hour_13_Snowy",
     "hour": 13,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/41"
+    "src": "https://dodo.ac/np/images/d/df/NH_1_PM_%28Snowy%29.flac"
   },
   {
     "id": 42,
     "fileName": "BGM_24Hour_13_Sunny",
     "hour": 13,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/42"
+    "src": "https://dodo.ac/np/images/4/46/NH_1_PM.flac"
   },
   {
     "id": 43,
     "fileName": "BGM_24Hour_14_Rainy",
     "hour": 14,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/43"
+    "src": "https://dodo.ac/np/images/e/e6/NH_2_PM_%28Rainy%29.flac"
   },
   {
     "id": 44,
     "fileName": "BGM_24Hour_14_Snowy",
     "hour": 14,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/44"
+    "src": "https://dodo.ac/np/images/f/f3/NH_2_PM_%28Snowy%29.flac"
   },
   {
     "id": 45,
     "fileName": "BGM_24Hour_14_Sunny",
     "hour": 14,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/45"
+    "src": "https://dodo.ac/np/images/d/d0/NH_2_PM.flac"
   },
   {
     "id": 46,
     "fileName": "BGM_24Hour_15_Rainy",
     "hour": 15,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/46"
+    "src": "https://dodo.ac/np/images/c/c3/NH_3_PM_%28Rainy%29.flac"
   },
   {
     "id": 47,
     "fileName": "BGM_24Hour_15_Snowy",
     "hour": 15,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/47"
+    "src": "https://dodo.ac/np/images/2/2e/NH_3_PM_%28Snowy%29.flac"
   },
   {
     "id": 48,
     "fileName": "BGM_24Hour_15_Sunny",
     "hour": 15,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/48"
+    "src": "https://dodo.ac/np/images/7/75/NH_3_PM.flac"
   },
   {
     "id": 49,
     "fileName": "BGM_24Hour_16_Rainy",
     "hour": 16,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/49"
+    "src": "https://dodo.ac/np/images/c/c5/NH_4_PM_%28Rainy%29.flac"
   },
   {
     "id": 50,
     "fileName": "BGM_24Hour_16_Snowy",
     "hour": 16,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/50"
+    "src": "https://dodo.ac/np/images/e/e4/NH_4_PM_%28Snowy%29.flac"
   },
   {
     "id": 51,
     "fileName": "BGM_24Hour_16_Sunny",
     "hour": 16,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/51"
+    "src": "https://dodo.ac/np/images/e/ea/NH_4_PM.flac"
   },
   {
     "id": 52,
     "fileName": "BGM_24Hour_17_Rainy",
     "hour": 17,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/52"
+    "src": "https://dodo.ac/np/images/9/90/NH_5_PM_%28Rainy%29.flac"
   },
   {
     "id": 53,
     "fileName": "BGM_24Hour_17_Snowy",
     "hour": 17,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/53"
+    "src": "https://dodo.ac/np/images/2/2a/NH_5_PM_%28Snowy%29.flac"
   },
   {
     "id": 54,
     "fileName": "BGM_24Hour_17_Sunny",
     "hour": 17,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/54"
+    "src": "https://dodo.ac/np/images/7/78/NH_5_PM.flac"
   },
   {
     "id": 55,
     "fileName": "BGM_24Hour_18_Rainy",
     "hour": 18,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/55"
+    "src": "https://dodo.ac/np/images/8/88/NH_6_PM_%28Rainy%29.flac"
   },
   {
     "id": 56,
     "fileName": "BGM_24Hour_18_Snowy",
     "hour": 18,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/56"
+    "src": "https://dodo.ac/np/images/c/c6/NH_6_PM_%28Snowy%29.flac"
   },
   {
     "id": 57,
     "fileName": "BGM_24Hour_18_Sunny",
     "hour": 18,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/57"
+    "src": "https://dodo.ac/np/images/2/2c/NH_6_PM.flac"
   },
   {
     "id": 58,
     "fileName": "BGM_24Hour_19_Rainy",
     "hour": 19,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/58"
+    "src": "https://dodo.ac/np/images/6/6e/NH_7_PM_%28Rainy%29.flac"
   },
   {
     "id": 59,
     "fileName": "BGM_24Hour_19_Snowy",
     "hour": 19,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/59"
+    "src": "https://dodo.ac/np/images/5/52/NH_7_PM_%28Snowy%29.flac"
   },
   {
     "id": 60,
     "fileName": "BGM_24Hour_19_Sunny",
     "hour": 19,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/60"
+    "src": "https://dodo.ac/np/images/d/de/NH_7_PM.flac"
   },
   {
     "id": 61,
     "fileName": "BGM_24Hour_20_Rainy",
     "hour": 20,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/61"
+    "src": "https://dodo.ac/np/images/e/e9/NH_8_PM_%28Rainy%29.flac"
   },
   {
     "id": 62,
     "fileName": "BGM_24Hour_20_Snowy",
     "hour": 20,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/62"
+    "src": "https://dodo.ac/np/images/f/f3/NH_8_PM_%28Snowy%29.flac"
   },
   {
     "id": 63,
     "fileName": "BGM_24Hour_20_Sunny",
     "hour": 20,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/63"
+    "src": "https://dodo.ac/np/images/2/27/NH_8_PM.flac"
   },
   {
     "id": 64,
     "fileName": "BGM_24Hour_21_Rainy",
     "hour": 21,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/64"
+    "src": "https://dodo.ac/np/images/a/aa/NH_9_PM_%28Rainy%29.flac"
   },
   {
     "id": 65,
     "fileName": "BGM_24Hour_21_Snowy",
     "hour": 21,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/65"
+    "src": "https://dodo.ac/np/images/b/bb/NH_9_PM_%28Snowy%29.flac"
   },
   {
     "id": 66,
     "fileName": "BGM_24Hour_21_Sunny",
     "hour": 21,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/66"
+    "src": "https://dodo.ac/np/images/4/44/NH_9_PM.flac"
   },
   {
     "id": 67,
     "fileName": "BGM_24Hour_22_Rainy",
     "hour": 22,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/67"
+    "src": "https://dodo.ac/np/images/6/6b/NH_10_PM_%28Rainy%29.flac"
   },
   {
     "id": 68,
     "fileName": "BGM_24Hour_22_Snowy",
     "hour": 22,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/68"
+    "src": "https://dodo.ac/np/images/c/c9/NH_10_PM_%28Snowy%29.flac"
   },
   {
     "id": 69,
     "fileName": "BGM_24Hour_22_Sunny",
     "hour": 22,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/69"
+    "src": "https://dodo.ac/np/images/c/ca/NH_10_PM.flac"
   },
   {
     "id": 70,
     "fileName": "BGM_24Hour_23_Rainy",
     "hour": 23,
     "weather": "Rainy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/70"
+    "src": "https://dodo.ac/np/images/c/cd/NH_11_PM_%28Rainy%29.flac"
   },
   {
     "id": 71,
     "fileName": "BGM_24Hour_23_Snowy",
     "hour": 23,
     "weather": "Snowy",
-    "musicSrc": "https://acnhapi.com/v1/hourly/71"
+    "src": "https://dodo.ac/np/images/1/16/NH_11_PM_%28Snowy%29.flac"
   },
   {
     "id": 72,
     "fileName": "BGM_24Hour_23_Sunny",
     "hour": 23,
     "weather": "Sunny",
-    "musicSrc": "https://acnhapi.com/v1/hourly/72"
+    "src": "https://dodo.ac/np/images/4/46/NH_11_PM.flac"
   }
 ]

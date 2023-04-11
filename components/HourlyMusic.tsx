@@ -38,7 +38,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
 
     setCurrentHour(formattedHour);
     setMusicTitle(`${formattedHour} (${weather})`);
-    setMusicSource(currentHourMusic!.musicSrc);
+    setMusicSource(currentHourMusic!.src);
   }, []);
 
   const handleClick = () => {

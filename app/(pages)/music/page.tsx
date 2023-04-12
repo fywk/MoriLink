@@ -50,7 +50,6 @@ export default function MusicPage() {
                   width={512}
                   height={512}
                   alt=""
-                  quality={80}
                   priority={index < 2}
                   draggable={false}
                   className="rounded"

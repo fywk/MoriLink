@@ -18,7 +18,6 @@ export const island: IslandConfig = {
   name: "Para Para",
   hemisphere: "Northern",
   nativeFruit: "Oranges",
-  islandRating: 4,
   residents: {
     // You can sort villagers in any order you want.
     // The default order is based on the order that they arrived on your island.

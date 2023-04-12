@@ -13,8 +13,7 @@ export type StarSign = (typeof STAR_SIGNS)[number];
 export type IslandConfig = {
   name: string;
   hemisphere: "Northern" | "Southern";
-  nativeFruit: NativeFruit;
-  islandRating: NumericRange<1, 5> | null;
+  nativeFruit: "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
   residents: {
     current: string[];
     former?: string[];
@@ -26,8 +25,6 @@ export type IslandConfig = {
 };
 
 export type Month = NumericRange<1, 12>;
-
-type NativeFruit = "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
 
 type NumericRange<
   START extends number,
@@ -44,7 +41,7 @@ type NumericRange<
     >;
 
 export type Pattern = {
-  id: string; // same as Cloudinary image name w/o the folder name and file extensions ==> "folder/placeholder.jpg" === "placeholder"
+  id: string;
   name: string;
   category: "normal" | "pro";
   pictures?: string[];

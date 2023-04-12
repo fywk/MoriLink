@@ -6,10 +6,13 @@ import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import PageLayout from "@/components/PageLayout";
 import { getImageURL, getPatternThumbnailURL } from "@/lib/cloudinary";
 import { patterns } from "@/lib/config";
+import { getPattern } from "@/lib/utils";
 
 type Params = {
   params: { id: string };
 };
+
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   return patterns.map((pattern) => {
@@ -17,15 +20,13 @@ export async function generateStaticParams() {
   });
 }
 
-async function getPattern(id: string) {
-  return patterns.find((pattern) => pattern.id === id);
-}
-
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const pattern = await getPattern(params.id);
+  const pattern = getPattern(params.id);
+
+  if (!pattern) notFound();
 
   const metadata: Metadata = {
-    title: pattern?.name,
+    title: pattern.name,
     themeColor: "#fecad1",
   };
 
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function PatternPage({ params }: Params) {
-  const pattern = await getPattern(params.id);
+  const pattern = getPattern(params.id);
 
   if (!pattern) notFound();
 
@@ -56,7 +57,7 @@ export default async function PatternPage({ params }: Params) {
             </div>
             <div className="aspect-square h-14 w-14">
               <Image
-                src={getPatternThumbnailURL(`patterns/${pattern!.id}`)}
+                src={getPatternThumbnailURL(`patterns/${pattern.id}`)}
                 width={154}
                 height={154}
                 alt=""
@@ -67,7 +68,7 @@ export default async function PatternPage({ params }: Params) {
             </div>
           </div>
           <Image
-            src={getImageURL(`patterns/${pattern!.id}`)}
+            src={getImageURL(`patterns/${pattern.id}`)}
             width={1280}
             height={720}
             alt=""

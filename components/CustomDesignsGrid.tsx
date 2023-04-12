@@ -13,7 +13,15 @@ const MINIMUM_EMPTY_SLOTS = 28;
 
 export default function PatternsGrid({ category }: Props) {
   // Filtering patterns array to include only objects that have a same category to the category prop
-  const filteredPatterns = patterns.filter((obj) => obj.category === category);
+  const filteredPatterns: Pattern[] = patterns.filter(
+    (pattern) => pattern.category === category
+  );
+
+  const patternCount = filteredPatterns.length;
+  const emptySlots =
+    patternCount > MINIMUM_EMPTY_SLOTS
+      ? MINIMUM_EMPTY_SLOTS * Math.ceil(patternCount / MINIMUM_EMPTY_SLOTS) - patternCount // prettier-ignore
+      : MINIMUM_EMPTY_SLOTS - patternCount;
 
   return (
     <div className="grid grid-cols-4 gap-4 md:grid-cols-7">
@@ -37,7 +45,7 @@ export default function PatternsGrid({ category }: Props) {
           />
         </Link>
       ))}
-      {[...Array(MINIMUM_EMPTY_SLOTS - filteredPatterns.length)].map((_, i) => (
+      {[...Array(emptySlots)].map((_, i) => (
         <div
           className="flex aspect-square h-full w-full items-center justify-center"
           key={i}

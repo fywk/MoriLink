@@ -1,11 +1,34 @@
-import { island } from "./config";
+import { villagers } from "animal-crossing";
+import { Villager } from "animal-crossing/lib/types/Villager";
+
+import { island, patterns } from "./config";
 import {
   NORTHERN_HEMISPHERE_WINTER_MONTHS,
   SOUTHERN_HEMISPHERE_WINTER_MONTHS,
   STAR_SIGN_BOUNDARIES,
   STAR_SIGNS,
 } from "./constants";
-import { Day, Month, StarSign } from "./types";
+import { Day, Month, Pattern, StarSign } from "./types";
+
+export function getPattern(id: string): Pattern | undefined {
+  return patterns.find((pattern) => pattern.id === id);
+}
+
+export function getStarSign(month: Month, day: Day): StarSign {
+  const signs = STAR_SIGNS;
+  const boundaries = STAR_SIGN_BOUNDARIES;
+
+  let signIndex: number;
+  const monthIndex = month - 1;
+
+  if (day <= boundaries[monthIndex]) {
+    signIndex = monthIndex;
+  } else {
+    signIndex = month % 12; // mod 12 to loop around to January index
+  }
+
+  return signs[signIndex];
+}
 
 export function getStarSignColour(sign: StarSign): string {
   switch (sign) {
@@ -36,20 +59,10 @@ export function getStarSignColour(sign: StarSign): string {
   }
 }
 
-export function getStarSign(month: Month, day: Day): StarSign {
-  const signs = STAR_SIGNS;
-  const boundaries = STAR_SIGN_BOUNDARIES;
-
-  let signIndex: number;
-  const monthIndex = month - 1;
-
-  if (day <= boundaries[monthIndex]) {
-    signIndex = monthIndex;
-  } else {
-    signIndex = month % 12; // mod 12 to loop around to January index
-  }
-
-  return signs[signIndex];
+export function getVillager(name: string): Villager | undefined {
+  return villagers.find(
+    (villager) => villager.name.toLowerCase() === name.toLowerCase()
+  );
 }
 
 export function isWinter(month: Month): boolean {

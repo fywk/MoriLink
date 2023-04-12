@@ -1,4 +1,3 @@
-import { villagers } from "animal-crossing";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +5,7 @@ import Link from "next/link";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
-import { getStarSign, getStarSignColour } from "@/lib/utils";
+import { getStarSign, getStarSignColour, getVillager } from "@/lib/utils";
 import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
 import {
   IconChevronLeft,
@@ -239,13 +238,15 @@ function ResidentsSection() {
 }
 
 function ResidentAvatar({ name }: { name: string }) {
-  const villager = villagers.find((villager) => villager.name === name);
+  const villager = getVillager(name);
+
+  if (!villager) return null;
 
   return (
     <div className="flex flex-col items-center gap-y-1.5">
       <div className="flex aspect-square items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
         <Image
-          src={villager!.iconImage}
+          src={villager.iconImage}
           width={128}
           height={128}
           alt=""
@@ -254,23 +255,25 @@ function ResidentAvatar({ name }: { name: string }) {
           className="rounded-full bg-pearl"
         />
       </div>
-      <p className="text-sm/none font-bold tracking-tight">{name}</p>
+      <p className="text-sm/none font-bold tracking-tight">{villager.name}</p>
     </div>
   );
 }
 
 function ResidentModal({ name }: { name: string }) {
-  const villager = villagers.find((villager) => villager.name === name);
+  const villager = getVillager(name);
+
+  if (!villager) return null;
 
   // Convert birthday string from mm/dd to dd/mm format
-  const birth = villager!.birthday.split("/");
+  const birth = villager.birthday.split("/");
   const birthday = `${birth[1]}/${birth[0]}`;
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
       <div className="flex aspect-square max-w-[7.5rem] items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
         <Image
-          src={villager!.iconImage}
+          src={villager.iconImage}
           width={128}
           height={128}
           alt=""
@@ -281,25 +284,25 @@ function ResidentModal({ name }: { name: string }) {
       </div>
       <h1>
         <a
-          href={`https://nookipedia.com/wiki/${name}`}
+          href={`https://nookipedia.com/wiki/${villager.name}`}
           className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 hover:underline"
-          title={`Nookipedia: ${name}`}
+          title={`Nookipedia: ${villager.name}`}
           target="_blank"
         >
-          {name}
+          {villager.name}
         </a>
       </h1>
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
           <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager?.species}
+            {villager.species}
           </div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
           <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager?.personality}
+            {villager.personality}
           </div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">

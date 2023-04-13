@@ -1,6 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
-export async function GET(request: NextRequest) {
+export const config = {
+  runtime: "edge",
+};
+
+export default async function handler(request: NextRequest) {
   const latitude = request.geo?.latitude ?? "3.1415";
   const longitude = request.geo?.longitude ?? "101.6865";
 
@@ -9,5 +13,5 @@ export async function GET(request: NextRequest) {
   );
   const weather = await res.json();
 
-  return NextResponse.json(weather);
+  return new Response(JSON.stringify(weather));
 }

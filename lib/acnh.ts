@@ -1,6 +1,6 @@
-import villagers from "animal-crossing/lib/data/Villagers.json";
+import { villagers } from "animal-crossing";
 
-type Villager = (typeof villagers)[number];
+import type { Villager } from "animal-crossing/lib/types/Villager";
 
 export function getVillager(name: string): Villager | undefined {
   return villagers.find(

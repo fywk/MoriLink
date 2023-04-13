@@ -1,6 +1,3 @@
-import { villagers } from "animal-crossing";
-import { Villager } from "animal-crossing/lib/types/Villager";
-
 import { island, patterns } from "./config";
 import {
   NORTHERN_HEMISPHERE_WINTER_MONTHS,
@@ -57,12 +54,6 @@ export function getStarSignColour(sign: StarSign): string {
     case "Sagittarius":
       return "89 190 208";
   }
-}
-
-export function getVillager(name: string): Villager | undefined {
-  return villagers.find(
-    (villager) => villager.name.toLowerCase() === name.toLowerCase()
-  );
 }
 
 export function isWinter(month: Month): boolean {

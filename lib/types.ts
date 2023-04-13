@@ -62,3 +62,5 @@ export type PlayerConfig = {
   happyHomeNetworkID?: string;
   isResidentRep: boolean;
 };
+
+export type WeatherCondition = "Rainy" | "Snowy" | "Sunny";

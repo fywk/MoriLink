@@ -1,11 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useSWRImmutable from "swr/immutable";
 
 import hourlyMusics from "@/data/music/hourly.json";
+import fetcher from "@/lib/fetcher";
 import { useMusicContext } from "@/lib/hooks";
-import { Month } from "@/lib/types";
+import { WeatherData } from "@/lib/openweather";
+import { Month, WeatherCondition } from "@/lib/types";
 import { isWinter, urlize } from "@/lib/utils";
 
 type Props = {
@@ -19,6 +22,16 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   const [currentHour, setCurrentHour] = useState("");
   const [musicTitle, setMusicTitle] = useState(" ");
   const [musicSource, setMusicSource] = useState("");
+  let weather = useRef<WeatherCondition>();
+
+  const { data } = useSWRImmutable<WeatherData>("/api/weather", fetcher);
+  if (!data) weather.current = "Sunny";
+  data && console.log(`Weather location: ${data.name}, ${data.sys.country}`);
+  const weatherCode = data && data.weather[0].id;
+  // Check whether it's thunderstoming, drizzling, raining, or snowing locally via OpenWeather API's weather condition codes
+  // Reference: https://openweathermap.org/weather-conditions
+  const isRainingOrSnowing =
+    weatherCode !== undefined && weatherCode >= 200 && weatherCode < 700;
 
   useEffect(() => {
     const now = new Date();
@@ -31,15 +44,18 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
 
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
-    const weather = isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Sunny";
+    weather.current = isRainingOrSnowing
+      ? isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Rainy" // prettier-ignore
+      : "Sunny";
     const currentHourMusic = hourlyMusics.find(
-      (music) => music.hour === now.getHours() && music.weather === weather
+      (music) =>
+        music.hour === now.getHours() && music.weather === weather.current
     );
 
     setCurrentHour(formattedHour);
-    setMusicTitle(`${formattedHour} (${weather})`);
+    setMusicTitle(`${formattedHour} (${weather.current})`);
     currentHourMusic && setMusicSource(currentHourMusic.src);
-  }, []);
+  }, [isRainingOrSnowing]);
 
   const handleClick = () => {
     if (musicTitle === audioTitle) {

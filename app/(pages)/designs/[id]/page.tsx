@@ -13,12 +13,12 @@ type Params = {
   params: { id: string };
 };
 
-export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return patterns.map((pattern) => {
-    id: pattern.id;
-  });
+  return patterns.map((pattern) => ({
+    id: pattern.id,
+  }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {

@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -7,6 +6,8 @@ import PageLayout from "@/components/PageLayout";
 import { getImageURL, getPatternThumbnailURL } from "@/lib/cloudinary";
 import { patterns } from "@/lib/config";
 import { getPattern } from "@/lib/utils";
+
+import type { Metadata } from "next";
 
 type Params = {
   params: { id: string };

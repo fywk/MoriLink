@@ -1,9 +1,10 @@
-import { Metadata } from "next";
 import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
 import { getImageURL } from "@/lib/cloudinary";
 import { island } from "@/lib/config";
+
+import type { Metadata } from "next";
 
 const TITLE = "Map";
 

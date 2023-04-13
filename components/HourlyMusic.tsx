@@ -8,8 +8,9 @@ import hourlyMusics from "@/data/music/hourly.json";
 import fetcher from "@/lib/fetcher";
 import { useMusicContext } from "@/lib/hooks";
 import { WeatherData } from "@/lib/openweather";
-import { Month, WeatherCondition } from "@/lib/types";
 import { isWinter, urlize } from "@/lib/utils";
+
+import type { Month, WeatherCondition } from "@/lib/types";
 
 type Props = {
   playingBadge: React.ReactNode;

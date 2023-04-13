@@ -1,10 +1,11 @@
-import { Metadata } from "next";
 import Image from "next/image";
 
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
 import { getStarSign, getStarSignColour } from "@/lib/utils";
+
+import type { Metadata } from "next";
 
 const TITLE = "Recent dreams";
 

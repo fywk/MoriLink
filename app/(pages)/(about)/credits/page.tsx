@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-
 import Logo from "@/components/Logo";
 import PageLayout from "@/components/PageLayout";
+
+import type { Metadata } from "next";
 
 const TITLE = "Credits";
 

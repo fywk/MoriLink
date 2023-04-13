@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { getPatternThumbnailURL } from "@/lib/cloudinary";
 import { patterns } from "@/lib/config";
-import { Pattern } from "@/lib/types";
+
+import type { Pattern } from "@/lib/types";
 
 type Props = {
   category: Pattern["category"];

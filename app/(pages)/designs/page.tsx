@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-
 import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import CustomDesignsGrid from "@/components/CustomDesignsGrid";
 import CustomDesingsTabs from "@/components/CustomDesignsTabs";
 import PageLayout from "@/components/PageLayout";
+
+import type { Metadata } from "next";
 
 const TITLE = "Custom Designs";
 

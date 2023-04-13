@@ -5,7 +5,8 @@ import {
   STAR_SIGN_BOUNDARIES,
   STAR_SIGNS,
 } from "./constants";
-import { Day, Month, Pattern, StarSign } from "./types";
+
+import type { Day, Month, Pattern, StarSign } from "./types";
 
 export function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);

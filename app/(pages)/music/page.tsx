@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 
 import HourlyMusic from "@/components/HourlyMusic";
@@ -8,6 +7,8 @@ import PageLayout from "@/components/PageLayout";
 import Tooltips from "@/components/Tooltips";
 import kkSongs from "@/data/music/kk_slider.json";
 import { IconClockPlay, IconPlayerPlayFilled } from "@tabler/icons-react";
+
+import type { Metadata } from "next";
 
 const TITLE = "Music";
 

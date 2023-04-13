@@ -1,7 +1,6 @@
-import cloudinary, {
-  ConfigAndUrlOptions,
-  TransformationOptions,
-} from "cloudinary";
+import cloudinary from "cloudinary";
+
+import type { ConfigAndUrlOptions, TransformationOptions } from "cloudinary";
 
 cloudinary.v2.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,

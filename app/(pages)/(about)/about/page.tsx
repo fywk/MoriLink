@@ -1,7 +1,8 @@
-import { Metadata } from "next";
 import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
+
+import type { Metadata } from "next";
 
 const TITLE = "About";
 

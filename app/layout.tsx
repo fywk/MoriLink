@@ -1,12 +1,13 @@
 import "./globals.css";
 
 import clsx from "clsx";
-import { Metadata } from "next";
 import { Nunito } from "next/font/google";
 
 import { site } from "@/lib/site";
 
 import MusicProvider from "./music-provider";
+
+import type { Metadata } from "next";
 
 const nunito = Nunito({
   subsets: ["latin"],

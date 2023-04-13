@@ -1,4 +1,4 @@
-import { IslandConfig, PatternsConfig, PlayerConfig } from "./types";
+import type { IslandConfig, PatternsConfig, PlayerConfig } from "./types";
 
 export const player: PlayerConfig = {
   name: "Francis",

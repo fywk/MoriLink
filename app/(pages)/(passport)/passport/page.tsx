@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +12,8 @@ import {
   IconChevronRight,
   IconPennantFilled,
 } from "@tabler/icons-react";
+
+import type { Metadata } from "next";
 
 const TITLE = "Passport";
 

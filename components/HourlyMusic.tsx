@@ -7,9 +7,9 @@ import useSWRImmutable from "swr/immutable";
 import hourlyMusics from "@/data/music/hourly.json";
 import fetcher from "@/lib/fetcher";
 import { useMusicContext } from "@/lib/hooks";
-import { WeatherData } from "@/lib/openweather";
 import { isWinter, urlize } from "@/lib/utils";
 
+import type { WeatherData } from "@/lib/openweather";
 import type { Month, WeatherCondition } from "@/lib/types";
 
 type Props = {
@@ -20,19 +20,25 @@ type Props = {
 export default function HourlyMusic({ playingBadge, children }: Props) {
   const { audioTitle, setAudioTitle, setAudioSrc, setAudioImage, isPlaying } =
     useMusicContext();
-  const [currentHour, setCurrentHour] = useState("");
-  const [musicTitle, setMusicTitle] = useState(" ");
-  const [musicSource, setMusicSource] = useState("");
+  const [currentHour, setCurrentHour] = useState<string>("");
+  const [musicTitle, setMusicTitle] = useState<string>(" ");
+  const [musicSource, setMusicSource] = useState<string>("");
+
   let weather = useRef<WeatherCondition>();
+  let isRainingOrSnowing = useRef<boolean>();
 
   const { data } = useSWRImmutable<WeatherData>("/api/weather", fetcher);
-  if (!data) weather.current = "Sunny";
-  data && console.log(`Weather location: ${data.name}, ${data.sys.country}`);
-  const weatherCode = data && data.weather[0].id;
-  // Check whether it's thunderstoming, drizzling, raining, or snowing locally via OpenWeather API's weather condition codes
-  // Reference: https://openweathermap.org/weather-conditions
-  const isRainingOrSnowing =
-    weatherCode !== undefined && weatherCode >= 200 && weatherCode < 700;
+
+  useEffect(() => {
+    if (data) {
+      // Check whether it's thunderstoming, drizzling, raining, or snowing locally via OpenWeather API's weather condition codes
+      // Reference: https://openweathermap.org/weather-conditions
+      const weatherCode = data.weather[0].id;
+      isRainingOrSnowing.current =
+        weatherCode !== undefined && weatherCode >= 200 && weatherCode < 700;
+      console.log(`⛅️ Weather Location: ${data.name}, ${data.sys.country}`);
+    }
+  }, [data]);
 
   useEffect(() => {
     const now = new Date();
@@ -45,7 +51,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
 
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
-    weather.current = isRainingOrSnowing
+    weather.current = isRainingOrSnowing.current
       ? isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Rainy" // prettier-ignore
       : "Sunny";
     const currentHourMusic = hourlyMusics.find(
@@ -57,6 +63,14 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     setMusicTitle(`${formattedHour} (${weather.current})`);
     currentHourMusic && setMusicSource(currentHourMusic.src);
   }, [isRainingOrSnowing]);
+
+  useEffect(() => {
+    if (currentHour && weather.current && data) {
+      console.log(
+        `🎵 ${weather.current} variant of the ${currentHour} hourly music will be played.`
+      );
+    }
+  }, [currentHour, data]);
 
   const handleClick = () => {
     if (musicTitle === audioTitle) {

@@ -25,7 +25,11 @@ export const metadata: Metadata = {
     viewportFit: "cover",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
   themeColor: site.themeColor,

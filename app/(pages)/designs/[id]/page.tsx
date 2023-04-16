@@ -9,19 +9,19 @@ import { getPattern } from "@/lib/utils";
 
 import type { Metadata } from "next";
 
-type Params = {
+type Props = {
   params: { id: string };
 };
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return patterns.map((pattern) => ({
     id: pattern.id,
   }));
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export function generateMetadata({ params }: Props): Metadata {
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return metadata;
 }
 
-export default async function PatternPage({ params }: Params) {
+export default function PatternPage({ params }: Props) {
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();

@@ -6,6 +6,15 @@ export type Audio = {
   image?: string;
 };
 
+export type CloudinaryImageProps = {
+  public_id: string;
+  filename: string;
+  created_at: string;
+  width: number;
+  height: number;
+  blurDataURL?: string;
+};
+
 export type Day = NumericRange<1, 31>;
 
 export type StarSign = (typeof STAR_SIGNS)[number];

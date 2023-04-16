@@ -10,15 +10,19 @@ cloudinary.v2.config({
   sign_url: true,
 });
 
+export default cloudinary;
+
 const cloudinaryFolder = process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER;
 
 export function getImageURL(
   path: string,
-  options?: TransformationOptions | ConfigAndUrlOptions
+  options?: TransformationOptions | ConfigAndUrlOptions,
+  withFolderName = false
 ): string {
-  return cloudinary.v2.url(`${cloudinaryFolder}/${path}`, {
+  const publicID = withFolderName ? path : `${cloudinaryFolder}/${path}`;
+  return cloudinary.v2.url(publicID, {
     quality: 100,
-    ...(typeof options === "object" ? options : {}),
+    ...(typeof options === "object" ? options : undefined),
   });
 }
 

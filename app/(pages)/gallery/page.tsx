@@ -9,8 +9,6 @@ import type { Metadata } from "next";
 
 const TITLE = "Gallery";
 
-export const revalidate = 60; // revalidate this page every 60 seconds
-
 export const metadata: Metadata = {
   title: TITLE,
   themeColor: "#ffd0ae",
@@ -25,7 +23,7 @@ export default async function GalleryPage() {
         {images.map((image, index) => (
           <Link
             href={`/gallery/${image.filename}`}
-            className="aspect-square h-full w-full rounded bg-[#ffd0ae] sm:aspect-video"
+            className="aspect-square h-full w-full rounded sm:aspect-video"
             key={image.filename}
           >
             <Image

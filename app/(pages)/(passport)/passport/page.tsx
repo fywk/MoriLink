@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
-import { getVillager } from "@/lib/acnh";
 import { island, player } from "@/lib/config";
-import { getStarSign, getStarSignColour } from "@/lib/utils";
+import { getVillager } from "@/lib/utils/getVillager";
+import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
 import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
 import {
   IconChevronLeft,

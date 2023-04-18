@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import useSWRImmutable from "swr/immutable";
 
 import hourlyMusics from "@/data/music/hourly.json";
-import fetcher from "@/lib/fetcher";
 import { useMusicContext } from "@/lib/hooks";
-import { isWinter, urlize } from "@/lib/utils";
+import fetcher from "@/lib/utils/fetcher";
+import { isWinter, urlize } from "@/lib/utils/miscellaneous";
 
-import type { WeatherData } from "@/lib/openweather";
-import type { Month, WeatherCondition } from "@/lib/types";
+import type { Month, WeatherCondition } from "@/lib/types/miscellaneous";
+import type { WeatherData } from "@/lib/types/openweather";
 
 type Props = {
   playingBadge: React.ReactNode;
@@ -24,8 +24,8 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   const [musicTitle, setMusicTitle] = useState<string>(" ");
   const [musicSource, setMusicSource] = useState<string>("");
 
-  let weather = useRef<WeatherCondition>();
-  let isRainingOrSnowing = useRef<boolean>();
+  const weather = useRef<WeatherCondition>();
+  const isRainingOrSnowing = useRef<boolean>();
 
   const { data } = useSWRImmutable<WeatherData>("/api/weather", fetcher);
 

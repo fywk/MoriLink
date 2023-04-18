@@ -3,9 +3,9 @@
 import clsx from "clsx";
 
 import { useMusicContext } from "@/lib/hooks";
-import { urlize } from "@/lib/utils";
+import { urlize } from "@/lib/utils/miscellaneous";
 
-import type { Audio } from "@/lib/types";
+import type { Audio } from "@/lib/types/miscellaneous";
 
 type Props = {
   music: Audio;

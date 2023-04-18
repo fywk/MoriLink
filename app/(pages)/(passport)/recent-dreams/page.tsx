@@ -3,7 +3,7 @@ import Image from "next/image";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
-import { getStarSign, getStarSignColour } from "@/lib/utils";
+import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
 
 import type { Metadata } from "next";
 

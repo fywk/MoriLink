@@ -27,7 +27,7 @@ export function getImageURL(
 }
 
 export function getPatternThumbnailURL(path: string): string {
-  const transformations = {
+  const transformations: TransformationOptions = {
     width: 154,
     height: 154,
     x: 1013,

@@ -1,7 +1,7 @@
-import { getImageURL } from "../cloudinary";
-import { CloudinaryImageProps } from "../types";
+import { getImageURL } from "./cloudinary";
 
 import type { TransformationOptions } from "cloudinary";
+import type { CloudinaryImageProps } from "../types/miscellaneous";
 
 const cache = new Map<CloudinaryImageProps, string>();
 

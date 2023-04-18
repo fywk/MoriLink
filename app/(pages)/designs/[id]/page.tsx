@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 
 import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import PageLayout from "@/components/PageLayout";
-import { getImageURL, getPatternThumbnailURL } from "@/lib/cloudinary";
 import { patterns } from "@/lib/config";
-import { getPattern } from "@/lib/utils";
+import { getImageURL, getPatternThumbnailURL } from "@/lib/utils/cloudinary";
+import { getPattern } from "@/lib/utils/miscellaneous";
 
 import type { Metadata } from "next";
 

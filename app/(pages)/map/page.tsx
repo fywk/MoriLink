@@ -1,9 +1,10 @@
 import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/cloudinary";
 import { island } from "@/lib/config";
+import { getImageURL } from "@/lib/utils/cloudinary";
 
+import type { TransformationOptions } from "cloudinary";
 import type { Metadata } from "next";
 
 const TITLE = "Map";
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
 
 export default async function MapPage() {
   const dreamAddress = island.dream?.address ?? "---- ---- ---- ---- ----";
+  const mapImageTransformations: TransformationOptions = {
+    width: 640,
+    height: 535,
+    x: 330,
+    y: 100,
+    crop: "crop",
+  };
 
   return (
     <PageLayout
@@ -27,13 +35,7 @@ export default async function MapPage() {
           <span className="relative">{island.name}</span>
         </div>
         <Image
-          src={getImageURL("map", {
-            width: 640,
-            height: 535,
-            x: 330,
-            y: 100,
-            crop: "crop",
-          })}
+          src={getImageURL("map", mapImageTransformations)}
           width={640}
           height={535}
           alt=""

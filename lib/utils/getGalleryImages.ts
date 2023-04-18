@@ -1,10 +1,10 @@
 import { cache } from "react";
 
-import cloudinary from "../cloudinary";
+import cloudinary from "./cloudinary";
 import { getBase64ImageURL } from "./getBase64ImageURL";
 
 import type { ResourceApiResponse } from "cloudinary";
-import type { CloudinaryImageProps } from "../types";
+import type { CloudinaryImageProps } from "../types/miscellaneous";
 
 export const getGalleryImages = cache(
   async (): Promise<CloudinaryImageProps[]> => {

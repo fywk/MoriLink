@@ -1,12 +1,12 @@
-import { island, patterns } from "./config";
+import { island, patterns } from "../config";
 import {
   NORTHERN_HEMISPHERE_WINTER_MONTHS,
   SOUTHERN_HEMISPHERE_WINTER_MONTHS,
   STAR_SIGN_BOUNDARIES,
   STAR_SIGNS,
-} from "./constants";
+} from "../constants";
 
-import type { Day, Month, Pattern, StarSign } from "./types";
+import type { Day, Month, Pattern, StarSign } from "../types/miscellaneous";
 
 export function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);

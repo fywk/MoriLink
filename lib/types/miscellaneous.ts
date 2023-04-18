@@ -1,4 +1,4 @@
-import { STAR_SIGNS } from "./constants";
+import { STAR_SIGNS } from "../constants";
 
 export type Audio = {
   title: string;

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useEffect } from "react";
 
 import { useMusicContext } from "@/lib/hooks";
-import { urlize } from "@/lib/utils";
+import { urlize } from "@/lib/utils/miscellaneous";
 
 import { MusicIcon } from "./Icons";
 

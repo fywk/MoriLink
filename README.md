@@ -1,17 +1,18 @@
 # Nook++
 
-## Photo Cropping Scripts
+A hybrid of NookPhone and NookLink from Animal Crossing: New Horizons.
 
-Some images used in this site is programatically crop with the [ImageMagick](https://github.com/imagemagick/imagemagick) CLI tool. It is assumed that the image is exported from Switch screenshot.
+![Screenshot of Nook++](/public/images/screenshot.png)
 
-- Script to crop map exported from Switch's screenshot:
+## Introduction
 
-```bash
-magick '*.jpg[640x535+330+100]' map.jpg
-```
+This application combined the functionalities found in the NookPhone smartphone in the game and the NookLink service of the Nintendo Switch Online app, along with some additional features.
 
-- Script to extract custom design thumbnail from screenshot:
+## Getting Started
 
 ```bash
-magick '*.jpg[154x154+1013+261]' thumbnail.jpg
+git clone https://github.com/fywk/NookPlusPlus.git
+cd NookPlusPlus
+pnpm install
+pnpm dev
 ```

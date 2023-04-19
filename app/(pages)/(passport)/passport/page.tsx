@@ -287,7 +287,7 @@ function ResidentModal({ name }: { name: string }) {
       <h1>
         <a
           href={`https://nookipedia.com/wiki/${villager.name}`}
-          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 hover:underline"
+          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 ring-tiffany-blue hover:underline focus:outline-none focus-visible:ring-3"
           title={`Nookipedia: ${villager.name}`}
           target="_blank"
         >

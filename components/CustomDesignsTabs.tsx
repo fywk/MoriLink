@@ -18,7 +18,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none focus-visible:ring-3",
+              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none ui-focus-visible:ring-3",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver"
             )
           }
@@ -40,7 +40,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none focus-visible:ring-3",
+              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none ui-focus-visible:ring-3",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver"
             )
           }
@@ -61,10 +61,10 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         </Tab>
       </Tab.List>
       <Tab.Panels className="pt-6">
-        <Tab.Panel className="ring-[#fecad1] ring-offset-4 ring-offset-alabaster focus:outline-none focus-visible:ring-3">
+        <Tab.Panel className="ring-[#fecad1] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
           {normalPanel}
         </Tab.Panel>
-        <Tab.Panel className="ring-[#fecad1] ring-offset-4 ring-offset-alabaster focus:outline-none focus-visible:ring-3">
+        <Tab.Panel className="ring-[#fecad1] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
           {proPanel}
         </Tab.Panel>
       </Tab.Panels>

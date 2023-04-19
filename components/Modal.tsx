@@ -27,7 +27,7 @@ export default function Modal({ isOpen, setIsOpen, children }: Props) {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="h-fit w-fit rounded-full p-2 hover:bg-[#ece5d4] focus:outline-none active:bg-[#ece5d4]"
+            className="h-fit w-fit rounded-full p-2 ring-tiffany-blue hover:bg-[#ece5d4] focus:outline-none active:bg-[#ece5d4] ui-focus-visible:ring-3"
           >
             <IconX size={29} stroke={2.375} className="text-beaver" />
           </button>

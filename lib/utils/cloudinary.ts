@@ -1,25 +1,25 @@
 import cloudinary from "cloudinary";
 
+import { env } from "../env.mjs";
+
 import type { ConfigAndUrlOptions, TransformationOptions } from "cloudinary";
 
 cloudinary.v2.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: env.CLOUDINARY_CLOUD_NAME,
+  api_key: env.CLOUDINARY_API_KEY,
+  api_secret: env.CLOUDINARY_API_SECRET,
   secure: true, // return "https" URLs
   sign_url: true,
 });
 
 export default cloudinary;
 
-const cloudinaryFolder = process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER;
-
 export function getImageURL(
   path: string,
   options?: TransformationOptions | ConfigAndUrlOptions,
   withFolderName = false
 ): string {
-  const publicID = withFolderName ? path : `${cloudinaryFolder}/${path}`;
+  const publicID = withFolderName ? path : `${env.CLOUDINARY_FOLDER}/${path}`;
   return cloudinary.v2.url(publicID, {
     quality: 100,
     ...(typeof options === "object" ? options : undefined),

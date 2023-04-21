@@ -6,7 +6,8 @@ import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
 import { getVillager } from "@/lib/utils/getVillager";
 import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
-import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
+import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
+import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 import {
   IconChevronLeft,
   IconChevronRight,
@@ -78,9 +79,7 @@ function CardSection() {
               <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin">
                 <div className="h-4 w-4">
                   <Image
-                    src="/images/sprites/Town_Island.png"
-                    width={64}
-                    height={64}
+                    src={spriteTownIsland}
                     alt=""
                     unoptimized
                     draggable={false}
@@ -126,13 +125,7 @@ function CardSection() {
             </div>
           </div>
           <div className="absolute bottom-2 right-2 aspect-square w-1/4 opacity-[0.125]">
-            <Image
-              src={nookLeaf}
-              width={180}
-              height={180}
-              alt=""
-              draggable={false}
-            />
+            <Image src={spriteNookInc} alt="" draggable={false} />
           </div>
         </div>
         <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">

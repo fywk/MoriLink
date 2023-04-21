@@ -1,20 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import apps from "@/data/apps.json";
+import { apps } from "@/data/apps";
 
-export default async function HomePage() {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
+export default function HomePage() {
   return (
     <div className="grid grid-cols-3 gap-4 text-dark-bronze-coin">
       {apps.map((app) => (
         <Link href={app.url} key={app.name}>
           <div className="group flex flex-col items-center gap-y-2 focus:outline-none">
             <Image
-              src={`/images/appicons/${app.icon}`}
-              width={150}
-              height={150}
+              src={app.icon}
               alt=""
               loading="eager"
               draggable={false}

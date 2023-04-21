@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 
 import { site } from "@/lib/site";
-import nookLeaf from "@/public/images/sprites/Nook_Inc.svg";
+import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 
 export default function Logo({ size }: { size?: "md" }) {
   return (
@@ -13,7 +13,7 @@ export default function Logo({ size }: { size?: "md" }) {
           size === "md" ? "h-8.5 w-8.5" : "h-7.5 w-7.5"
         )}
       >
-        <Image src={nookLeaf} alt="" draggable={false} priority />
+        <Image src={spriteNookInc} alt="" draggable={false} />
       </div>
       <h1
         className={clsx(

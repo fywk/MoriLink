@@ -34,7 +34,7 @@ export default async function GalleryPage() {
               placeholder="blur"
               blurDataURL={image.blurDataURL}
               loading={index < 3 ? "eager" : "lazy"}
-              className="h-full w-full rounded-sm object-cover"
+              className="h-full w-full rounded object-cover"
             />
           </Link>
         ))}

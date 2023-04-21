@@ -4,6 +4,8 @@ import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
 import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
+import spriteIsland from "@/public/images/sprites/Island.png";
+import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";
 
@@ -39,9 +41,7 @@ export default function RecentDreamsPage() {
             <div className="flex w-full items-center gap-x-2 rounded-2xl bg-alabaster p-5 text-left transition-colors hover:bg-bone active:bg-bone">
               <div className="relative">
                 <Image
-                  src="/images/sprites/Island.png"
-                  width={192}
-                  height={256}
+                  src={spriteIsland}
                   alt=""
                   priority
                   unoptimized
@@ -72,9 +72,7 @@ export default function RecentDreamsPage() {
           </p>
           <div className="flex items-center gap-x-1">
             <Image
-              src="/images/sprites/Town_Island.png"
-              width={100}
-              height={100}
+              src={spriteTownIsland}
               alt=""
               priority
               unoptimized
@@ -107,9 +105,7 @@ function IslandDreamModal({ starSignColour }: { starSignColour: string }) {
     >
       <div className="flex items-center gap-x-2">
         <Image
-          src="/images/sprites/Town_Island.png"
-          width={100}
-          height={100}
+          src={spriteTownIsland}
           alt=""
           unoptimized
           draggable={false}

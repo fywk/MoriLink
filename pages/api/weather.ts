@@ -1,3 +1,5 @@
+import { env } from "@/lib/env.mjs";
+
 import type { NextRequest } from "next/server";
 
 export const config = {
@@ -9,7 +11,7 @@ export default async function handler(request: NextRequest) {
   const longitude = request.geo?.longitude ?? "101.6865";
 
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${env.OPENWEATHER_API_KEY}&units=metric`
   );
   const weather = await res.json();
 

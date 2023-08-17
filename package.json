@@ -10,6 +10,7 @@
     "@headlessui/react": "^1.7.17",
     "@headlessui/tailwindcss": "^0.2.0",
     "@tabler/icons-react": "^2.30.0",
+    "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",

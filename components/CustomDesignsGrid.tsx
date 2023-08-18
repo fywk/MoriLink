@@ -21,7 +21,7 @@ export default function PatternsGrid({ category }: Props) {
   const patternCount = filteredPatterns.length;
   const emptySlots =
     patternCount > MINIMUM_EMPTY_SLOTS
-      ? MINIMUM_EMPTY_SLOTS * Math.ceil(patternCount / MINIMUM_EMPTY_SLOTS) - patternCount // prettier-ignore
+      ? MINIMUM_EMPTY_SLOTS * Math.ceil(patternCount / MINIMUM_EMPTY_SLOTS) - patternCount
       : MINIMUM_EMPTY_SLOTS - patternCount;
 
   return (

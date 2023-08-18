@@ -52,7 +52,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
     weather.current = isRainingOrSnowing.current
-      ? isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Rainy" // prettier-ignore
+      ? isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Rainy"
       : "Sunny";
     const currentHourMusic = hourlyMusics.find(
       (music) =>

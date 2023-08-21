@@ -23,9 +23,7 @@ export default function StatusBar() {
         <span>{player.name}</span>
       </div>
       <div className="flex-none">
-        <span className="place-self-end">
-          {`${today.getDate()}/${today.getMonth() + 1}`}
-        </span>
+        <span className="place-self-end">{`${today.getDate()}/${today.getMonth() + 1}`}</span>
       </div>
     </div>
   );

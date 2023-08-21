@@ -4,15 +4,11 @@ import Link from "next/link";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
-import { getVillager } from "@/lib/utils/getVillager";
-import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
+import { getVillager } from "@/lib/utils/get-villager";
+import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconPennantFilled,
-} from "@tabler/icons-react";
+import { IconChevronLeft, IconChevronRight, IconPennantFilled } from "@tabler/icons-react";
 
 import type { Metadata } from "next";
 
@@ -78,12 +74,7 @@ function CardSection() {
             <div className="flex text-xs/none font-bold">
               <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin">
                 <div className="h-4 w-4">
-                  <Image
-                    src={spriteTownIsland}
-                    alt=""
-                    unoptimized
-                    draggable={false}
-                  />
+                  <Image src={spriteTownIsland} alt="" unoptimized draggable={false} />
                 </div>
                 {island.name}
               </div>
@@ -102,9 +93,7 @@ function CardSection() {
               </div>
             </div>
             <hr className="border-[1.5px] border-[#faf7da]" />
-            <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">
-              {player.title}
-            </h4>
+            <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">{player.title}</h4>
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
             <h2 className="text-[22px]/none font-[750] tracking-tight text-dark-bronze-coin">
               {player.name}
@@ -157,23 +146,14 @@ function MiddleSection() {
         descColour="text-[#a364d5]"
       />
       {player.happyHomeNetworkID && (
-        <DisclosureWidget
-          title="Happy Home Network ID"
-          description={player.happyHomeNetworkID}
-        />
+        <DisclosureWidget title="Happy Home Network ID" description={player.happyHomeNetworkID} />
       )}
       <Link
         href="/recent-dreams"
         className="flex items-center justify-between border-y-2 border-dashed border-[#dbd8bf] px-3 py-2.5 hover:bg-[#ece5d4] active:bg-[#ece5d4]"
       >
-        <span className="text-[17.5px] font-bold text-dark-bronze-coin">
-          Recent dreams
-        </span>
-        <IconChevronRight
-          size={20}
-          stroke={3}
-          className="text-dark-bronze-coin/70"
-        />
+        <span className="text-[17.5px] font-bold text-dark-bronze-coin">Recent dreams</span>
+        <IconChevronRight size={20} stroke={3} className="text-dark-bronze-coin/70" />
       </Link>
     </section>
   );
@@ -213,15 +193,10 @@ function ResidentsSection() {
       </div>
       {"former" in island.residents && (
         <>
-          <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">
-            Former residents
-          </h3>
+          <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">Former residents</h3>
           <div className="grid grid-cols-4 gap-x-8 gap-y-5.5 px-1">
             {island.residents.former?.map((resident, i) => (
-              <ModalOpener
-                modalContent={<ResidentModal name={resident} />}
-                key={i}
-              >
+              <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
                 <ResidentAvatar name={resident} />
               </ModalOpener>
             ))}
@@ -290,21 +265,15 @@ function ResidentModal({ name }: { name: string }) {
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager.species}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager.personality}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {birthday}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
     </div>

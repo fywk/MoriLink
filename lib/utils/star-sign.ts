@@ -1,16 +1,6 @@
-import { island, patterns } from "../config";
-import {
-  NORTHERN_HEMISPHERE_WINTER_MONTHS,
-  SOUTHERN_HEMISPHERE_WINTER_MONTHS,
-  STAR_SIGN_BOUNDARIES,
-  STAR_SIGNS,
-} from "../constants";
+import { STAR_SIGNS, STAR_SIGN_BOUNDARIES } from "../constants";
 
-import type { Day, Month, Pattern, StarSign } from "../types/miscellaneous";
-
-export function getPattern(id: string): Pattern | undefined {
-  return patterns.find((pattern) => pattern.id === id);
-}
+import type { Day, Month, StarSign } from "../types/miscellaneous";
 
 export function getStarSign(month: Month, day: Day): StarSign {
   const signs = STAR_SIGNS;
@@ -22,7 +12,7 @@ export function getStarSign(month: Month, day: Day): StarSign {
   if (day <= boundaries[monthIndex]) {
     signIndex = monthIndex;
   } else {
-    signIndex = month % 12; // mod 12 to loop around to January index
+    signIndex = month % 12;
   }
 
   return signs[signIndex];
@@ -55,17 +45,4 @@ export function getStarSignColour(sign: StarSign): string {
     case "Sagittarius":
       return "89 190 208";
   }
-}
-
-export function isWinter(month: Month): boolean {
-  const winterMonths =
-    island.hemisphere === "Northern"
-      ? NORTHERN_HEMISPHERE_WINTER_MONTHS
-      : SOUTHERN_HEMISPHERE_WINTER_MONTHS;
-
-  return winterMonths.includes(month);
-}
-
-export function urlize(input: string): string {
-  return input.replace(/\s+/g, "-").toLowerCase();
 }

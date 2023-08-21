@@ -7,10 +7,11 @@ import useSWRImmutable from "swr/immutable";
 import hourlyMusics from "@/data/music/hourly.json";
 import { useMusicContext } from "@/lib/hooks";
 import fetcher from "@/lib/utils/fetcher";
-import { isWinter, urlize } from "@/lib/utils/miscellaneous";
+import { isWinter } from "@/lib/utils/is-winter";
 
-import type { Month, WeatherCondition } from "@/lib/types/miscellaneous";
+import type { WeatherCondition } from "@/lib/types/miscellaneous";
 import type { WeatherData } from "@/lib/types/openweather";
+import { urlize } from "@/lib/utils/urlize";
 
 type Props = {
   playingBadge: React.ReactNode;
@@ -18,8 +19,7 @@ type Props = {
 };
 
 export default function HourlyMusic({ playingBadge, children }: Props) {
-  const { audioTitle, setAudioTitle, setAudioSrc, setAudioImage, isPlaying } =
-    useMusicContext();
+  const { audioTitle, setAudioTitle, setAudioSrc, setAudioImage, isPlaying } = useMusicContext();
   const [currentHour, setCurrentHour] = useState<string>("");
   const [musicTitle, setMusicTitle] = useState<string>(" ");
   const [musicSource, setMusicSource] = useState<string>("");
@@ -52,11 +52,10 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
     weather.current = isRainingOrSnowing.current
-      ? isWinter((now.getMonth() + 1) as Month) ? "Snowy" : "Rainy"
+      ? isWinter(now.getMonth() + 1) ? "Snowy" : "Rainy" // prettier-ignore
       : "Sunny";
     const currentHourMusic = hourlyMusics.find(
-      (music) =>
-        music.hour === now.getHours() && music.weather === weather.current
+      (music) => music.hour === now.getHours() && music.weather === weather.current,
     );
 
     setCurrentHour(formattedHour);
@@ -67,7 +66,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   useEffect(() => {
     if (currentHour && weather.current && data) {
       console.log(
-        `🎵 ${weather.current} variant of the ${currentHour} hourly music will be played.`
+        `🎵 ${weather.current} variant of the ${currentHour} hourly music will be played.`,
       );
     }
   }, [currentHour, data]);
@@ -86,21 +85,21 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
 
   return (
     <button
-      type="button"
       onClick={() => handleClick()}
-      id={urlize(musicTitle)}
       className={clsx(
         "group relative m-auto h-full max-h-[7.25rem] w-full max-w-[7.25rem] scroll-mt-44 rounded-3xl bg-[#f3fede] focus:outline-none",
         audioTitle === musicTitle
           ? "ring-5 ring-[#48c058]"
-          : "focus-visible:ring-4 focus-visible:ring-tiffany-blue/90"
+          : "focus-visible:ring-4 focus-visible:ring-tiffany-blue/90",
       )}
+      id={urlize(musicTitle)}
+      type="button"
     >
       {isPlaying && audioTitle === musicTitle && playingBadge}
       <div
         className={clsx(
           "flex flex-col items-center justify-center gap-y-3 text-dark-bronze-coin transition-opacity",
-          !currentHour ? "opacity-0" : "opacity-100"
+          !currentHour ? "opacity-0" : "opacity-100",
         )}
       >
         {children}

@@ -5,9 +5,7 @@ import type { CloudinaryImageProps } from "../types/miscellaneous";
 
 const cache = new Map<CloudinaryImageProps, string>();
 
-export async function getBase64ImageURL(
-  image: CloudinaryImageProps
-): Promise<string> {
+export async function getBase64ImageURL(image: CloudinaryImageProps): Promise<string> {
   let url = cache.get(image);
   if (url) return url;
 
@@ -18,9 +16,7 @@ export async function getBase64ImageURL(
     format: "jpg",
   };
 
-  const response = await fetch(
-    getImageURL(image.public_id, blurPlaceholderTransformations, true)
-  );
+  const response = await fetch(getImageURL(image.public_id, blurPlaceholderTransformations, true));
   const buffer = await response.arrayBuffer();
   const data = Buffer.from(buffer).toString("base64");
 

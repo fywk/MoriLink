@@ -35,11 +35,7 @@ export const metadata: Metadata = {
   themeColor: site.themeColor,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={clsx(nunito.className, "bg-alabaster")}>
       <body>

@@ -14,7 +14,7 @@ export default function ModalOpener({ children, modalContent }: Props) {
 
   return (
     <>
-      <button type="button" className="w-full" onClick={() => setIsOpen(true)}>
+      <button onClick={() => setIsOpen(true)} className="w-full" type="button">
         {children}
       </button>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>

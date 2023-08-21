@@ -1,11 +1,6 @@
 export function MusicIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 128 128"
-      width={128}
-      height={128}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width={128} height={128}>
       <style>{".a,.c{opacity:.7;fill:#fff}.c{opacity:.2}"}</style>
       <path
         fill="currentColor"
@@ -20,10 +15,7 @@ export function MusicIcon() {
         fill="currentColor"
         d="M58.4 44.5c0 16 .2 22.3.3 14 .2-8.3.2-21.3 0-29-.1-7.7-.3-1-.3 15z"
       />
-      <path
-        fill="currentColor"
-        d="M74.4 60.5c0 5 .1 7.2.3 5 .2-2.2.2-6.3 0-9-.2-2.8-.3-1-.3 4z"
-      />
+      <path fill="currentColor" d="M74.4 60.5c0 5 .1 7.2.3 5 .2-2.2.2-6.3 0-9-.2-2.8-.3-1-.3 4z" />
       <path
         d="M110.2 59c0 1.4.2 1.8.5 1 .2-.8.2-2 0-2.5-.3-.5-.5.1-.5 1.5z"
         opacity={0.4}

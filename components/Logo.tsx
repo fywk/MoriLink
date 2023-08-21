@@ -10,7 +10,7 @@ export default function Logo({ size }: { size?: "md" }) {
       <div
         className={clsx(
           "overflow-hidden rounded-full bg-alabaster",
-          size === "md" ? "h-8.5 w-8.5" : "h-7.5 w-7.5"
+          size === "md" ? "h-8.5 w-8.5" : "h-7.5 w-7.5",
         )}
       >
         <Image src={spriteNookInc} alt="" draggable={false} />
@@ -18,7 +18,7 @@ export default function Logo({ size }: { size?: "md" }) {
       <h1
         className={clsx(
           "font-black leading-none tracking-tight text-old-burgundy",
-          size === "md" ? "text-[29.8px]" : "text-[25px]"
+          size === "md" ? "text-[29.8px]" : "text-[25px]",
         )}
       >
         {site.title}

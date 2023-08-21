@@ -1,4 +1,5 @@
 import { STAR_SIGNS } from "../constants";
+import type { NumericRange } from "./utility";
 
 export type Audio = {
   title: string;
@@ -24,30 +25,24 @@ export type IslandConfig = {
   hemisphere: "Northern" | "Southern";
   nativeFruit: "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
   residents: {
+    /**
+     * You can sort villagers in any order you want.
+     * The default order is based on the order that they arrived on your island.
+     * Note: The order you listed here will be the order they appeared in the app.
+     */
     current: string[];
     former?: string[];
   };
   dream?: {
     address: string;
-    updated: { date: string; time: string };
+    updated: {
+      date: string;
+      time: string;
+    };
   };
 };
 
 export type Month = NumericRange<1, 12>;
-
-type NumericRange<
-  START extends number,
-  END extends number,
-  ARR extends unknown[] = [],
-  ACC extends number = never
-> = ARR["length"] extends END
-  ? ACC | START | END
-  : NumericRange<
-      START,
-      END,
-      [...ARR, 1],
-      ARR[START] extends undefined ? ACC : ACC | ARR["length"]
-    >;
 
 export type Pattern = {
   id: string;

@@ -14,9 +14,7 @@ const MINIMUM_EMPTY_SLOTS = 28;
 
 export default function PatternsGrid({ category }: Props) {
   // Filtering patterns array to include only objects that have a same category to the category prop
-  const filteredPatterns: Pattern[] = patterns.filter(
-    (pattern) => pattern.category === category
-  );
+  const filteredPatterns: Pattern[] = patterns.filter((pattern) => pattern.category === category);
 
   const patternCount = filteredPatterns.length;
   const emptySlots =
@@ -47,10 +45,7 @@ export default function PatternsGrid({ category }: Props) {
         </Link>
       ))}
       {[...Array(emptySlots)].map((_, i) => (
-        <div
-          className="flex aspect-square h-full w-full items-center justify-center"
-          key={i}
-        >
+        <div className="flex aspect-square h-full w-full items-center justify-center" key={i}>
           <div className="aspect-square h-5.5 w-5.5 rounded-full bg-bone"></div>
         </div>
       ))}

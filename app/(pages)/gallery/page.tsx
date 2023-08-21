@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
 import { getImageURL } from "@/lib/utils/cloudinary";
-import { getGalleryImages } from "@/lib/utils/getGalleryImages";
+import { getGalleryImages } from "@/lib/utils/get-gallery-images";
 
 import type { Metadata } from "next";
 

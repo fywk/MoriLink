@@ -17,7 +17,7 @@ export default cloudinary;
 export function getImageURL(
   path: string,
   options?: TransformationOptions | ConfigAndUrlOptions,
-  withFolderName = false
+  withFolderName = false,
 ): string {
   const publicID = withFolderName ? path : `${env.CLOUDINARY_FOLDER}/${path}`;
   return cloudinary.v2.url(publicID, {

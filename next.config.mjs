@@ -2,9 +2,6 @@ await import("./lib/env.mjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 86400, //seconds (24 hours)

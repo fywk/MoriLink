@@ -28,18 +28,18 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   const weather = useRef<WeatherCondition>();
   const isRainingOrSnowing = useRef<boolean>();
 
-  const { data } = useSWRImmutable<WeatherData>("/api/weather", fetcher);
+  const { data: weatherData } = useSWRImmutable<WeatherData>("/api/weather", fetcher);
 
   useEffect(() => {
-    if (data) {
+    if (weatherData) {
       // Check whether it's thunderstoming, drizzling, raining, or snowing locally via OpenWeather API's weather condition codes
       // Reference: https://openweathermap.org/weather-conditions
-      const weatherCode = data.weather[0].id;
+      const weatherCode = weatherData.id;
       isRainingOrSnowing.current =
         weatherCode !== undefined && weatherCode >= 200 && weatherCode < 700;
-      console.log(`⛅️ Weather Location: ${data.name}, ${data.sys.country}`);
+      console.log(`⛅️ Weather Location: ${weatherData.city}, ${weatherData.country}`);
     }
-  }, [data]);
+  }, [weatherData]);
 
   useEffect(() => {
     const now = new Date();
@@ -67,12 +67,12 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   }, [isRainingOrSnowing]);
 
   useEffect(() => {
-    if (currentHour && weather.current && data) {
+    if (currentHour && weather.current && weatherData) {
       console.log(
         `🎵 ${weather.current} variant of the ${currentHour} hourly music will be played.`,
       );
     }
-  }, [currentHour, data]);
+  }, [currentHour, weatherData]);
 
   const handleClick = () => {
     if (musicTitle === audioTitle) {

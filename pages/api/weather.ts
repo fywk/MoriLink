@@ -1,4 +1,4 @@
-import { env } from "@/lib/env.mjs";
+import { getCurrentWeather } from "@/lib/providers/openweather";
 
 import type { NextRequest } from "next/server";
 
@@ -10,10 +10,21 @@ export default async function handler(request: NextRequest) {
   const latitude = request.geo?.latitude ?? "3.1415";
   const longitude = request.geo?.longitude ?? "101.6865";
 
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${env.OPENWEATHER_API_KEY}&units=metric`,
-  );
-  const weather = await res.json();
+  const weather = await getCurrentWeather(latitude, longitude);
 
-  return new Response(JSON.stringify(weather));
+  if (!weather) {
+    return new Response(JSON.stringify({ error: "An error occurred while trying to fetch." }), {
+      status: 400,
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+  }
+
+  return new Response(JSON.stringify(weather), {
+    status: 200,
+    headers: {
+      "content-type": "application/json",
+    },
+  });
 }

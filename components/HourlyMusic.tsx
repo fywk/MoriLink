@@ -5,13 +5,14 @@ import { useEffect, useRef, useState } from "react";
 import useSWRImmutable from "swr/immutable";
 
 import hourlyMusics from "@/data/music/hourly.json";
+import { island } from "@/lib/config";
 import { useMusicContext } from "@/lib/hooks";
 import fetcher from "@/lib/utils/fetcher";
 import { isWinter } from "@/lib/utils/is-winter";
+import { urlize } from "@/lib/utils/urlize";
 
 import type { WeatherCondition } from "@/lib/types/miscellaneous";
 import type { WeatherData } from "@/lib/types/openweather";
-import { urlize } from "@/lib/utils/urlize";
 
 type Props = {
   playingBadge: React.ReactNode;
@@ -52,7 +53,9 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
     weather.current = isRainingOrSnowing.current
-      ? isWinter(now.getMonth() + 1) ? "Snowy" : "Rainy" // prettier-ignore
+      ? isWinter(island.hemisphere, now.getMonth() + 1)
+        ? "Snowy"
+        : "Rainy"
       : "Sunny";
     const currentHourMusic = hourlyMusics.find(
       (music) => music.hour === now.getHours() && music.weather === weather.current,

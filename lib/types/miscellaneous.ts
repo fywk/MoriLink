@@ -1,4 +1,5 @@
 import { STAR_SIGNS } from "../constants";
+
 import type { NumericRange } from "./utility";
 
 export type Audio = {
@@ -18,11 +19,13 @@ export type CloudinaryImageProps = {
 
 export type Day = NumericRange<1, 31>;
 
+export type Hemisphere = "Northern" | "Southern";
+
 export type StarSign = (typeof STAR_SIGNS)[number];
 
 export type IslandConfig = {
   name: string;
-  hemisphere: "Northern" | "Southern";
+  hemisphere: Hemisphere;
   nativeFruit: "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
   residents: {
     /**

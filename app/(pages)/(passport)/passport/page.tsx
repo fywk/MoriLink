@@ -1,3 +1,4 @@
+import { IconChevronLeft, IconChevronRight, IconPennantFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +9,6 @@ import { getVillager } from "@/lib/utils/get-villager";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
-import { IconChevronLeft, IconChevronRight, IconPennantFilled } from "@tabler/icons-react";
 
 import type { Metadata } from "next";
 
@@ -120,7 +120,7 @@ function CardSection() {
         <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
           <p className="text-xs/none font-bold">{`Registered on: ${player.registrationDate}`}</p>
           <div className="flex -space-x-0.5">
-            {[...Array(12)].map((_, i) => (
+            {[...Array<undefined>(12)].map((_, i) => (
               <IconChevronLeft size={10} stroke={2.5} key={i} />
             ))}
           </div>

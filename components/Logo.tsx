@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import { site } from "@/lib/site";
+import { app } from "@/lib/config";
 import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 
 export default function Logo({ size }: { size?: "md" }) {
@@ -21,7 +21,7 @@ export default function Logo({ size }: { size?: "md" }) {
           size === "md" ? "text-[29.8px]" : "text-[25px]",
         )}
       >
-        {site.title}
+        {app.title}
       </h1>
     </div>
   );

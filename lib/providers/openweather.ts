@@ -22,8 +22,8 @@ const CurrentWeatherSchema = z.object({
 });
 
 /**
- * @param lat - Geographical latitude coordinate in decimal degrees format.
- * @param lon - Geographical longitude coordinate in decimal degrees format.
+ * @param lat - Latitude in decimal degrees format.
+ * @param lon - Longitude in decimal degrees format.
  */
 export async function getCurrentWeather(lat: string, lon: string): Promise<WeatherData | null> {
   const currentWeatherEndpoint = `${apiRoot}/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;

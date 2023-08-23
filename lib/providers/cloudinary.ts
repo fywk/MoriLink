@@ -20,20 +20,9 @@ export function getImageURL(
   withFolderName = false,
 ): string {
   const publicID = withFolderName ? path : `${env.CLOUDINARY_FOLDER}/${path}`;
+
   return cloudinary.v2.url(publicID, {
     quality: 100,
     ...(typeof options === "object" ? options : undefined),
   });
-}
-
-export function getPatternThumbnailURL(path: string): string {
-  const transformations: TransformationOptions = {
-    width: 154,
-    height: 154,
-    x: 1013,
-    y: 261,
-    crop: "crop",
-  };
-
-  return getImageURL(path, transformations);
 }

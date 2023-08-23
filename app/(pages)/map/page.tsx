@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
 import { island } from "@/lib/config";
-import { getImageURL } from "@/lib/utils/cloudinary";
+import { getImageURL } from "@/lib/providers/cloudinary";
 
 import type { TransformationOptions } from "cloudinary";
 import type { Metadata } from "next";

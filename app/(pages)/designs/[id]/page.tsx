@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import PageLayout from "@/components/PageLayout";
 import { patterns } from "@/lib/config";
-import { getImageURL, getPatternThumbnailURL } from "@/lib/utils/cloudinary";
+import { getImageURL } from "@/lib/providers/cloudinary";
+import { getPatternThumbnailURL } from "@/lib/utils/image";
+
+import type { Metadata } from "next";
 
 import type { Pattern } from "@/lib/types/miscellaneous";
-import type { Metadata } from "next";
 
 type Props = {
   params: { id: string };

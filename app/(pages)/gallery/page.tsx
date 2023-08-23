@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/utils/cloudinary";
-import { getGalleryImages } from "@/lib/utils/get-gallery-images";
+import { getImageURL } from "@/lib/providers/cloudinary";
+import { getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 

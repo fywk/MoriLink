@@ -1,4 +1,14 @@
-import type { IslandConfig, PatternsConfig, PlayerConfig } from "./types/miscellaneous";
+import type { AppConfig, IslandConfig, PatternsConfig, PlayerConfig } from "./types/config";
+
+export const app: Readonly<AppConfig> = {
+  title: "Nook++",
+  description: "My ACNH Companion App",
+  themeColor: "#82d7aa",
+  location: {
+    latitude: "3.1415",
+    longitude: "101.6865",
+  },
+};
 
 export const player: Readonly<PlayerConfig> = {
   name: "Francis",

@@ -2,7 +2,7 @@ import type { AppConfig, IslandConfig, PatternsConfig, PlayerConfig } from "./ty
 
 export const app: Readonly<AppConfig> = {
   title: "Nook++",
-  description: "My ACNH Companion App",
+  description: "A hybrid recreation of NookPhone and NookLink from Animal Crossing: New Horizons",
   themeColor: "#82d7aa",
   location: {
     latitude: "3.1415",

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
+import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { getVillager } from "@/lib/utils/get-villager";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
@@ -187,7 +188,7 @@ function ResidentsSection() {
       <div className="grid grid-cols-3 gap-x-9 gap-y-5.5 px-1">
         {island.residents.current.map((resident, i) => (
           <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
-            <ResidentAvatar name={resident} />
+            <Resident name={resident} />
           </ModalOpener>
         ))}
       </div>
@@ -197,7 +198,7 @@ function ResidentsSection() {
           <div className="grid grid-cols-4 gap-x-8 gap-y-5.5 px-1">
             {island.residents.former?.map((resident, i) => (
               <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
-                <ResidentAvatar name={resident} />
+                <Resident name={resident} />
               </ModalOpener>
             ))}
           </div>
@@ -207,24 +208,14 @@ function ResidentsSection() {
   );
 }
 
-function ResidentAvatar({ name }: { name: string }) {
+function Resident({ name }: { name: string }) {
   const villager = getVillager(name);
 
   if (!villager) return null;
 
   return (
     <div className="flex flex-col items-center gap-y-1.5">
-      <div className="flex aspect-square items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
-        <Image
-          src={villager.iconImage}
-          width={128}
-          height={128}
-          alt=""
-          unoptimized
-          draggable={false}
-          className="rounded-full bg-pearl"
-        />
-      </div>
+      <VillagerAvatar imgSrc={villager.iconImage} />
       <p className="text-sm/none font-bold tracking-tight">{villager.name}</p>
     </div>
   );
@@ -241,17 +232,7 @@ function ResidentModal({ name }: { name: string }) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
-      <div className="flex aspect-square max-w-[7.5rem] items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
-        <Image
-          src={villager.iconImage}
-          width={128}
-          height={128}
-          alt=""
-          unoptimized
-          draggable={false}
-          className="rounded-full bg-pearl"
-        />
-      </div>
+      <VillagerAvatar imgSrc={villager.iconImage} customClass="max-w-[7.5rem]" />
       <h1>
         <a
           href={`https://nookipedia.com/wiki/${villager.name}`}

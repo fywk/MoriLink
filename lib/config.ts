@@ -30,7 +30,6 @@ export const island: Readonly<IslandConfig> = {
   nativeFruit: "Oranges",
   residents: {
     current: [
-      "Sprinkle",
       "Ken",
       "Norma",
       "Angus",
@@ -40,8 +39,9 @@ export const island: Readonly<IslandConfig> = {
       "Maddie",
       "Merengue",
       "Sasha",
+      "Ketchup",
     ],
-    former: ["Sterling", "Cherry", "Aurora", "Dizzy"],
+    former: ["Sterling", "Cherry", "Aurora", "Dizzy", "Sprinkle"],
   },
   dream: {
     address: "DA-8948-7177-3853",

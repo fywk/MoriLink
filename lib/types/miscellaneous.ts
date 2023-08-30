@@ -10,9 +10,6 @@ export type Audio = {
 
 export type CloudinaryImageProps = {
   public_id: string;
-  /**
-   * The filename of the image in the format of `YYYYMMDD_HHMMSS`.
-   */
   filename: string;
   created_at: string;
   width: number;

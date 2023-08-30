@@ -63,7 +63,7 @@ export function generatePatternThumbnailURL(path: string): string {
 export const getGalleryImages = cache(async (): Promise<CloudinaryImageProps[]> => {
   const response: ResourceApiResponse = await cloudinary.v2.search
     .expression(`folder:${env.CLOUDINARY_FOLDER}/screenshots/*`)
-    .sort_by("name", "desc")
+    .sort_by("filename", "desc")
     .max_results(500)
     .execute();
 
@@ -71,7 +71,7 @@ export const getGalleryImages = cache(async (): Promise<CloudinaryImageProps[]> 
   response.resources.map((image) =>
     images.push({
       public_id: image.public_id,
-      filename: String(image.filename),
+      filename: image.filename,
       created_at: image.created_at,
       width: image.width,
       height: image.height,

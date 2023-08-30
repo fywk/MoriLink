@@ -11,10 +11,10 @@ type Props = {
   params: { filename: string };
 };
 
-const TITLE = "Gallery";
+const title = "Gallery";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title,
   themeColor: "#ffd0ae",
 };
 
@@ -40,7 +40,7 @@ export default async function GalleryImagePage({ params }: Props) {
   });
 
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#ffd0ae]" parentPage="/gallery">
+    <PageLayout title={title} navbarBgClass="bg-[#ffd0ae]" parentPage="/gallery">
       <div className="mb-[env(safe-area-inset-bottom)] flex h-full items-center justify-center p-4">
         <figure className="space-y-2">
           <Image

@@ -13,17 +13,17 @@ import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";
 
-const TITLE = "Passport";
+const title = "Passport";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title,
   themeColor: "#b4e4b5",
 };
 
 export default function PassportPage() {
   return (
     <PageLayout
-      title={TITLE}
+      title={title}
       navbarBgClass="bg-[#b4e4b5]"
       mainBgClass="bg-[repeating-linear-gradient(#f5f0e3,_#f5f0e3_10px,_#f2eedd_10px,_#f2eedd_17px)] bg-fixed"
     >

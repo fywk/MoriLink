@@ -5,16 +5,16 @@ import PageLayout from "@/components/PageLayout";
 
 import type { Metadata } from "next";
 
-const TITLE = "Custom Designs";
+const title = "Custom Designs";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title,
   themeColor: "#fecad1",
 };
 
 export default async function CustomDesignsPage() {
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#fecad1]">
+    <PageLayout title={title} navbarBgClass="bg-[#fecad1]">
       <div className="flex h-full flex-col justify-between gap-y-16">
         <div className="mx-auto w-full max-w-2xl px-5 pt-8">
           <CustomDesingsTabs

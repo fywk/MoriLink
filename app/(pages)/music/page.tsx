@@ -1,3 +1,4 @@
+import { IconClockPlay, IconPlayerPlayFilled } from "@tabler/icons-react";
 import Image from "next/image";
 
 import HourlyMusic from "@/components/HourlyMusic";
@@ -6,20 +7,19 @@ import NowPlaying from "@/components/NowPlaying";
 import PageLayout from "@/components/PageLayout";
 import Tooltips from "@/components/Tooltips";
 import kkSongs from "@/data/music/kk_slider.json";
-import { IconClockPlay, IconPlayerPlayFilled } from "@tabler/icons-react";
 
 import type { Metadata } from "next";
 
-const TITLE = "Music";
+const title = "Music";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title,
   themeColor: "#def4b9",
 };
 
 export default function MusicPage() {
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#def4b9]" mainBgClass="bg-[#def4b9]">
+    <PageLayout title={title} navbarBgClass="bg-[#def4b9]" mainBgClass="bg-[#def4b9]">
       <div className="px-safe pb-safe">
         <NowPlaying />
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 px-7 pb-14 pt-[5.5rem] sm:grid-cols-3 sm:px-9 md:grid-cols-4 md:px-11">

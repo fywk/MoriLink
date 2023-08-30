@@ -9,10 +9,10 @@ import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";
 
-const TITLE = "Recent dreams";
+const title = "Recent dreams";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title,
   themeColor: "#b4e4b5",
 };
 
@@ -22,7 +22,7 @@ export default function RecentDreamsPage() {
   const dreamUpdated = island.dream ? island.dream.updated.date : "----";
 
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#b4e4b5]" parentPage="/passport">
+    <PageLayout title={title} navbarBgClass="bg-[#b4e4b5]" parentPage="/passport">
       <div className="bg-pearl" style={{ ["--star-sign-colour" as any]: starSignColour }}>
         <div className="mx-auto w-full max-w-xl space-y-3.5 px-5 py-7">
           <p className="font-bold leading-none tracking-[-0.0125em] text-dark-bronze-coin">

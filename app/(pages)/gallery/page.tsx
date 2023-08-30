@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/providers/cloudinary";
-import { getGalleryImages } from "@/lib/utils/image";
+import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 
@@ -27,7 +26,7 @@ export default async function GalleryPage() {
             key={image.filename}
           >
             <Image
-              src={getImageURL(image.public_id, undefined, true)}
+              src={generateImageURL(image.public_id, undefined, true)}
               width={image.width}
               height={image.height}
               alt=""

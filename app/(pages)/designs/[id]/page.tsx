@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import CustomDesignsFooter from "@/components/CustomDesignsFooter";
 import PageLayout from "@/components/PageLayout";
 import { patterns } from "@/lib/config";
-import { getImageURL } from "@/lib/providers/cloudinary";
-import { getPatternThumbnailURL } from "@/lib/utils/image";
+import { generateImageURL, generatePatternThumbnailURL } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 
@@ -56,7 +55,7 @@ export default function PatternPage({ params }: Props) {
             </div>
             <div className="aspect-square h-14 w-14">
               <Image
-                src={getPatternThumbnailURL(`patterns/${pattern.id}`)}
+                src={generatePatternThumbnailURL(`patterns/${pattern.id}`)}
                 width={154}
                 height={154}
                 alt=""
@@ -67,7 +66,7 @@ export default function PatternPage({ params }: Props) {
             </div>
           </div>
           <Image
-            src={getImageURL(`patterns/${pattern.id}`)}
+            src={generateImageURL(`patterns/${pattern.id}`)}
             width={1280}
             height={720}
             alt=""
@@ -79,7 +78,7 @@ export default function PatternPage({ params }: Props) {
             pattern.pictures.length &&
             pattern.pictures.map((picture, index) => (
               <Image
-                src={getImageURL(`patterns/pictures/${picture}`)}
+                src={generateImageURL(`patterns/pictures/${picture}`)}
                 width={1280}
                 height={720}
                 alt=""

@@ -2,8 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/providers/cloudinary";
-import { getGalleryImages } from "@/lib/utils/image";
+import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 
@@ -32,7 +31,8 @@ export default async function GalleryImagePage({ params }: Props) {
 
   if (!image) notFound();
 
-  const ymd = image.filename.split("-")[0].match(/(....)(..)(..)/)!;
+  // Match the image filename in the format of `YYYYMMDD_HHMMSS` against the pattern `YYYYMMDD`
+  const ymd = image.filename.match(/(....)(..)(..)/)!; // returns ["YYYYMMDD", "YYYY", "MM", "DD"]
   const imageTakenDate = new Date(+ymd[1], +ymd[2] - 1, +ymd[3]).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "long",
@@ -44,7 +44,7 @@ export default async function GalleryImagePage({ params }: Props) {
       <div className="mb-[env(safe-area-inset-bottom)] flex h-full items-center justify-center p-4">
         <figure className="space-y-2">
           <Image
-            src={getImageURL(image.public_id, undefined, true)}
+            src={generateImageURL(image.public_id, undefined, true)}
             width={image.width}
             height={image.height}
             alt=""

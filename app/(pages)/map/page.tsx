@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
 import { island } from "@/lib/config";
-import { getImageURL } from "@/lib/providers/cloudinary";
+import { generateImageURL } from "@/lib/utils/image";
 
 import type { TransformationOptions } from "cloudinary";
 import type { Metadata } from "next";
@@ -31,7 +31,7 @@ export default async function MapPage() {
           <span className="relative">{island.name}</span>
         </div>
         <Image
-          src={getImageURL("map", mapImageTransformations)}
+          src={generateImageURL("map", mapImageTransformations)}
           width={640}
           height={535}
           alt=""

@@ -14,7 +14,7 @@ export default function Navbar({ title, bgClass, parentPage = "/" }: Props) {
     <div
       className={clsx(
         "sticky top-0 z-40 flex items-center justify-between py-3 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] lg:px-4",
-        bgClass
+        bgClass,
       )}
     >
       <Link

@@ -3,7 +3,7 @@ import Image from "next/image";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import { island, player } from "@/lib/config";
-import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
+import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import spriteIsland from "@/public/images/sprites/Island.png";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
@@ -22,22 +22,13 @@ export default function RecentDreamsPage() {
   const dreamUpdated = island.dream ? island.dream.updated.date : "----";
 
   return (
-    <PageLayout
-      title={TITLE}
-      navbarBgClass="bg-[#b4e4b5]"
-      parentPage="/passport"
-    >
-      <div
-        className="bg-pearl"
-        style={{ ["--star-sign-colour" as any]: starSignColour }}
-      >
+    <PageLayout title={TITLE} navbarBgClass="bg-[#b4e4b5]" parentPage="/passport">
+      <div className="bg-pearl" style={{ ["--star-sign-colour" as any]: starSignColour }}>
         <div className="mx-auto w-full max-w-xl space-y-3.5 px-5 py-7">
           <p className="font-bold leading-none tracking-[-0.0125em] text-dark-bronze-coin">
             {"Your island's dream:"}
           </p>
-          <ModalOpener
-            modalContent={<IslandDreamModal starSignColour={starSignColour} />}
-          >
+          <ModalOpener modalContent={<IslandDreamModal starSignColour={starSignColour} />}>
             <div className="flex w-full items-center gap-x-2 rounded-2xl bg-alabaster p-5 text-left transition-colors hover:bg-bone active:bg-bone">
               <div className="relative">
                 <Image
@@ -63,9 +54,7 @@ export default function RecentDreamsPage() {
         </div>
       </div>
       <div className="mx-auto max-w-xl space-y-5 px-5 py-7">
-        <p className="font-bold tracking-[-0.0125em] text-dark-bronze-coin">
-          Recent dreams
-        </p>
+        <p className="font-bold tracking-[-0.0125em] text-dark-bronze-coin">Recent dreams</p>
         <div className="space-y-2">
           <p className="text-xs/none font-bold tracking-tight text-beaver">
             {"Visited dream on 20/3/2023"}
@@ -104,24 +93,14 @@ function IslandDreamModal({ starSignColour }: { starSignColour: string }) {
       style={{ ["--star-sign-colour" as any]: starSignColour }}
     >
       <div className="flex items-center gap-x-2">
-        <Image
-          src={spriteTownIsland}
-          alt=""
-          unoptimized
-          draggable={false}
-          className="h-9 w-9"
-        />
+        <Image src={spriteTownIsland} alt="" unoptimized draggable={false} className="h-9 w-9" />
         <h3 className="text-[1.375rem]/none font-bold tracking-[-0.0125em] text-dark-bronze-coin">
           {island.name}
         </h3>
       </div>
       <div className="space-y-px">
-        <h4 className="text-lg/none font-bold tracking-[-0.0125em] text-beaver">
-          Dream Address
-        </h4>
-        <p className="text-lg font-bold tracking-[-0.0125em] text-[#a364d5]">
-          {dreamAddress}
-        </p>
+        <h4 className="text-lg/none font-bold tracking-[-0.0125em] text-beaver">Dream Address</h4>
+        <p className="text-lg font-bold tracking-[-0.0125em] text-[#a364d5]">{dreamAddress}</p>
       </div>
       <div className="my-0.5 space-y-2">
         <div className="h-[4.5rem] w-[4.5rem] rounded-full bg-[rgb(var(--star-sign-colour))]"></div>

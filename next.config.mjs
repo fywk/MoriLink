@@ -2,14 +2,12 @@ await import("./lib/env.mjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 86400, //seconds (24 hours)
+    minimumCacheTTL: 7_776_000, // seconds (90 days)
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "acnhcdn.com" },
       {
         protocol: "https",
         hostname: "dodo.ac",

@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 
 import { MusicContext } from "@/lib/hooks";
 
-export default function MusicProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function MusicProvider({ children }: { children: React.ReactNode }) {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [audioTitle, setAudioTitle] = useState("");
   const [audioSrc, setAudioSrc] = useState("");

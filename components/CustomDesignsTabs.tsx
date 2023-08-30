@@ -19,7 +19,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
           className={({ selected }) =>
             clsx(
               "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none ui-focus-visible:ring-3",
-              selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver"
+              selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
         >
@@ -28,7 +28,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
               <div
                 className={clsx(
                   "flex h-5.5 w-5.5 items-center justify-center",
-                  selected ? "text-white" : "text-beaver"
+                  selected ? "text-white" : "text-beaver",
                 )}
               >
                 <NormalCustomDesignsIcon />
@@ -41,7 +41,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
           className={({ selected }) =>
             clsx(
               "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[#fecad1] focus:outline-none ui-focus-visible:ring-3",
-              selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver"
+              selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
         >
@@ -50,7 +50,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
               <div
                 className={clsx(
                   "flex h-5.5 w-5.5 items-center justify-center",
-                  selected ? "text-white" : "text-beaver"
+                  selected ? "text-white" : "text-beaver",
                 )}
               >
                 <ProCustomDesignsIcon />

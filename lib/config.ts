@@ -1,10 +1,16 @@
-import type {
-  IslandConfig,
-  PatternsConfig,
-  PlayerConfig,
-} from "./types/miscellaneous";
+import type { AppConfig, IslandConfig, PatternsConfig, PlayerConfig } from "./types/config";
 
-export const player: PlayerConfig = {
+export const app: Readonly<AppConfig> = {
+  title: "Nook++",
+  description: "A hybrid recreation of NookPhone and NookLink from Animal Crossing: New Horizons",
+  themeColor: "#82d7aa",
+  location: {
+    latitude: "3.1415",
+    longitude: "101.6865",
+  },
+};
+
+export const player: Readonly<PlayerConfig> = {
   name: "Francis",
   birth: {
     month: 10,
@@ -18,18 +24,12 @@ export const player: PlayerConfig = {
   isResidentRep: true,
 };
 
-export const island: IslandConfig = {
+export const island: Readonly<IslandConfig> = {
   name: "Para Para",
   hemisphere: "Northern",
   nativeFruit: "Oranges",
   residents: {
-    // You can sort villagers in any order you want.
-    // The default order is based on the order that they arrived on your island.
-    // Note: The order you listed here will be the order they appeared in the app.
     current: [
-      "Dizzy",
-      "Sprinkle",
-      "Aurora",
       "Ken",
       "Norma",
       "Angus",
@@ -37,16 +37,22 @@ export const island: IslandConfig = {
       "Portia",
       "Marina",
       "Maddie",
+      "Merengue",
+      "Sasha",
+      "Ketchup",
     ],
-    former: ["Sterling", "Cherry"],
+    former: ["Sterling", "Cherry", "Aurora", "Dizzy", "Sprinkle"],
   },
   dream: {
     address: "DA-8948-7177-3853",
-    updated: { date: "25/3/2023", time: "4:30 PM" },
+    updated: {
+      date: "25/3/2023",
+      time: "4:30 PM",
+    },
   },
 };
 
-export const patterns: PatternsConfig = [
+export const patterns: Readonly<PatternsConfig> = [
   {
     id: "MO-Y67L-TS75-2D0R",
     name: "Bicycle Sign",

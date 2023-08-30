@@ -2,24 +2,20 @@ import { env } from "@/lib/env.mjs";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const VALID_PATHS = ["/gallery"] as const;
+// The paths that's valid for revalidation
+const validPaths = ["/gallery"] as const;
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Check for secret to confirm this is a valid request
   if (req.query.secret !== env.MY_SECRET_REVALIDATION_TOKEN) {
     return res.status(401).json({ message: "Invalid token" });
   }
 
-  const path = Array.isArray(req.query.path)
-    ? req.query.path[0]
-    : req.query.path;
+  const path = Array.isArray(req.query.path) ? req.query.path[0] : req.query.path;
 
   // Check if path exists and is valid
   if (path) {
-    if (!VALID_PATHS.includes(path)) {
+    if (!validPaths.includes(path)) {
       return res.status(401).json({ message: `'${path}' is not a valid path` });
     }
   } else {

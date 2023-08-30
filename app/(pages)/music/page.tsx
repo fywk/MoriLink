@@ -19,11 +19,7 @@ export const metadata: Metadata = {
 
 export default function MusicPage() {
   return (
-    <PageLayout
-      title={TITLE}
-      navbarBgClass="bg-[#def4b9]"
-      mainBgClass="bg-[#def4b9]"
-    >
+    <PageLayout title={TITLE} navbarBgClass="bg-[#def4b9]" mainBgClass="bg-[#def4b9]">
       <div className="px-safe pb-safe">
         <NowPlaying />
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 px-7 pb-14 pt-[5.5rem] sm:grid-cols-3 sm:px-9 md:grid-cols-4 md:px-11">
@@ -42,10 +38,7 @@ export default function MusicPage() {
               key={song.id}
             >
               <Tooltips>{song.name}</Tooltips>
-              <picture
-                className="rounded"
-                style={{ backgroundColor: song.albumArt.colour }}
-              >
+              <picture className="rounded" style={{ backgroundColor: song.albumArt.colour }}>
                 <Image
                   src={song.albumArt.src}
                   width={512}

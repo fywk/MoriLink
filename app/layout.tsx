@@ -3,7 +3,7 @@ import "./globals.css";
 import clsx from "clsx";
 import { Nunito } from "next/font/google";
 
-import { site } from "@/lib/site";
+import { app } from "@/lib/config";
 
 import MusicProvider from "./music-provider";
 
@@ -15,10 +15,10 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: site.title,
-    template: `%s - ${site.title}`,
+    default: app.title,
+    template: `%s - ${app.title}`,
   },
-  description: site.description,
+  description: app.description,
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -32,14 +32,10 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  themeColor: site.themeColor,
+  themeColor: app.themeColor,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={clsx(nunito.className, "bg-alabaster")}>
       <body>

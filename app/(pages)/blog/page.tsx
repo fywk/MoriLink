@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <PageLayout
-      title={TITLE}
-      navbarBgClass="bg-[#e6ec8d]"
-      mainBgClass="bg-[#e6ec8d]"
-    >
+    <PageLayout title={TITLE} navbarBgClass="bg-[#e6ec8d]" mainBgClass="bg-[#e6ec8d]">
       test
     </PageLayout>
   );

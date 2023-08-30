@@ -2,8 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/utils/cloudinary";
-import { getGalleryImages } from "@/lib/utils/getGalleryImages";
+import { getImageURL } from "@/lib/providers/cloudinary";
+import { getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 
@@ -33,22 +33,14 @@ export default async function GalleryImagePage({ params }: Props) {
   if (!image) notFound();
 
   const ymd = image.filename.split("-")[0].match(/(....)(..)(..)/)!;
-  const imageTakenDate = new Date(
-    +ymd[1],
-    +ymd[2] - 1,
-    +ymd[3]
-  ).toLocaleDateString("en-GB", {
+  const imageTakenDate = new Date(+ymd[1], +ymd[2] - 1, +ymd[3]).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
   return (
-    <PageLayout
-      title={TITLE}
-      navbarBgClass="bg-[#ffd0ae]"
-      parentPage="/gallery"
-    >
+    <PageLayout title={TITLE} navbarBgClass="bg-[#ffd0ae]" parentPage="/gallery">
       <div className="mb-[env(safe-area-inset-bottom)] flex h-full items-center justify-center p-4">
         <figure className="space-y-2">
           <Image

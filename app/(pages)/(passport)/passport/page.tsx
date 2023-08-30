@@ -1,18 +1,15 @@
+import { IconChevronLeft, IconChevronRight, IconPennantFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
+import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
-import { getVillager } from "@/lib/utils/getVillager";
-import { getStarSign, getStarSignColour } from "@/lib/utils/miscellaneous";
+import { getVillager } from "@/lib/utils/get-villager";
+import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconPennantFilled,
-} from "@tabler/icons-react";
 
 import type { Metadata } from "next";
 
@@ -78,12 +75,7 @@ function CardSection() {
             <div className="flex text-xs/none font-bold">
               <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin">
                 <div className="h-4 w-4">
-                  <Image
-                    src={spriteTownIsland}
-                    alt=""
-                    unoptimized
-                    draggable={false}
-                  />
+                  <Image src={spriteTownIsland} alt="" unoptimized draggable={false} />
                 </div>
                 {island.name}
               </div>
@@ -102,9 +94,7 @@ function CardSection() {
               </div>
             </div>
             <hr className="border-[1.5px] border-[#faf7da]" />
-            <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">
-              {player.title}
-            </h4>
+            <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">{player.title}</h4>
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
             <h2 className="text-[22px]/none font-[750] tracking-tight text-dark-bronze-coin">
               {player.name}
@@ -131,7 +121,7 @@ function CardSection() {
         <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
           <p className="text-xs/none font-bold">{`Registered on: ${player.registrationDate}`}</p>
           <div className="flex -space-x-0.5">
-            {[...Array(12)].map((_, i) => (
+            {[...Array<undefined>(12)].map((_, i) => (
               <IconChevronLeft size={10} stroke={2.5} key={i} />
             ))}
           </div>
@@ -157,23 +147,14 @@ function MiddleSection() {
         descColour="text-[#a364d5]"
       />
       {player.happyHomeNetworkID && (
-        <DisclosureWidget
-          title="Happy Home Network ID"
-          description={player.happyHomeNetworkID}
-        />
+        <DisclosureWidget title="Happy Home Network ID" description={player.happyHomeNetworkID} />
       )}
       <Link
         href="/recent-dreams"
         className="flex items-center justify-between border-y-2 border-dashed border-[#dbd8bf] px-3 py-2.5 hover:bg-[#ece5d4] active:bg-[#ece5d4]"
       >
-        <span className="text-[17.5px] font-bold text-dark-bronze-coin">
-          Recent dreams
-        </span>
-        <IconChevronRight
-          size={20}
-          stroke={3}
-          className="text-dark-bronze-coin/70"
-        />
+        <span className="text-[17.5px] font-bold text-dark-bronze-coin">Recent dreams</span>
+        <IconChevronRight size={20} stroke={3} className="text-dark-bronze-coin/70" />
       </Link>
     </section>
   );
@@ -207,22 +188,17 @@ function ResidentsSection() {
       <div className="grid grid-cols-3 gap-x-9 gap-y-5.5 px-1">
         {island.residents.current.map((resident, i) => (
           <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
-            <ResidentAvatar name={resident} />
+            <Resident name={resident} />
           </ModalOpener>
         ))}
       </div>
       {"former" in island.residents && (
         <>
-          <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">
-            Former residents
-          </h3>
+          <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">Former residents</h3>
           <div className="grid grid-cols-4 gap-x-8 gap-y-5.5 px-1">
             {island.residents.former?.map((resident, i) => (
-              <ModalOpener
-                modalContent={<ResidentModal name={resident} />}
-                key={i}
-              >
-                <ResidentAvatar name={resident} />
+              <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
+                <Resident name={resident} />
               </ModalOpener>
             ))}
           </div>
@@ -232,24 +208,14 @@ function ResidentsSection() {
   );
 }
 
-function ResidentAvatar({ name }: { name: string }) {
+function Resident({ name }: { name: string }) {
   const villager = getVillager(name);
 
   if (!villager) return null;
 
   return (
     <div className="flex flex-col items-center gap-y-1.5">
-      <div className="flex aspect-square items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
-        <Image
-          src={villager.iconImage}
-          width={128}
-          height={128}
-          alt=""
-          unoptimized
-          draggable={false}
-          className="rounded-full bg-pearl"
-        />
-      </div>
+      <VillagerAvatar imgSrc={villager.iconImage} />
       <p className="text-sm/none font-bold tracking-tight">{villager.name}</p>
     </div>
   );
@@ -266,17 +232,7 @@ function ResidentModal({ name }: { name: string }) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
-      <div className="flex aspect-square max-w-[7.5rem] items-center justify-center overflow-hidden rounded-full bg-[#faf7da] p-1">
-        <Image
-          src={villager.iconImage}
-          width={128}
-          height={128}
-          alt=""
-          unoptimized
-          draggable={false}
-          className="rounded-full bg-pearl"
-        />
-      </div>
+      <VillagerAvatar imgSrc={villager.iconImage} customClass="max-w-[7.5rem]" />
       <h1>
         <a
           href={`https://nookipedia.com/wiki/${villager.name}`}
@@ -290,21 +246,15 @@ function ResidentModal({ name }: { name: string }) {
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager.species}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {villager.personality}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">
-            {birthday}
-          </div>
+          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
     </div>

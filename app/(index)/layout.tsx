@@ -4,7 +4,7 @@ import { player } from "@/lib/config";
 
 export default function HomePageLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-full min-h-[100dvh] w-full items-center justify-center bg-dutch-white bg-[radial-gradient(#f4ecca_15%,_transparent_15%),_radial-gradient(#f4ecca_14%,_transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat">
+    <div className="flex h-full min-h-[100dvh] w-full items-center justify-center bg-dutch-white bg-[radial-gradient(#f4ecca_15%,transparent_15%),radial-gradient(#f4ecca_14%,transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat">
       <div className="m-auto grid w-full max-w-[25rem] grid-cols-1 gap-y-3 px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-8">
         <Logo />
         <div className="w-full rounded-[5rem] bg-alabaster pb-9.5 pt-8.5">

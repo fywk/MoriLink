@@ -11,10 +11,11 @@ type Props = {
 };
 
 const title = "Gallery";
+const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
   title,
-  themeColor: "#ffd0ae",
+  themeColor,
 };
 
 export async function generateStaticParams() {
@@ -40,7 +41,7 @@ export default async function GalleryImagePage({ params }: Props) {
   });
 
   return (
-    <PageLayout title={title} navbarBgClass="bg-[#ffd0ae]" parentPage="/gallery">
+    <PageLayout title={title} themeColor={themeColor} parentPage="/gallery">
       <div className="mb-[env(safe-area-inset-bottom)] flex h-full items-center justify-center p-4">
         <figure className="space-y-2">
           <Image

@@ -7,17 +7,18 @@ import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 import type { Metadata } from "next";
 
 const title = "Gallery";
+const themeColor = "#fecad1";
 
 export const metadata: Metadata = {
   title,
-  themeColor: "#ffd0ae",
+  themeColor,
 };
 
 export default async function GalleryPage() {
   const images = await getGalleryImages();
 
   return (
-    <PageLayout title={title} navbarBgClass="bg-[#ffd0ae]">
+    <PageLayout title={title} themeColor={themeColor}>
       <div className="mx-auto mb-[env(safe-area-inset-bottom)] grid max-w-5xl grid-cols-3 gap-3 py-4 pl-[calc(1rem+env(safe-area-inset-left))] pr-[calc(1rem+env(safe-area-inset-right))] md:grid-cols-4 md:gap-3.5">
         {images.map((image, index) => (
           <Link

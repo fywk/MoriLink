@@ -14,16 +14,12 @@ type Props = {
   params: { id: string };
 };
 
-export const dynamicParams = false;
+const themeColor = "#fecad1";
+
+export const dynamicParams = false; // dynamic segments not included in generateStaticParams will return a 404
 
 function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);
-}
-
-export function generateStaticParams() {
-  return patterns.map((pattern) => ({
-    id: pattern.id,
-  }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {
@@ -33,10 +29,16 @@ export function generateMetadata({ params }: Props): Metadata {
 
   const metadata: Metadata = {
     title: pattern.name,
-    themeColor: "#fecad1",
+    themeColor,
   };
 
   return metadata;
+}
+
+export function generateStaticParams() {
+  return patterns.map((pattern) => ({
+    id: pattern.id,
+  }));
 }
 
 export default function PatternPage({ params }: Props) {
@@ -45,7 +47,7 @@ export default function PatternPage({ params }: Props) {
   if (!pattern) notFound();
 
   return (
-    <PageLayout title="Custom Designs" navbarBgClass="bg-[#fecad1]" parentPage="/designs">
+    <PageLayout title="Custom Designs" themeColor={themeColor} parentPage="/designs">
       <div className="flex h-full flex-col justify-between gap-y-16">
         <div className="mx-auto flex max-w-2xl flex-col gap-y-6 px-5 pt-8">
           <div className="flex items-center justify-between gap-x-2.5">
@@ -61,7 +63,7 @@ export default function PatternPage({ params }: Props) {
                 alt=""
                 quality={95}
                 loading="eager"
-                className="bg-[#fecad1]"
+                className="bg-[var(--theme-color)]"
               />
             </div>
           </div>
@@ -72,7 +74,7 @@ export default function PatternPage({ params }: Props) {
             alt=""
             quality={85}
             priority
-            className="rounded-2xl bg-[#fecad1]"
+            className="rounded-2xl bg-[var(--theme-color)]"
           />
           {Array.isArray(pattern.pictures) &&
             pattern.pictures.length &&
@@ -83,7 +85,7 @@ export default function PatternPage({ params }: Props) {
                 height={720}
                 alt=""
                 quality={85}
-                className="rounded-2xl bg-[#fecad1]"
+                className="rounded-2xl bg-[var(--theme-color)]"
                 key={index}
               />
             ))}

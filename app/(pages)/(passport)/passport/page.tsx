@@ -14,18 +14,19 @@ import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 import type { Metadata } from "next";
 
 const title = "Passport";
+const themeColor = "#b4e4b5";
 
 export const metadata: Metadata = {
   title,
-  themeColor: "#b4e4b5",
+  themeColor,
 };
 
 export default function PassportPage() {
   return (
     <PageLayout
       title={title}
-      navbarBgClass="bg-[#b4e4b5]"
-      mainBgClass="bg-[repeating-linear-gradient(#f5f0e3,#f5f0e3_10px,#f2eedd_10px,#f2eedd_17px)] bg-fixed"
+      themeColor={themeColor}
+      mainBackground="fixed repeating-linear-gradient(#f5f0e3, #f5f0e3 10px, #f2eedd 10px, #f2eedd 17px)"
     >
       <div className="mx-auto max-w-xl px-3 pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
         <CardSection />

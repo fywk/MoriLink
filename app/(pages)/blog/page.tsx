@@ -3,15 +3,16 @@ import PageLayout from "@/components/PageLayout";
 import type { Metadata } from "next";
 
 const title = "Blog";
+const themeColor = "#e6ec8d";
 
 export const metadata: Metadata = {
   title,
-  themeColor: "#e6ec8d",
+  themeColor,
 };
 
 export default function BlogPage() {
   return (
-    <PageLayout title={title} navbarBgClass="bg-[#e6ec8d]" mainBgClass="bg-[#e6ec8d]">
+    <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
       test
     </PageLayout>
   );

@@ -4,25 +4,31 @@ import Navbar from "./Navbar";
 
 type Props = {
   title: string;
-  navbarBgClass: React.HTMLProps<HTMLElement>["className"];
-  mainBgClass?: React.HTMLProps<HTMLElement>["className"];
+  themeColor: string;
+  mainBackground?: string;
   parentPage?: string;
   children: React.ReactNode;
 };
 
 export default function PageLayout({
   title,
-  navbarBgClass,
-  mainBgClass = "bg-alabaster",
-  parentPage,
+  themeColor,
+  mainBackground = "transparent",
+  parentPage = "/",
   children,
 }: Props) {
   return (
-    <>
-      <Navbar title={title} bgClass={navbarBgClass} parentPage={parentPage} />
-      <main className={clsx("h-full w-full", mainBgClass)} id="content">
+    <div
+      className="relative grid h-full min-h-[100dvh] grid-rows-[auto_1fr]"
+      style={{
+        ["--theme-color" as any]: themeColor,
+        ["--main-background" as any]: mainBackground,
+      }}
+    >
+      <Navbar title={title} parentPage={parentPage} />
+      <main className={clsx("h-full w-full [background:var(--main-background)]")} id="content">
         {children}
       </main>
-    </>
+    </div>
   );
 }

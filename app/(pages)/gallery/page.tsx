@@ -7,7 +7,7 @@ import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 import type { Metadata } from "next";
 
 const title = "Gallery";
-const themeColor = "#fecad1";
+const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
   title,

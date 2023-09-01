@@ -7,6 +7,8 @@ import type { ConfigAndUrlOptions, ResourceApiResponse, TransformationOptions } 
 
 import type { CloudinaryImageProps } from "../types/miscellaneous";
 
+const sharp = require("sharp");
+
 export async function generateBase64ImageURL(image: CloudinaryImageProps): Promise<string> {
   const localCache = new Map<CloudinaryImageProps["public_id"], string>();
 
@@ -84,3 +86,33 @@ export const getGalleryImages = cache(async (): Promise<CloudinaryImageProps[]> 
 
   return images;
 });
+
+export async function getLatestMap() {
+  const response: ResourceApiResponse = await cloudinary.v2.search
+    .expression(`folder:${env.CLOUDINARY_FOLDER}/maps/*`)
+    .sort_by("created_at", "desc")
+    .max_results(1)
+    .execute();
+
+  const image = response.resources[0];
+
+  return image;
+}
+
+/**
+ * Get the background color of the map from a pixel located at 320, 205.
+ *
+ * @param input - The path to the map image
+ * @returns A string representing the RGB values in CSS `rgb(R G B)` format
+ */
+export async function getMapBackgroundColor(input: string): Promise<string> {
+  const response = await fetch(input);
+  const buffer = await response.arrayBuffer();
+  const data = await sharp(Buffer.from(buffer))
+    .extract({ left: 320, top: 205, width: 1, height: 1 })
+    .raw()
+    .toBuffer();
+  const [r, g, b] = data;
+
+  return `rgb(${r} ${g} ${b})`;
+}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { patterns } from "@/lib/config";
-import { getPatternThumbnailURL } from "@/lib/utils/image";
+import { generatePatternThumbnailURL } from "@/lib/utils/image";
 
 import type { Pattern } from "@/lib/types/miscellaneous";
 
@@ -34,7 +34,7 @@ export default function PatternsGrid({ category }: Props) {
         >
           <div className="aspect-square h-5.5 w-5.5 rounded-full bg-bone"></div>
           <Image
-            src={getPatternThumbnailURL(`patterns/${pattern.id}`)}
+            src={generatePatternThumbnailURL(`patterns/${pattern.id}`)}
             width={154}
             height={154}
             alt=""

@@ -4,16 +4,19 @@ import PageLayout from "@/components/PageLayout";
 
 import type { Metadata } from "next";
 
-const TITLE = "About";
+const title = "About";
+const themeColor = "#dacca7";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  themeColor: "#dacca7",
+  title,
+  themeColor,
 };
 
 export default function AboutPage() {
+  const githubProfileLink = "https://github.com/fywk";
+
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#dacca7]">
+    <PageLayout title={title} themeColor={themeColor}>
       <div className="mx-auto flex h-full max-w-xl flex-col justify-between px-5 pb-12 pt-6">
         <div className="flex flex-col divide-y-2 divide-dashed divide-bone">
           <Link
@@ -29,7 +32,7 @@ export default function AboutPage() {
             Credits
           </Link>
           <a
-            href="https://github.com/fywk"
+            href={`${githubProfileLink}/NookPlusPlus`}
             className="px-[9px] py-3.5 text-lg font-bold text-dark-bronze-coin hover:bg-[#ece5d4] active:bg-[#ece5d4]"
             target="_blank"
           >
@@ -38,7 +41,7 @@ export default function AboutPage() {
         </div>
         <div className="text-center text-xs/none font-bold text-beaver">
           {"Made with ♥ by "}
-          <a href="https://github.com/fywk">{"@fywk"}</a>
+          <a href={githubProfileLink}>{"@fywk"}</a>
         </div>
       </div>
     </PageLayout>

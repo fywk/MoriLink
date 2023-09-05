@@ -2,23 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
-import { getImageURL } from "@/lib/providers/cloudinary";
-import { getGalleryImages } from "@/lib/utils/image";
+import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
 
-const TITLE = "Gallery";
+const title = "Gallery";
+const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  themeColor: "#ffd0ae",
+  title,
+  themeColor,
 };
 
 export default async function GalleryPage() {
   const images = await getGalleryImages();
 
   return (
-    <PageLayout title={TITLE} navbarBgClass="bg-[#ffd0ae]">
+    <PageLayout title={title} themeColor={themeColor}>
       <div className="mx-auto mb-[env(safe-area-inset-bottom)] grid max-w-5xl grid-cols-3 gap-3 py-4 pl-[calc(1rem+env(safe-area-inset-left))] pr-[calc(1rem+env(safe-area-inset-right))] md:grid-cols-4 md:gap-3.5">
         {images.map((image, index) => (
           <Link
@@ -27,7 +27,7 @@ export default async function GalleryPage() {
             key={image.filename}
           >
             <Image
-              src={getImageURL(image.public_id, undefined, true)}
+              src={generateImageURL(image.public_id, undefined, true)}
               width={image.width}
               height={image.height}
               alt=""

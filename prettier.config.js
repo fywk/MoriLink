@@ -17,6 +17,4 @@ module.exports = {
     "",
     "<TYPES>^[./]",
   ],
-  // prettier-plugin-tailwindcss
-  tailwindAttributes: ["navbarBgClass", "mainBgClass"],
 };

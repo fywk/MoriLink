@@ -7,6 +7,7 @@ import useSWRImmutable from "swr/immutable";
 import hourlyMusics from "@/data/music/hourly.json";
 import { island } from "@/lib/config";
 import { useMusicContext } from "@/lib/hooks";
+import dayjs from "@/lib/utils/dayjs";
 import fetcher from "@/lib/utils/fetcher";
 import { isWinter } from "@/lib/utils/is-winter";
 import { urlize } from "@/lib/utils/urlize";
@@ -42,23 +43,20 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
   }, [weatherData]);
 
   useEffect(() => {
-    const now = new Date();
+    const now = dayjs();
 
     // Convert time to 12-hour format
-    const formattedHour = now.toLocaleString("en-US", {
-      hour: "numeric",
-      hour12: true,
-    });
+    const formattedHour = now.format("h A");
 
     // Set weather to "Snowy" to play the snowy variant of the hourly music when it's winter
     // The months of winter are determined by island's hemisphere set in `/lib/config.ts`
     weather.current = isRainingOrSnowing.current
-      ? isWinter(island.hemisphere, now.getMonth() + 1)
+      ? isWinter(island.hemisphere, now.month() + 1)
         ? "Snowy"
         : "Rainy"
       : "Sunny";
     const currentHourMusic = hourlyMusics.find(
-      (music) => music.hour === now.getHours() && music.weather === weather.current,
+      (music) => music.hour === now.hour() && music.weather === weather.current,
     );
 
     setCurrentHour(formattedHour);

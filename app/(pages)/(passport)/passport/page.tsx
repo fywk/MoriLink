@@ -6,6 +6,8 @@ import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
+import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT } from "@/lib/constants";
+import dayjs from "@/lib/utils/dayjs";
 import { getVillager } from "@/lib/utils/get-villager";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
@@ -38,9 +40,13 @@ export default function PassportPage() {
 }
 
 function CardSection() {
-  const birthday = `${player.birth.day}/${player.birth.month}`;
+  const birthday = dayjs()
+    .month(player.birth.month - 1)
+    .date(player.birth.day)
+    .format(DATE_FORMAT_SHORT);
   const starSign = getStarSign(player.birth.month, player.birth.day);
   const starSignColour = getStarSignColour(starSign);
+  const registrationDate = dayjs(player.registrationDate).format(DATE_FORMAT_MEDIUM);
 
   return (
     <section
@@ -120,7 +126,7 @@ function CardSection() {
           </div>
         </div>
         <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
-          <p className="text-xs/none font-bold">{`Registered on: ${player.registrationDate}`}</p>
+          <p className="text-xs/none font-bold">{`Registered on: ${registrationDate}`}</p>
           <div className="flex -space-x-0.5">
             {[...Array<undefined>(12)].map((_, i) => (
               <IconChevronLeft size={10} stroke={2.5} key={i} />
@@ -229,7 +235,10 @@ function ResidentModal({ name }: { name: string }) {
 
   // Convert birthday string from mm/dd to dd/mm format
   const birth = villager.birthday.split("/");
-  const birthday = `${birth[1]}/${birth[0]}`;
+  const birthday = dayjs()
+    .month(+birth[0] - 1)
+    .date(+birth[1])
+    .format(DATE_FORMAT_SHORT);
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">

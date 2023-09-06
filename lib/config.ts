@@ -18,7 +18,7 @@ export const player: Readonly<PlayerConfig> = {
   },
   comment: "Nothing ever last forever",
   title: "Inexperienced Problem Solver",
-  registrationDate: "20/3/2020",
+  registrationDate: "2020-03-20",
   creatorID: "MA-3831-5858-5426",
   // happyHomeNetworkID: "",
   isResidentRep: true,
@@ -46,7 +46,7 @@ export const island: Readonly<IslandConfig> = {
   dream: {
     address: "DA-8948-7177-3853",
     updated: {
-      date: "25/3/2023",
+      date: "2023-03-25",
       time: "4:30 PM",
     },
   },

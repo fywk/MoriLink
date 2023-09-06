@@ -1,6 +1,7 @@
-import { STAR_SIGNS, STAR_SIGN_BOUNDARIES } from "../constants";
+import { STAR_SIGN_BOUNDARIES, STAR_SIGNS } from "../constants";
 
-import type { Day, Month, StarSign } from "../types/miscellaneous";
+import type { Day, Month } from "../types/date";
+import type { StarSign } from "../types/miscellaneous";
 
 export function getStarSign(month: Month, day: Day): StarSign {
   const signs = STAR_SIGNS;

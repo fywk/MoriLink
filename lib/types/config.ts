@@ -1,4 +1,15 @@
-import type { Day, Hemisphere, Month, Pattern } from "./miscellaneous";
+import type { DateFormat, Day, Month } from "./date";
+import type { Hemisphere, Pattern } from "./miscellaneous";
+
+export type AppConfig = {
+  title: string;
+  description?: string;
+  themeColor: string;
+  location: {
+    latitude: string;
+    longitude: string;
+  };
+};
 
 export type IslandConfig = {
   name: string;
@@ -17,7 +28,8 @@ export type IslandConfig = {
   dream?: {
     address: string;
     updated: {
-      date: string;
+      /** Date should be in ISO 8601 `YYYY-MM-DD` format, e.g. "2020-03-20" */
+      date: DateFormat;
       time: string;
     };
   };
@@ -33,18 +45,9 @@ export type PlayerConfig = {
   };
   comment: string;
   title: string;
-  registrationDate: string;
+  /** Date should be in ISO 8601 `YYYY-MM-DD` format, e.g. "2020-03-20" */
+  registrationDate: DateFormat;
   creatorID?: string;
   happyHomeNetworkID?: string;
   isResidentRep: boolean;
-};
-
-export type AppConfig = {
-  title: string;
-  description?: string;
-  themeColor: string;
-  location: {
-    latitude: string;
-    longitude: string;
-  };
 };

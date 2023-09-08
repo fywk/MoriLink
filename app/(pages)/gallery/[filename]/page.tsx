@@ -2,6 +2,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import PageLayout from "@/components/PageLayout";
+import { DATE_FORMAT_FULL } from "@/lib/constants";
+import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
 import type { Metadata } from "next";
@@ -34,11 +36,11 @@ export default async function GalleryImagePage({ params }: Props) {
 
   // Match the image filename in the format of `YYYYMMDD_HHMMSS` against the pattern `YYYYMMDD`
   const ymd = image.filename.match(/(....)(..)(..)/)!; // returns ["YYYYMMDD", "YYYY", "MM", "DD"]
-  const imageTakenDate = new Date(+ymd[1], +ymd[2] - 1, +ymd[3]).toLocaleDateString("en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const imageTakenDate = dayjs()
+    .year(+ymd[1])
+    .month(+ymd[2] - 1)
+    .date(+ymd[3])
+    .format(DATE_FORMAT_FULL);
 
   return (
     <PageLayout title={title} themeColor={themeColor} parentPage="/gallery">

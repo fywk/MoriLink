@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
 import { island } from "@/lib/config";
+import { DATE_FORMAT_MEDIUM } from "@/lib/constants";
+import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getLatestMap, getMapBackgroundColor } from "@/lib/utils/image";
 
 import type { TransformationOptions } from "cloudinary";
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 
 export default async function MapPage() {
   const dreamAddress = island.dream?.address ?? "---- ---- ---- ---- ----";
-  const mapUpdateDate = new Date(map.created_at).toLocaleDateString("en-GB");
+  const mapUpdateDate = dayjs(map.created_at).format(DATE_FORMAT_MEDIUM);
 
   return (
     <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>

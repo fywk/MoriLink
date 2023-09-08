@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+import { DATE_FORMAT_SHORT } from "@/lib/constants";
+import dayjs from "@/lib/utils/dayjs";
+
 export default function DateString() {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    const now = new Date();
-    setDate(`${now.getDate()}/${now.getMonth() + 1}`);
+    setDate(dayjs().format(DATE_FORMAT_SHORT));
   }, []);
 
   return <span className="place-self-end">{date}</span>;

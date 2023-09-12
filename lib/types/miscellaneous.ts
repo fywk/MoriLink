@@ -1,7 +1,5 @@
 import { STAR_SIGNS } from "../constants";
 
-import type { NumericRange } from "./utility";
-
 export type Audio = {
   title: string;
   src: string;

@@ -9,7 +9,7 @@ type Props = {
 
 export default function Modal({ isOpen, setIsOpen, children }: Props) {
   return (
-    <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+    <Dialog open={isOpen} onClose={() => {}} className="relative z-50">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-dutch-white/75 bg-[radial-gradient(#f4ecca_15%,_transparent_15%),_radial-gradient(#f4ecca_14%,_transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat"

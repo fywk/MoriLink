@@ -28,27 +28,31 @@ export const island: Readonly<IslandConfig> = {
   name: "Para Para",
   hemisphere: "Northern",
   nativeFruit: "Oranges",
+  dreamAddress: "DA-8948-7177-3853",
   residents: {
     current: [
-      "Norma",
       "Angus",
       "Stitches",
-      "Portia",
-      "Marina",
       "Maddie",
       "Merengue",
       "Sasha",
       "Ketchup",
       "Rudy",
+      "Petri",
+      "Marshal",
+      "Alice",
     ],
-    former: ["Sterling", "Cherry", "Aurora", "Dizzy", "Sprinkle", "Ken"],
-  },
-  dream: {
-    address: "DA-8948-7177-3853",
-    updated: {
-      date: "2023-03-25",
-      time: "4:30 PM",
-    },
+    former: [
+      "Sterling",
+      "Cherry",
+      "Aurora",
+      "Dizzy",
+      "Sprinkle",
+      "Ken",
+      "Portia",
+      "Norma",
+      "Marina",
+    ],
   },
 };
 

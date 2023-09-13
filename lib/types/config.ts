@@ -15,6 +15,7 @@ export type IslandConfig = {
   name: string;
   hemisphere: Hemisphere;
   nativeFruit: "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
+  dreamAddress?: `DA-${number}-${number}-${number}`;
   /**
    * You can sort villager residents in any order you want.
    * The default order in the official app is based on the order that they arrived on your island.
@@ -24,14 +25,6 @@ export type IslandConfig = {
   residents: {
     current: string[];
     former?: string[];
-  };
-  dream?: {
-    address: string;
-    updated: {
-      /** Date should be in ISO 8601 `YYYY-MM-DD` format, e.g. "2020-03-20" */
-      date: DateFormat;
-      time: string;
-    };
   };
 };
 
@@ -47,7 +40,7 @@ export type PlayerConfig = {
   title: string;
   /** Date should be in ISO 8601 `YYYY-MM-DD` format, e.g. "2020-03-20" */
   registrationDate: DateFormat;
-  creatorID?: string;
-  happyHomeNetworkID?: string;
+  creatorID?: `MA-${number}-${number}-${number}`;
+  happyHomeNetworkID?: `RA-${number}-${number}-${number}`;
   isResidentRep: boolean;
 };

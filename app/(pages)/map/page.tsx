@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MapPage() {
-  const dreamAddress = island.dream?.address ?? "---- ---- ---- ---- ----";
+  const dreamAddress = island.dreamAddress ?? "---- ---- ---- ---- ----";
   const mapUpdateDate = dayjs(map.created_at).format(DATE_FORMAT_MEDIUM);
 
   return (

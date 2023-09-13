@@ -1,6 +1,5 @@
-import { IconChevronLeft, IconChevronRight, IconPennantFilled } from "@tabler/icons-react";
+import { IconChevronLeft, IconPennantFilled } from "@tabler/icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
@@ -150,19 +149,12 @@ function MiddleSection() {
       />
       <DisclosureWidget
         title="Dream Address"
-        description={island.dream?.address ?? placeholder}
+        description={island.dreamAddress ?? placeholder}
         descColour="text-[#a364d5]"
       />
       {player.happyHomeNetworkID && (
         <DisclosureWidget title="Happy Home Network ID" description={player.happyHomeNetworkID} />
       )}
-      <Link
-        href="/recent-dreams"
-        className="flex items-center justify-between border-y-2 border-dashed border-[#dbd8bf] px-3 py-2.5 hover:bg-[#ece5d4] active:bg-[#ece5d4]"
-      >
-        <span className="text-[17.5px] font-bold text-dark-bronze-coin">Recent dreams</span>
-        <IconChevronRight size={20} stroke={3} className="text-dark-bronze-coin/70" />
-      </Link>
     </section>
   );
 }

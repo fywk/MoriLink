@@ -1,16 +1,12 @@
-import type { NumericRange } from "./utility";
+import type { NumericRange, ParseInt } from "./utility";
+
+type zeroToFive = NumericRange<0, 5>;
 
 type zeroToNine = NumericRange<0, 9>;
 
-type oneToNine = NumericRange<1, 9>;
+type Year2000To2060 = `20${zeroToFive}${zeroToNine}` | "2060";
 
-type YYYY = `19${zeroToNine}${zeroToNine}` | `20${zeroToNine}${zeroToNine}`;
-
-type MM = `0${oneToNine}` | `1${NumericRange<0, 2>}`;
-
-type DD = `0${oneToNine}` | `${NumericRange<1, 2>}${zeroToNine}` | `3${NumericRange<0, 1>}`;
-
-export type DateFormat = `${YYYY}-${MM}-${DD}`;
+export type Year = ParseInt<Year2000To2060>;
 
 export type Month = NumericRange<1, 12>;
 

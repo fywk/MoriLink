@@ -1,4 +1,5 @@
 import { cache } from "react";
+import sharp from "sharp";
 
 import { env } from "../env.mjs";
 import cloudinary from "../providers/cloudinary";
@@ -6,8 +7,6 @@ import cloudinary from "../providers/cloudinary";
 import type { ConfigAndUrlOptions, ResourceApiResponse, TransformationOptions } from "cloudinary";
 
 import type { CloudinaryImageProps } from "../types/miscellaneous";
-
-const sharp = require("sharp");
 
 export async function generateBase64ImageURL(image: CloudinaryImageProps): Promise<string> {
   const localCache = new Map<CloudinaryImageProps["public_id"], string>();
@@ -40,7 +39,7 @@ export function generateImageURL(
 ): string {
   const publicID = withFolderName ? path : `${env.CLOUDINARY_FOLDER}/${path}`;
 
-  return cloudinary.v2.url(publicID, {
+  return cloudinary.url(publicID, {
     quality: 100,
     ...(typeof options === "object" ? options : undefined),
   });
@@ -63,7 +62,7 @@ export function generatePatternThumbnailURL(path: string): string {
 }
 
 export const getGalleryImages = cache(async (): Promise<CloudinaryImageProps[]> => {
-  const response: ResourceApiResponse = await cloudinary.v2.search
+  const response: ResourceApiResponse = await cloudinary.search
     .expression(`folder:${env.CLOUDINARY_FOLDER}/screenshots/*`)
     .sort_by("filename", "desc")
     .max_results(500)
@@ -88,7 +87,7 @@ export const getGalleryImages = cache(async (): Promise<CloudinaryImageProps[]> 
 });
 
 export async function getLatestMap() {
-  const response: ResourceApiResponse = await cloudinary.v2.search
+  const response: ResourceApiResponse = await cloudinary.search
     .expression(`folder:${env.CLOUDINARY_FOLDER}/maps/*`)
     .sort_by("created_at", "desc")
     .max_results(1)
@@ -115,4 +114,23 @@ export async function getMapBackgroundColor(input: string): Promise<string> {
   const [r, g, b] = data;
 
   return `rgb(${r} ${g} ${b})`;
+}
+
+export async function getPassportPhoto() {
+  const response: ResourceApiResponse = await cloudinary.search
+    .expression(`folder:${env.CLOUDINARY_FOLDER}/passport_photos/*`)
+    .sort_by("created_at", "desc")
+    .max_results(1)
+    .execute();
+  const latestImage = response.resources[0];
+
+  const signedImageUrl = generateImageURL(latestImage.public_id, undefined, true);
+
+  const image = {
+    url: signedImageUrl,
+    width: latestImage.width,
+    height: latestImage.height,
+  };
+
+  return image;
 }

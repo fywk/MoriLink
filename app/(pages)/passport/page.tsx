@@ -1,15 +1,18 @@
-import { IconChevronLeft, IconPennantFilled } from "@tabler/icons-react";
+import { IconChevronLeft, IconCopy, IconPennantFilled } from "@tabler/icons-react";
+import clsx from "clsx";
 import Image from "next/image";
 
+import CopyToClipboardButton from "@/components/CopyToClipboardButton";
+import NookIncEmblem from "@/components/icons/NookIncEmblem";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
-import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT } from "@/lib/constants";
+import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 import { getVillager } from "@/lib/utils/get-villager";
+import { getPassportPhoto } from "@/lib/utils/image";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
-import spriteNookInc from "@/public/images/sprites/Nook_Inc.svg";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";
@@ -38,14 +41,20 @@ export default function PassportPage() {
   );
 }
 
-function CardSection() {
+async function CardSection() {
+  const passportPhoto = await getPassportPhoto();
+
   const birthday = dayjs()
     .month(player.birth.month - 1)
     .date(player.birth.day)
     .format(DATE_FORMAT_SHORT);
   const starSign = getStarSign(player.birth.month, player.birth.day);
   const starSignColour = getStarSignColour(starSign);
-  const registrationDate = dayjs(player.registrationDate).format(DATE_FORMAT_MEDIUM);
+  const registrationDate = dayjs()
+    .year(player.registrationDate.year)
+    .month(player.registrationDate.month - 1)
+    .date(player.registrationDate.day)
+    .format(DATE_FORMAT_MEDIUM);
 
   return (
     <section
@@ -54,27 +63,35 @@ function CardSection() {
     >
       <div className="grid grid-cols-1 overflow-hidden rounded-2xl">
         <div className="bg-[rgb(var(--star-sign-colour)/0.05)]">
-          <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold uppercase tracking-tight text-[rgb(var(--star-sign-colour))] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
+          <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold uppercase tracking-tight text-[rgb(var(--star-sign-colour))] brightness-[.85] saturate-[.75] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
             Passport
           </span>
         </div>
-        <div className="relative flex gap-x-2.5 bg-[rgb(var(--star-sign-colour)/0.15)] px-5 py-3">
-          <div className="relative">
-            <div className="aspect-square h-fit w-1/5 min-w-[5.5rem] rounded-xl bg-[#faf7da] p-1.5">
-              <div className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/0.25)]"></div>
+        <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/0.15)] px-5 py-3">
+          <div className="relative h-fit basis-1/5">
+            <div className="aspect-square h-fit w-full min-w-[5.75rem] rounded-xl bg-[#faf7da] p-1.5">
+              <Image
+                src={passportPhoto.url}
+                width={passportPhoto.width}
+                height={passportPhoto.height}
+                alt=""
+                quality={100}
+                priority
+                className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/0.25)]"
+              />
             </div>
             {player.isResidentRep && (
-              <div className="relative bottom-1 right-2 flex w-fit rotate-3 items-center gap-x-[5px] border-[3px] border-double border-[#98744e] p-1">
-                <div className="flex h-3 w-3 items-center justify-center bg-[#98744e] text-[#faf7da]">
+              <div className="absolute -bottom-5 right-2 flex w-max rotate-[4deg] items-center gap-x-1 rounded border-[3px] border-double border-[#98744e] p-[3px]">
+                <div className="flex h-3 w-3 items-center justify-center rounded-sm bg-[#98744e] text-[#faf7da]">
                   <IconPennantFilled size={10} />
                 </div>
-                <span className="text-[10px]/none font-[750] tracking-tight text-[#98744e]">
+                <span className="pr-1 text-[9px]/none font-[750] tracking-tight text-[#98744e]">
                   Resident Rep.
                 </span>
               </div>
             )}
           </div>
-          <div className="flex flex-grow flex-col gap-y-2">
+          <div className="z-10 flex flex-grow basis-4/5 flex-col gap-y-2">
             <p className="w-fit max-w-[24ch] overflow-hidden text-ellipsis whitespace-nowrap rounded-full bg-[#faf7da] px-2.5 py-1.5 text-[13px]/none font-bold text-dark-bronze-coin/70">
               {player.comment}
             </p>
@@ -120,15 +137,15 @@ function CardSection() {
               <p className="text-[13px]/none font-bold text-dark-bronze-coin/60">{`Birthday: ${birthday}`}</p>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 aspect-square w-1/4 opacity-[0.125]">
-            <Image src={spriteNookInc} alt="" draggable={false} />
+          <div className="absolute bottom-2 right-2 aspect-square w-1/4 text-[#faf7da]">
+            <NookIncEmblem />
           </div>
         </div>
         <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
-          <p className="text-xs/none font-bold">{`Registered on: ${registrationDate}`}</p>
+          <p className="text-[11px]/none font-bold tracking-tight">{`Registered on: ${registrationDate}`}</p>
           <div className="flex -space-x-0.5">
             {[...Array<undefined>(12)].map((_, i) => (
-              <IconChevronLeft size={10} stroke={2.5} key={i} />
+              <IconChevronLeft size={9} stroke={2.5} key={i} />
             ))}
           </div>
         </div>
@@ -138,12 +155,12 @@ function CardSection() {
 }
 
 function MiddleSection() {
-  const placeholder = "---- ---- ---- ---- ----";
+  const placeholder = ID_PLACEHOLDER;
 
   return (
     <section className="mb-10 flex flex-col gap-y-8 px-2.5">
       <DisclosureWidget
-        title="Custom design creator ID"
+        title="Custom design Creator ID"
         description={player.creatorID ?? placeholder}
         descColour="text-[#f36f7d]"
       />
@@ -169,12 +186,16 @@ function DisclosureWidget({
   descColour?: string;
 }) {
   return (
-    <details className="px-2 text-[15.5px]/none" open={true}>
-      <summary className="select-none font-bold tracking-tight text-dark-bronze-coin/70">
-        {title}
-      </summary>
-      <div className="ml-3 mt-7 font-[750]">
-        <p className={descColour}>{description}</p>
+    <details className="px-2 text-[15.5px]/none font-bold" open={true}>
+      <summary className="select-none tracking-tight text-dark-bronze-coin/70">{title}</summary>
+      <div className="ml-3 mt-5.5 flex h-7.5 items-center justify-between">
+        <p className={clsx("font-[750]", descColour)}>{description}</p>
+        <CopyToClipboardButton text={description}>
+          <div className="flex h-full items-center gap-x-[3px] border-l-2 border-dark-bronze-coin/[.15] pl-2 text-dark-bronze-coin/75">
+            <IconCopy size={19} stroke={2.25} />
+            Copy
+          </div>
+        </CopyToClipboardButton>
       </div>
     </details>
   );
@@ -183,7 +204,7 @@ function DisclosureWidget({
 function ResidentsSection() {
   return (
     <section className="px-3 text-dark-bronze-coin">
-      <h2 className="mb-6 text-[17px]/none font-bold tracking-tight">{`Residents of ${island.name}`}</h2>
+      <h2 className="mb-6 text-[16.5px]/none font-bold tracking-tight">{`Residents of ${island.name}`}</h2>
       <div className="grid grid-cols-3 gap-x-9 gap-y-5.5 px-1">
         {island.residents.current.map((resident, i) => (
           <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>

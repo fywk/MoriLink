@@ -4,7 +4,21 @@
 
 @layer base {
   html {
-    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .toast-popover {
+    @apply rounded-full bg-beaver px-3.5 py-2.5 text-center text-sm/none font-bold text-[#faf7da];
+  }
+
+  .toast-popover:popover-open {
+    position: fixed;
+    inset: unset;
+    left: 0;
+    right: 0;
+    bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
 

@@ -4,6 +4,8 @@ export const DATE_FORMAT_MEDIUM = "D MMM YYYY";
 
 export const DATE_FORMAT_SHORT = "D MMM";
 
+export const ID_PLACEHOLDER = "---- ---- ---- ---- ----";
+
 export const STAR_SIGNS = [
   "Capricorn",
   "Aquarius",

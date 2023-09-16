@@ -40,8 +40,8 @@ export default function PatternsGrid({ category }: Props) {
             alt=""
             quality={95}
             loading={index + 1 > 5 ? "lazy" : "eager"}
-            draggable={false}
             className="absolute"
+            draggable={false}
           />
         </Link>
       ))}

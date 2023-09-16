@@ -45,6 +45,7 @@ export default async function MapPage() {
           quality={85}
           priority
           className="mx-auto w-full"
+          draggable={false}
         />
 
         <h3 className="mx-auto w-full max-w-sm border-b-2 border-dashed border-white/50 text-center text-[17px] font-bold text-[#23776c] sm:text-lg md:text-xl">

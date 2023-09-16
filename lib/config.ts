@@ -34,6 +34,7 @@ export const island: Readonly<IslandConfig> = {
   hemisphere: "Northern",
   nativeFruit: "Oranges",
   airportColor: "Orange",
+  weatherSeed: 620746543,
   residents: {
     current: [
       "Stitches",

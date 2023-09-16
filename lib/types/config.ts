@@ -17,6 +17,8 @@ export type IslandConfig = {
   hemisphere: Hemisphere;
   nativeFruit: "Apples" | "Cherries" | "Oranges" | "Peaches" | "Pears";
   airportColor: "Blue" | "Yellow" | "Orange" | "Green";
+  /** MeteoNook weather seed. */
+  weatherSeed?: number;
   /**
    * You can sort villager residents in any order you want.
    * The default order in the official app is based on the order that they arrived on your island.

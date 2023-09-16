@@ -1,9 +1,16 @@
+/**
+ * This is the revalidation API route for On-Demand Revalidation.
+ *
+ * @example
+ * GET `https://<your-site.com>/api/revalidate?secret=<secret-token>&path=<valid-path>`
+ */
+
 import { env } from "@/lib/env.mjs";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // The paths that's valid for revalidation
-const validPaths = ["/gallery", "/map"] as const;
+const validPaths = ["/gallery", "/map", "/passport"] as const;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Check for secret to confirm this is a valid request

@@ -17,7 +17,7 @@ export default function Logo({ size }: { size?: "md" }) {
       </div>
       <h1
         className={clsx(
-          "font-black leading-none tracking-tight text-old-burgundy",
+          "font-black leading-none tracking-tight text-[#42332c]",
           size === "md" ? "text-[29.8px]" : "text-[25px]",
         )}
       >

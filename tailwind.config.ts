@@ -21,7 +21,6 @@ const config: Config = {
         "dutch-white": "#ede1b8",
         beaver: "#908669",
         "dark-bronze-coin": "#4d3906",
-        "old-burgundy": "#41352f",
         "pearl-aqua": "#82d7aa",
         "tiffany-blue": "#19c5b6",
       },

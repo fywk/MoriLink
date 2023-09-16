@@ -4,9 +4,9 @@ import clsx from "clsx";
 import { useEffect } from "react";
 
 import { useMusicContext } from "@/lib/hooks";
-
 import { urlize } from "@/lib/utils/urlize";
-import { MusicIcon } from "./Icons";
+
+import MusicIcon from "./icons/MusicIcon";
 
 export default function NowPlaying() {
   const { audioTitle, isPlaying } = useMusicContext();

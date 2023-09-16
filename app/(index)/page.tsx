@@ -13,8 +13,8 @@ export default function HomePage() {
               src={app.icon}
               alt=""
               loading="eager"
-              draggable={false}
               className="h-auto max-w-full transform overflow-hidden rounded-[1.875rem] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-110"
+              draggable={false}
               style={{ backgroundColor: app.bgColour }}
             />
             <span className="whitespace-nowrap text-[11px]/none font-bold tracking-tighter">

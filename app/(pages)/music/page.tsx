@@ -46,8 +46,8 @@ export default function MusicPage() {
                   height={512}
                   alt=""
                   priority={index < 2}
-                  draggable={false}
                   className="rounded"
+                  draggable={false}
                 />
               </picture>
             </KKMusic>

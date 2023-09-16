@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import PageLayout from "@/components/PageLayout";
 import { island } from "@/lib/config";
-import { DATE_FORMAT_MEDIUM } from "@/lib/constants";
+import { DATE_FORMAT_MEDIUM, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getLatestMap, getMapBackgroundColor } from "@/lib/utils/image";
 
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   themeColor,
 };
 
-export default async function MapPage() {
-  const dreamAddress = island.dreamAddress ?? "---- ---- ---- ---- ----";
+export default function MapPage() {
+  const dreamAddress = island.dreamAddress ?? ID_PLACEHOLDER;
   const mapUpdateDate = dayjs(map.created_at).format(DATE_FORMAT_MEDIUM);
 
   return (

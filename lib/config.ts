@@ -16,22 +16,26 @@ export const player: Readonly<PlayerConfig> = {
     month: 10,
     day: 8,
   },
-  comment: "Nothing ever last forever",
   title: "Inexperienced Problem Solver",
-  registrationDate: "2020-03-20",
+  comment: "Nothing ever last forever",
+  isResidentRep: true,
+  registrationDate: {
+    year: 2020,
+    month: 3,
+    day: 20,
+  },
   creatorID: "MA-3831-5858-5426",
   // happyHomeNetworkID: "",
-  isResidentRep: true,
 };
 
 export const island: Readonly<IslandConfig> = {
   name: "Para Para",
+  dreamAddress: "DA-8948-7177-3853",
   hemisphere: "Northern",
   nativeFruit: "Oranges",
-  dreamAddress: "DA-8948-7177-3853",
+  airportColor: "Orange",
   residents: {
     current: [
-      "Angus",
       "Stitches",
       "Maddie",
       "Merengue",
@@ -41,6 +45,7 @@ export const island: Readonly<IslandConfig> = {
       "Petri",
       "Marshal",
       "Alice",
+      "Marlo",
     ],
     former: [
       "Sterling",
@@ -52,6 +57,7 @@ export const island: Readonly<IslandConfig> = {
       "Portia",
       "Norma",
       "Marina",
+      "Angus",
     ],
   },
 };

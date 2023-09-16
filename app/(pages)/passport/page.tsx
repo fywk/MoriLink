@@ -6,7 +6,6 @@ import CopyToClipboardButton from "@/components/CopyToClipboardButton";
 import NookIncEmblem from "@/components/icons/NookIncEmblem";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
-import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
@@ -78,6 +77,7 @@ async function CardSection() {
                 quality={100}
                 priority
                 className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/0.25)]"
+                draggable={false}
               />
             </div>
             {player.isResidentRep && (
@@ -235,7 +235,7 @@ function Resident({ name }: { name: string }) {
 
   return (
     <div className="flex flex-col items-center gap-y-1.5">
-      <VillagerAvatar imgSrc={villager.iconImage} />
+      <VillagerAvatar src={villager.iconImage} />
       <p className="text-sm/none font-bold tracking-tight">{villager.name}</p>
     </div>
   );
@@ -255,7 +255,7 @@ function ResidentModal({ name }: { name: string }) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
-      <VillagerAvatar imgSrc={villager.iconImage} customClass="max-w-[7.5rem]" />
+      <VillagerAvatar src={villager.iconImage} extraClasses="max-w-[7.5rem]" />
       <h1>
         <a
           href={`https://nookipedia.com/wiki/${villager.name}`}
@@ -280,6 +280,25 @@ function ResidentModal({ name }: { name: string }) {
           <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function VillagerAvatar({ src, extraClasses }: { src: string; extraClasses?: string }) {
+  return (
+    <div
+      className={clsx("relative flex aspect-square items-center justify-center p-1", extraClasses)}
+    >
+      <div className="absolute h-full w-full rounded-full border-4 border-[#faf7da] bg-pearl"></div>
+      <Image
+        src={src}
+        width={128}
+        height={128}
+        alt=""
+        quality={100}
+        className="z-10"
+        draggable={false}
+      />
     </div>
   );
 }

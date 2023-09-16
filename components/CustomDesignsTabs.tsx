@@ -3,7 +3,8 @@
 import { Tab } from "@headlessui/react";
 import clsx from "clsx";
 
-import { NormalCustomDesignsIcon, ProCustomDesignsIcon } from "./Icons";
+import NormalCustomDesignsIcon from "./icons/NormalCustomDesignsIcon";
+import ProCustomDesignsIcon from "./icons/ProCustomDesignsIcon";
 
 type Props = {
   normalPanel: React.ReactNode;

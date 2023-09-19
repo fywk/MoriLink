@@ -1,6 +1,7 @@
 import DateString from "@/components/DateString";
 import Logo from "@/components/Logo";
 import { player } from "@/lib/config";
+import { DATE_FORMAT_SHORT } from "@/lib/constants";
 
 export default function HomePageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,7 +30,9 @@ export default function HomePageLayout({ children }: { children: React.ReactNode
                 <span>{player.name}</span>
               </div>
               <div className="flex-none">
-                <DateString />
+                <span className="place-self-end">
+                  <DateString format={DATE_FORMAT_SHORT} />
+                </span>
               </div>
             </div>
             <main className="min-h-[22.5rem] px-7.5" id="content">

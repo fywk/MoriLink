@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-import { DATE_FORMAT_SHORT } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 
-export default function DateString() {
+export default function DateString({ format }: { format: string }) {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    setDate(dayjs().format(DATE_FORMAT_SHORT));
-  }, []);
+    setDate(dayjs().format(format));
+  }, [format]);
 
-  return <span className="place-self-end">{date}</span>;
+  return date;
 }

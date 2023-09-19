@@ -1,6 +1,5 @@
 import { island } from "@/lib/config";
 import iconAbout from "@/public/images/appicons/About.png";
-import iconBlog from "@/public/images/appicons/Blog.png";
 import iconCustomDesigns from "@/public/images/appicons/Custom_Design.png";
 import iconGallery from "@/public/images/appicons/Gallery.png";
 import iconMap from "@/public/images/appicons/Map.png";
@@ -27,10 +26,9 @@ export const apps = [
       ]
     : []),
   {
-    name: "Blog",
-    url: "/blog",
-    icon: iconBlog,
-    bgColour: "#ccd85d",
+    name: "Calendar",
+    url: "/calendar",
+    bgColour: "#f6cb63",
   },
   {
     name: "Gallery",

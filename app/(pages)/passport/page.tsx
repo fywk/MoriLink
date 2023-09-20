@@ -123,17 +123,14 @@ async function CardSection() {
               {player.name}
             </h2>
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
-            <div className="flex items-center gap-x-1">
-              <div className="h-4 w-4">
-                <Image
-                  src={`/images/sprites/Starsign_${starSign}.png`}
-                  width={80}
-                  height={80}
-                  alt=""
-                  unoptimized
-                  draggable={false}
-                />
-              </div>
+            <div className="flex items-center gap-x-[3px]">
+              <Image
+                src={`/images/sprites/Starsign_${starSign}.svg`}
+                width={16}
+                height={16}
+                alt={`${starSign} star sign icon`}
+                draggable={false}
+              />
               <p className="text-[13px]/none font-bold text-dark-bronze-coin/60">{`Birthday: ${birthday}`}</p>
             </div>
           </div>

@@ -10,7 +10,7 @@ type Item = (typeof apps)[number];
 
 export default function HomePage() {
   return (
-    <div className="grid grid-cols-3 gap-4 text-dark-bronze-coin">
+    <div className="grid grid-cols-3 gap-4 text-dark-bronze-coin @container">
       {apps.map((app) => (
         <AppGridItem item={app} key={app.name} />
       ))}
@@ -34,7 +34,7 @@ function AppGridItem({ item }: { item: Item }) {
       {...linkProps}
     >
       <div
-        className="h-full w-full transform overflow-hidden rounded-[1.875rem] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-105"
+        className="h-full w-full transform overflow-hidden rounded-[10cqw] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-105"
         style={{ backgroundColor: item.bgColour }}
       >
         {item.name === "Calendar" ? (
@@ -45,7 +45,7 @@ function AppGridItem({ item }: { item: Item }) {
               src={item.icon}
               alt=""
               loading="eager"
-              className="h-auto max-w-full"
+              className="h-full w-full rounded-[10cqw]"
               draggable={false}
             />
           )

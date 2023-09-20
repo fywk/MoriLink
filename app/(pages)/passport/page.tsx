@@ -246,7 +246,7 @@ function ResidentModal({ name }: { name: string }) {
 
   if (!villager) return null;
 
-  // Convert birthday string from mm/dd to dd/mm format
+  // Convert birthday string in the format of mm/dd to dd/mm
   const birth = villager.birthday.split("/");
   const birthday = dayjs()
     .month(+birth[0] - 1)

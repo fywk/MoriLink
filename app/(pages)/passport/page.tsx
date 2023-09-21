@@ -96,13 +96,13 @@ async function CardSection() {
               {player.comment}
             </p>
             <div className="flex text-xs/none font-bold">
-              <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin">
+              <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin">
                 <div className="h-4 w-4">
                   <Image src={spriteTownIsland} alt="" unoptimized draggable={false} />
                 </div>
                 {island.name}
               </div>
-              <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin/60">
+              <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin/60">
                 <div className="h-4 w-4">
                   <Image
                     src={`/images/sprites/Fruit_${island.nativeFruit}.png`}
@@ -123,7 +123,7 @@ async function CardSection() {
               {player.name}
             </h2>
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
-            <div className="flex items-center gap-x-[3px]">
+            <div className="flex items-center gap-x-0.5">
               <Image
                 src={`/images/sprites/Starsign_${starSign}.svg`}
                 width={16}

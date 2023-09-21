@@ -6,6 +6,7 @@ import CopyToClipboardButton from "@/components/CopyToClipboardButton";
 import NookIncEmblem from "@/components/icons/NookIncEmblem";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
+import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
@@ -277,25 +278,6 @@ function ResidentModal({ name }: { name: string }) {
           <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function VillagerAvatar({ src, extraClasses }: { src: string; extraClasses?: string }) {
-  return (
-    <div
-      className={clsx("relative flex aspect-square items-center justify-center p-1", extraClasses)}
-    >
-      <div className="absolute h-full w-full rounded-full border-4 border-[#faf7da] bg-pearl"></div>
-      <Image
-        src={src}
-        width={128}
-        height={128}
-        alt=""
-        quality={100}
-        className="z-10"
-        draggable={false}
-      />
     </div>
   );
 }

@@ -22,28 +22,28 @@ export function getStarSign(month: Month, day: Day): StarSign {
 export function getStarSignColour(sign: StarSign): string {
   switch (sign) {
     case "Capricorn":
-      return "235 130 111";
+      return "238 130 110";
     case "Aquarius":
-      return "205 133 209";
+      return "205 135 216";
     case "Pisces":
-      return "93 174 202";
+      return "95 175 196";
     case "Aries":
-      return "177 173 144";
+      return "178 172 151";
     case "Taurus":
-      return "111 190 101";
+      return "115 191 124";
     case "Gemini":
-      return "123 149 223";
+      return "118 144 212";
     case "Cancer":
-      return "252 145 135";
+      return "241 147 135";
     case "Leo":
-      return "185 205 57";
+      return "172 193 0";
     case "Virgo":
-      return "168 158 229";
+      return "169 162 240";
     case "Libra":
-      return "123 197 158";
+      return "102 197 155";
     case "Scorpio":
-      return "222 165 0";
+      return "214 158 0";
     case "Sagittarius":
-      return "89 190 208";
+      return "83 183 202";
   }
 }

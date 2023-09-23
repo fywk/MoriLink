@@ -17,4 +17,6 @@ module.exports = {
     "",
     "<TYPES>^[./]",
   ],
+  // prettier-plugin-tailwindcss
+  tailwindFunctions: ["clsx"],
 };

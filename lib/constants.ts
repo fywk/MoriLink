@@ -21,5 +21,5 @@ export const STAR_SIGNS = [
   "Sagittarius",
 ] as const;
 
-/** The last day of each star sign in ACNH, starting with January 19 of Capricorn, February 18 of Aquarius, and so on. */
-export const STAR_SIGN_BOUNDARIES = [19, 18, 20, 19, 20, 21, 22, 22, 22, 22, 22, 21] as const;
+/** The end date of each star sign in ACNH, starting with January 19 of Capricorn, February 18 of Aquarius, and so on. */
+export const STAR_SIGN_BOUNDARIES = [19, 18, 20, 19, 20, 21, 22, 22, 22, 23, 22, 21] as const;

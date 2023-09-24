@@ -23,15 +23,15 @@ export default function ResidentBirthdaysCard() {
   return (
     <EventCard
       title={`Birthday of ${island.name} Residents`}
-      titleColors="text-rose-500/90 before:border-rose-500/75 after:border-rose-500/75"
-      cardClasses="bg-rose-200/80 bg-[repeating-linear-gradient(315deg,transparent,transparent_14px,rgb(254,205,211)_14px,rgb(254,205,211)_24px)]"
+      titleColors="text-rose-600/70 before:border-rose-500/75 after:border-rose-500/60"
+      cardClasses="bg-rose-200/80 bg-[repeating-linear-gradient(135deg,transparent,transparent_12px,rgb(254,205,211)_12px,rgb(254,205,211)_24px)]"
     >
       <div className="grid grid-cols-4 justify-center gap-x-6 gap-y-4 tracking-tight md:grid-cols-5">
         {sortedResidents.map((resident) => (
           <div className="flex flex-col items-center gap-y-1" key={resident.name}>
             <VillagerAvatar src={resident.iconImage} extraClasses="max-w-[5rem]" />
             <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">{resident.name}</h4>
-            <h5 className="rounded-full bg-rose-500/75 px-2 py-1 text-xs/none font-bold text-white">
+            <h5 className="rounded-full bg-rose-400 px-2 py-1 text-xs/none font-bold text-white">
               {dayjs()
                 .month(+resident.birthday.split("/")[0] - 1)
                 .date(+resident.birthday.split("/")[1])

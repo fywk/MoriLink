@@ -62,12 +62,12 @@ async function CardSection() {
       style={{ ["--star-sign-colour" as any]: starSignColour }}
     >
       <div className="grid grid-cols-1 overflow-hidden rounded-2xl">
-        <div className="bg-[rgb(var(--star-sign-colour)/0.05)]">
+        <div className="bg-[rgb(var(--star-sign-colour)/.05)]">
           <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold uppercase tracking-tight text-[rgb(var(--star-sign-colour))] brightness-[.85] saturate-[.75] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
             Passport
           </span>
         </div>
-        <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/0.15)] px-5 py-3">
+        <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/.15)] px-5 py-3">
           <div className="relative h-fit basis-1/5">
             <div className="aspect-square h-fit w-full min-w-[5.75rem] rounded-xl bg-[#faf7da] p-1.5">
               <Image
@@ -77,7 +77,7 @@ async function CardSection() {
                 alt=""
                 quality={100}
                 priority
-                className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/0.25)]"
+                className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/.25)]"
                 draggable={false}
               />
             </div>
@@ -139,7 +139,7 @@ async function CardSection() {
             <NookIncEmblem />
           </div>
         </div>
-        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
+        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
           <p className="text-[11px]/none font-bold tracking-tight">{`Registered on: ${registrationDate}`}</p>
           <div className="flex -space-x-0.5">
             {[...Array<undefined>(12)].map((_, i) => (
@@ -267,15 +267,15 @@ function ResidentModal({ name }: { name: string }) {
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
     </div>

@@ -26,20 +26,20 @@ export default function ZodiacSeasonCard() {
           <h4 className="leading-none text-[rgb(var(--star-sign-colour))] brightness-[.875] saturate-150 @[200px]:text-lg/none">
             {currentZodiac}
           </h4>
-          <p className="text-xs/none text-beaver @[200px]:text-sm/none">{`(${zodiacDates})`}</p>
+          <p className="text-xs/none text-dark-bronze-coin/75 @[200px]:text-sm/none">{`(${zodiacDates})`}</p>
         </div>
         <Image
           src={`/images/sprites/star-fragment/${zodiacFragmentName}.png`}
           width={128}
           height={128}
-          alt={`${currentZodiac} star sign icon`}
+          alt=""
           unoptimized
           className="absolute left-0 top-0 h-8 w-8"
           draggable={false}
         />
         <Image
           src={celesteIcon}
-          alt="Celeste character icon"
+          alt=""
           unoptimized
           className="absolute bottom-0 right-0 h-7.5 w-7.5"
           draggable={false}

@@ -1,3 +1,5 @@
+import seasonColours from "@/data/season-colours.json";
+
 import dayjs from "./dayjs";
 
 import type { Dayjs } from "dayjs";
@@ -64,7 +66,7 @@ function checkDateInRange(
   return currentDate.isBetween(seasonStartDate, seasonEndDate, "day", "[]");
 }
 
-export function getCurrentSeason(date: Dayjs, hemisphere: Hemisphere): Season | undefined {
+export function getSeason(date: Dayjs, hemisphere: Hemisphere): Season | undefined {
   const hemisphereSeasons = seasons[hemisphere];
 
   for (const season in hemisphereSeasons) {
@@ -78,6 +80,18 @@ export function getCurrentSeason(date: Dayjs, hemisphere: Hemisphere): Season | 
       return season as Season;
     }
   }
+}
+
+export function getSeasonColour(season: Season): string {
+  return seasonColours[season];
+}
+
+export function getSeasonDateRange(season: Season, hemisphere: Hemisphere): string {
+  const seasonDateRange = seasons[hemisphere][season];
+  const startDate = seasonDateRange.startDate.format("D MMM");
+  const endDate = seasonDateRange.endDate.format("D MMM");
+
+  return `${startDate} - ${endDate}`;
 }
 
 export function isDateInSeason(date: Dayjs, hemisphere: Hemisphere, season: Season): boolean {

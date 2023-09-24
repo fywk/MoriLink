@@ -26,7 +26,10 @@ export default function CalendarPage() {
       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-2.5 px-3 pb-[calc(3.5rem-env(safe-area-inset-bottom))] pt-5">
         <Header />
         <div className="flex flex-col gap-y-1.5">
-          <Section title="Seasonal Announcements" icon={<MegaphoneIcon className="h-4 w-4" />}>
+          <Section
+            title="Seasonal Announcements"
+            icon={<MegaphoneIcon className="h-4 w-4 -rotate-12" />}
+          >
             <div className="grid grid-cols-[1fr_auto_1fr]">
               <CurrentSeasonCard />
               <Divider axis="X" />

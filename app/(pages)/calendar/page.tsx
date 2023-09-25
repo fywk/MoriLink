@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function CalendarPage() {
   return (
     <PageLayout title={title} themeColor={themeColor} mainBackground="#fdfdf5">
-      <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-2 px-3 pb-[calc(3.5rem-env(safe-area-inset-bottom))] pt-5">
+      <div className="mx-auto flex max-w-xl flex-col gap-y-2.5 px-3 pb-[calc(5rem+env(safe-area-inset-bottom))] pt-[15px]">
         <Header />
         <div className="flex flex-col gap-y-1.5">
           <Section

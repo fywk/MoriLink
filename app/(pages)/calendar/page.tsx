@@ -13,7 +13,7 @@ import ZodiacSeasonCard from "./ZodiacSeasonCard";
 import type { Metadata } from "next";
 
 const title = "Calendar";
-const themeColor = "#fce496";
+const themeColor = "#f9db97";
 
 export const metadata: Metadata = {
   title,

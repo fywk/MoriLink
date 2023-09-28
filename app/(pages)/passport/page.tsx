@@ -6,6 +6,7 @@ import CopyToClipboardButton from "@/components/CopyToClipboardButton";
 import NookIncEmblem from "@/components/icons/NookIncEmblem";
 import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
+import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
@@ -61,12 +62,12 @@ async function CardSection() {
       style={{ ["--star-sign-colour" as any]: starSignColour }}
     >
       <div className="grid grid-cols-1 overflow-hidden rounded-2xl">
-        <div className="bg-[rgb(var(--star-sign-colour)/0.05)]">
+        <div className="bg-[rgb(var(--star-sign-colour)/.05)]">
           <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold uppercase tracking-tight text-[rgb(var(--star-sign-colour))] brightness-[.85] saturate-[.75] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
             Passport
           </span>
         </div>
-        <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/0.15)] px-5 py-3">
+        <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/.15)] px-5 py-3">
           <div className="relative h-fit basis-1/5">
             <div className="aspect-square h-fit w-full min-w-[5.75rem] rounded-xl bg-[#faf7da] p-1.5">
               <Image
@@ -76,7 +77,7 @@ async function CardSection() {
                 alt=""
                 quality={100}
                 priority
-                className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/0.25)]"
+                className="aspect-square overflow-hidden rounded-lg bg-[rgb(var(--star-sign-colour)/.25)]"
                 draggable={false}
               />
             </div>
@@ -96,13 +97,13 @@ async function CardSection() {
               {player.comment}
             </p>
             <div className="flex text-xs/none font-bold">
-              <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin">
+              <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin">
                 <div className="h-4 w-4">
                   <Image src={spriteTownIsland} alt="" unoptimized draggable={false} />
                 </div>
                 {island.name}
               </div>
-              <div className="flex basis-1/2 items-center gap-x-1 text-dark-bronze-coin/60">
+              <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin/60">
                 <div className="h-4 w-4">
                   <Image
                     src={`/images/sprites/Fruit_${island.nativeFruit}.png`}
@@ -123,17 +124,14 @@ async function CardSection() {
               {player.name}
             </h2>
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
-            <div className="flex items-center gap-x-1">
-              <div className="h-4 w-4">
-                <Image
-                  src={`/images/sprites/Starsign_${starSign}.png`}
-                  width={80}
-                  height={80}
-                  alt=""
-                  unoptimized
-                  draggable={false}
-                />
-              </div>
+            <div className="flex items-center gap-x-0.5">
+              <Image
+                src={`/images/sprites/Starsign_${starSign}.svg`}
+                width={16}
+                height={16}
+                alt={`${starSign} star sign icon`}
+                draggable={false}
+              />
               <p className="text-[13px]/none font-bold text-dark-bronze-coin/60">{`Birthday: ${birthday}`}</p>
             </div>
           </div>
@@ -141,7 +139,7 @@ async function CardSection() {
             <NookIncEmblem />
           </div>
         </div>
-        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/0.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
+        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
           <p className="text-[11px]/none font-bold tracking-tight">{`Registered on: ${registrationDate}`}</p>
           <div className="flex -space-x-0.5">
             {[...Array<undefined>(12)].map((_, i) => (
@@ -246,7 +244,7 @@ function ResidentModal({ name }: { name: string }) {
 
   if (!villager) return null;
 
-  // Convert birthday string from mm/dd to dd/mm format
+  // Convert birthday string in the format of mm/dd to dd/mm
   const birth = villager.birthday.split("/");
   const birthday = dayjs()
     .month(+birth[0] - 1)
@@ -269,36 +267,17 @@ function ResidentModal({ name }: { name: string }) {
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[0.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
+          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function VillagerAvatar({ src, extraClasses }: { src: string; extraClasses?: string }) {
-  return (
-    <div
-      className={clsx("relative flex aspect-square items-center justify-center p-1", extraClasses)}
-    >
-      <div className="absolute h-full w-full rounded-full border-4 border-[#faf7da] bg-pearl"></div>
-      <Image
-        src={src}
-        width={128}
-        height={128}
-        alt=""
-        quality={100}
-        className="z-10"
-        draggable={false}
-      />
     </div>
   );
 }

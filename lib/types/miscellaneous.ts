@@ -17,6 +17,8 @@ export type CloudinaryImageProps = {
 
 export type Hemisphere = "Northern" | "Southern";
 
+export type Season = "Spring" | "Summer" | "Fall" | "Winter";
+
 export type StarSign = (typeof STAR_SIGNS)[number];
 
 export type Pattern = {

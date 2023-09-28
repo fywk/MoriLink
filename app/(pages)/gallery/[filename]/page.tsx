@@ -44,7 +44,7 @@ export default async function GalleryImagePage({ params }: Props) {
 
   return (
     <PageLayout title={title} themeColor={themeColor} parentPage="/gallery">
-      <div className="mb-[env(safe-area-inset-bottom)] flex h-full items-center justify-center p-4">
+      <div className="mb-safe flex h-full items-center justify-center p-4">
         <figure className="space-y-2">
           <Image
             src={generateImageURL(image.public_id, undefined, true)}

@@ -52,7 +52,7 @@ export default function MapPage() {
           {`Dream Address : ${dreamAddress}`}
         </h3>
       </div>
-      <p className="absolute inset-x-0 bottom-2.5 mx-auto mb-[env(safe-area-inset-bottom)] w-max text-sm font-bold leading-none text-[#23776c] md:left-[unset] md:right-2.5 md:text-sm">
+      <p className="mb-safe absolute inset-x-0 bottom-2.5 mx-auto w-max text-sm font-bold leading-none text-[#23776c] md:left-[unset] md:right-2.5 md:text-sm">
         {`Map updated: ${mapUpdateDate}`}
       </p>
     </PageLayout>

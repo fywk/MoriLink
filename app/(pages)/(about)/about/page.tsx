@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import PageLayout from "@/components/PageLayout";
+import { app } from "@/lib/config";
 
 import type { Metadata } from "next";
 
@@ -32,7 +33,7 @@ export default function AboutPage() {
             Credits
           </Link>
           <a
-            href={`${githubProfileLink}/NookPlusPlus`}
+            href={`${githubProfileLink}/${app.name}`}
             className="px-[9px] py-3.5 text-lg font-bold text-dark-bronze-coin hover:bg-[#ece5d4] active:bg-[#ece5d4]"
             target="_blank"
           >

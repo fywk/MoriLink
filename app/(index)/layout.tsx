@@ -1,13 +1,17 @@
+import Image from "next/image";
+
 import DateString from "@/components/DateString";
-import Logo from "@/components/Logo";
-import { player } from "@/lib/config";
+import { app, player } from "@/lib/config";
 import { DATE_FORMAT_SHORT } from "@/lib/constants";
+import morilinkLogo from "@/public/images/MoriLink_Logo.svg";
 
 export default function HomePageLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-full min-h-[100dvh] w-full items-center justify-center bg-dutch-white bg-[radial-gradient(#f4ecca_15%,transparent_15%),radial-gradient(#f4ecca_14%,transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat">
-      <div className="m-auto grid w-full max-w-[25rem] grid-cols-1 gap-y-3 px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-8">
-        <Logo />
+      <div className="m-auto grid w-full max-w-[25rem] grid-cols-1 gap-y-2 px-5 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-8">
+        <div className="flex justify-center">
+          <Image src={morilinkLogo} alt={`${app.name} logo`} className="w-40" draggable={false} />
+        </div>
         <div className="w-full rounded-[5rem] bg-alabaster pb-9.5 pt-8.5">
           <div className="grid h-full grid-rows-[auto_1fr] gap-y-7.5">
             <div className="flex items-center px-9 text-sm font-semibold tracking-normal text-bone">

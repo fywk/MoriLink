@@ -1,8 +1,8 @@
 import type { AppConfig, IslandConfig, PatternsConfig, PlayerConfig } from "./types/config";
 
 export const app: Readonly<AppConfig> = {
-  title: "Nook++",
-  description: "A hybrid recreation of NookPhone and NookLink from Animal Crossing: New Horizons",
+  name: "MoriLink",
+  description: `A web app inspired by NookPhone and NookLink from the Animal Crossing: New Horizons game`,
   themeColor: "#82d7aa",
   location: {
     latitude: "3.1415",

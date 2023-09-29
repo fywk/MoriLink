@@ -14,8 +14,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: app.title,
-    template: `%s - ${app.title}`,
+    default: app.name,
+    template: `%s - ${app.name}`,
   },
   description: app.description,
   viewport: {

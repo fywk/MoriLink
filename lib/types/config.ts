@@ -2,7 +2,7 @@ import type { Day, Month, Year } from "./date";
 import type { Hemisphere, Pattern } from "./miscellaneous";
 
 export type AppConfig = {
-  title: string;
+  name: string;
   description?: string;
   themeColor: string;
   location: {

@@ -1,18 +1,20 @@
-# Nook++
+# MoriLink
 
-A hybrid of NookPhone and NookLink from Animal Crossing: New Horizons.
+[MoriLink](https://morilink.fywk.dev) is a web app inspired by **NookPhone** and **NookLink** from the _Animal Crossing: New Horizons_ game.
 
-![Screenshot of Nook++](/public/images/screenshot.png)
+![Screenshot of MoriLink](/public/images/screenshot.png)
 
 ## Introduction
 
-This application combined the functionalities found in the NookPhone smartphone in the game and the NookLink service of the Nintendo Switch Online app, along with some additional features.
+The application offers some functionalities found in the NookPhone smartphone in the game and the NookLink service of the Nintendo Switch Online app, along with some additional features.
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/fywk/NookPlusPlus.git
-cd NookPlusPlus
+git clone https://github.com/fywk/MoriLink.git
+cd MoriLink
 pnpm install
 pnpm dev
 ```
+
+Then, create a `env.local` file for environment secrets listed in the `env.local.example` file.

@@ -20,7 +20,7 @@ export default function CreditsPage() {
       <div className="mx-auto flex max-w-xl flex-col justify-between px-5 pb-12 pt-6">
         <Image
           src={morilinkLogo}
-          alt={`${app.title} logo`}
+          alt={`${app.name} logo`}
           className="-mx-1 w-48 py-8"
           draggable={false}
         />

@@ -106,7 +106,7 @@ async function CardSection() {
               <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin/60">
                 <div className="h-4 w-4">
                   <Image
-                    src={`/images/sprites/Fruit_${island.nativeFruit}.png`}
+                    src={`/images/sprites/fruit/${island.nativeFruit}.png`}
                     width={64}
                     height={64}
                     alt=""
@@ -126,7 +126,7 @@ async function CardSection() {
             <hr className="w-2/3 border-[1.5px] border-[#faf7da]" />
             <div className="flex items-center gap-x-0.5">
               <Image
-                src={`/images/sprites/Starsign_${starSign}.svg`}
+                src={`/images/sprites/star-sign/${starSign}.svg`}
                 width={16}
                 height={16}
                 alt={`${starSign} star sign icon`}

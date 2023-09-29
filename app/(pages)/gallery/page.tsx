@@ -19,7 +19,7 @@ export default async function GalleryPage() {
 
   return (
     <PageLayout title={title} themeColor={themeColor}>
-      <div className="mx-auto mb-[env(safe-area-inset-bottom)] grid max-w-5xl grid-cols-3 gap-3 py-4 pl-[calc(1rem+env(safe-area-inset-left))] pr-[calc(1rem+env(safe-area-inset-right))] md:grid-cols-4 md:gap-3.5">
+      <div className="mb-safe mx-auto grid max-w-5xl grid-cols-3 gap-3 py-4 pl-[calc(1rem+env(safe-area-inset-left))] pr-[calc(1rem+env(safe-area-inset-right))] md:grid-cols-4 md:gap-3.5">
         {images.map((image, index) => (
           <Link
             href={`/gallery/${image.filename}`}

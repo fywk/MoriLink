@@ -1,11 +1,11 @@
 import { island } from "@/lib/config";
-import iconAbout from "@/public/images/appicons/About.png";
-import iconCustomDesigns from "@/public/images/appicons/Custom_Design.png";
-import iconGallery from "@/public/images/appicons/Gallery.png";
-import iconMap from "@/public/images/appicons/Map.png";
-import iconMusic from "@/public/images/appicons/Music.png";
-import iconPassport from "@/public/images/appicons/Passport.png";
-import iconWeather from "@/public/images/appicons/Weather.png";
+import iconAbout from "@/public/images/app-icons/About.png";
+import iconCustomDesigns from "@/public/images/app-icons/Custom_Design.png";
+import iconGallery from "@/public/images/app-icons/Gallery.png";
+import iconMap from "@/public/images/app-icons/Map.png";
+import iconMusic from "@/public/images/app-icons/Music.png";
+import iconPassport from "@/public/images/app-icons/Passport.png";
+import iconWeather from "@/public/images/app-icons/Weather.png";
 
 export const apps = [
   {

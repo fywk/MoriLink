@@ -3,9 +3,8 @@ import "./globals.css";
 import clsx from "clsx";
 import { Nunito } from "next/font/google";
 
+import MusicProvider from "@/components/MusicProvider";
 import { app } from "@/lib/config";
-
-import MusicProvider from "./music-provider";
 
 import type { Metadata } from "next";
 

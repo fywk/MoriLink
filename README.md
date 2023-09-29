@@ -1,6 +1,6 @@
 # MoriLink
 
-[MoriLink](https://morilink.fywk.dev) is a web app inspired by **NookPhone** and **NookLink** from the _Animal Crossing: New Horizons_ game.
+[MoriLink](https://mori.fywk.dev) is a web app inspired by **NookPhone** and **NookLink** from the _Animal Crossing: New Horizons_ game.
 
 ![Screenshot of MoriLink](/public/images/screenshot.png)
 

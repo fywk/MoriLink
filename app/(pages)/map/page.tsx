@@ -47,13 +47,12 @@ export default function MapPage() {
           className="mx-auto w-full"
           draggable={false}
         />
-
         <h3 className="mx-auto w-full max-w-sm border-b-2 border-dashed border-white/50 text-center text-[17px] font-bold text-[#23776c] sm:text-lg md:text-xl">
           {`Dream Address : ${dreamAddress}`}
         </h3>
       </div>
-      <p className="mb-safe absolute inset-x-0 bottom-2.5 mx-auto w-max text-sm font-bold leading-none text-[#23776c] md:left-[unset] md:right-2.5 md:text-sm">
-        {`Map updated: ${mapUpdateDate}`}
+      <p className="mb-safe absolute inset-x-0 bottom-3.5 mx-auto w-max text-xs/none font-bold leading-none tracking-tight text-[#23776c] md:bottom-3 md:left-[unset] md:right-3 md:text-sm/none">
+        {`Map updated on: ${mapUpdateDate}`}
       </p>
     </PageLayout>
   );

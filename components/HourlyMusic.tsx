@@ -90,7 +90,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
       id={urlize(musicTitle)}
       type="button"
     >
-      {isPlaying && audioTitle === musicTitle && playingBadge}
+      {isPlaying && audioTitle === musicTitle ? playingBadge : null}
       <div
         className={clsx(
           "flex flex-col items-center justify-center gap-y-3 text-dark-bronze-coin transition-opacity",

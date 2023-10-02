@@ -1,13 +1,12 @@
-import villagers from "animal-crossing/lib/data/Villagers.json";
-
 import VillagerAvatar from "@/components/VillagerAvatar";
 import { island } from "@/lib/config";
 import { DATE_FORMAT_SHORT } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
+import villagers from "@/lib/utils/villagers";
 
 import EventCard from "./EventCard";
 
-type Villager = (typeof villagers)[number];
+import type { Villager } from "@/lib/utils/villagers";
 
 export default function ResidentBirthdaysCard() {
   const sortedResidents = island.residents.current

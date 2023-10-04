@@ -33,7 +33,7 @@ export default function PassportPage() {
       mainBackground="fixed repeating-linear-gradient(#f5f0e3, #f5f0e3 10px, #f2eedd 10px, #f2eedd 17px)"
     >
       <div className="mx-auto max-w-xl px-3 pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
-        <CardSection />
+        <PlayerPassport />
         <MiddleSection />
         <ResidentsSection />
       </div>
@@ -41,7 +41,7 @@ export default function PassportPage() {
   );
 }
 
-async function CardSection() {
+async function PlayerPassport() {
   const passportPhoto = await getPassportPhoto();
 
   const birthday = dayjs()

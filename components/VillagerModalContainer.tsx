@@ -1,7 +1,7 @@
 "use client";
 
 import { Dialog } from "@headlessui/react";
-import { IconX } from "@tabler/icons-react";
+import { IconRefresh, IconX } from "@tabler/icons-react";
 import Link from "next/link";
 
 type Props = {
@@ -29,6 +29,10 @@ export default function VillagerModalContainer({ parentPage, children }: Props) 
             <IconX size={29} stroke={2.375} className="text-beaver" />
           </Link>
           {children}
+          <p className="-mb-5 flex items-center justify-center gap-x-0.5 text-[10px]/none font-bold tracking-tight text-beaver">
+            <IconRefresh size={11} stroke={2.5} />
+            Refresh for more details
+          </p>
         </Dialog.Panel>
       </div>
     </Dialog>

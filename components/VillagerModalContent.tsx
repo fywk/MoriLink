@@ -1,4 +1,4 @@
-import { DATE_FORMAT_SHORT } from "@/lib/constants";
+import { DATE_FORMAT_SHORT, NOOKIPEDIA_WIKI_LINK } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 
 import VillagerAvatar from "./VillagerAvatar";
@@ -18,10 +18,11 @@ export default function VillagerModalContent({ villager }: { villager: Villager 
       <VillagerAvatar src={villager.iconImage} extraClasses="max-w-[7.5rem]" />
       <h1>
         <a
-          href={`https://nookipedia.com/wiki/${villager.name}`}
+          href={`${NOOKIPEDIA_WIKI_LINK}/${villager.name}`}
           className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 ring-tiffany-blue hover:underline focus:outline-none focus-visible:ring-3"
           title={`Nookipedia: ${villager.name}`}
           target="_blank"
+          rel="noreferrer"
         >
           {villager.name}
         </a>

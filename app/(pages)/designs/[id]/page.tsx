@@ -77,7 +77,7 @@ export default function PatternPage({ params }: Props) {
             className="rounded-2xl bg-[var(--theme-color)]"
           />
           {Array.isArray(pattern.pictures) &&
-            pattern.pictures.length &&
+            pattern.pictures.length > 0 &&
             pattern.pictures.map((picture, index) => (
               <Image
                 src={generateImageURL(`patterns/pictures/${picture}`)}

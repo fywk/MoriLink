@@ -1,18 +1,18 @@
 import { IconChevronLeft, IconCopy, IconPennantFilled } from "@tabler/icons-react";
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 
 import CopyToClipboardButton from "@/components/CopyToClipboardButton";
 import NookIncEmblem from "@/components/icons/NookIncEmblem";
-import ModalOpener from "@/components/ModalOpener";
 import PageLayout from "@/components/PageLayout";
 import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
-import { getVillager } from "@/lib/utils/get-villager";
 import { getPassportPhoto } from "@/lib/utils/image";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
+import { getVillager } from "@/lib/utils/villagers";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";
@@ -33,7 +33,7 @@ export default function PassportPage() {
       mainBackground="fixed repeating-linear-gradient(#f5f0e3, #f5f0e3 10px, #f2eedd 10px, #f2eedd 17px)"
     >
       <div className="mx-auto max-w-xl px-3 pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
-        <CardSection />
+        <PlayerPassport />
         <MiddleSection />
         <ResidentsSection />
       </div>
@@ -41,7 +41,7 @@ export default function PassportPage() {
   );
 }
 
-async function CardSection() {
+async function PlayerPassport() {
   const passportPhoto = await getPassportPhoto();
 
   const birthday = dayjs()
@@ -204,20 +204,18 @@ function ResidentsSection() {
     <section className="px-3 text-dark-bronze-coin">
       <h2 className="mb-6 text-[16.5px]/none font-bold tracking-tight">{`Residents of ${island.name}`}</h2>
       <div className="grid grid-cols-3 gap-x-9 gap-y-5.5 px-1">
-        {island.residents.current.map((resident, i) => (
-          <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
-            <Resident name={resident} />
-          </ModalOpener>
+        {island.residents.current.map((currentResident) => (
+          <Link href={`/resident/${currentResident}`} scroll={false} key={currentResident}>
+            <Resident name={currentResident} />
+          </Link>
         ))}
       </div>
       {"former" in island.residents && (
         <>
           <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">Former residents</h3>
           <div className="grid grid-cols-4 gap-x-8 gap-y-5.5 px-1">
-            {island.residents.former?.map((resident, i) => (
-              <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
-                <Resident name={resident} />
-              </ModalOpener>
+            {island.residents.former?.map((formerResident) => (
+              <Resident name={formerResident} key={formerResident} />
             ))}
           </div>
         </>
@@ -235,49 +233,6 @@ function Resident({ name }: { name: string }) {
     <div className="flex flex-col items-center gap-y-1.5">
       <VillagerAvatar src={villager.iconImage} />
       <p className="text-sm/none font-bold tracking-tight">{villager.name}</p>
-    </div>
-  );
-}
-
-function ResidentModal({ name }: { name: string }) {
-  const villager = getVillager(name);
-
-  if (!villager) return null;
-
-  // Convert birthday string in the format of mm/dd to dd/mm
-  const birth = villager.birthday.split("/");
-  const birthday = dayjs()
-    .month(+birth[0] - 1)
-    .date(+birth[1])
-    .format(DATE_FORMAT_SHORT);
-
-  return (
-    <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
-      <VillagerAvatar src={villager.iconImage} extraClasses="max-w-[7.5rem]" />
-      <h1>
-        <a
-          href={`https://nookipedia.com/wiki/${villager.name}`}
-          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 ring-tiffany-blue hover:underline focus:outline-none focus-visible:ring-3"
-          title={`Nookipedia: ${villager.name}`}
-          target="_blank"
-        >
-          {villager.name}
-        </a>
-      </h1>
-      <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
-        <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
-          <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
-        </div>
-        <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
-          <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
-        </div>
-        <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
-          <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
-        </div>
-      </div>
     </div>
   );
 }

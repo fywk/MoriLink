@@ -49,7 +49,7 @@ export default function NowPlaying() {
           ) : audioTitle && !isPlaying ? (
             "Loading..."
           ) : (
-            audioTitle && isPlaying && audioTitle
+            ""
           )}
         </h2>
       </div>

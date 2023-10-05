@@ -12,7 +12,7 @@ export default function Navbar({ title, parentPage }: Props) {
       <Link
         href={parentPage}
         className="flex h-8 w-8 basis-8 items-center justify-center rounded-full bg-alabaster text-beaver ring-tiffany-blue focus:outline-none focus-visible:ring-3"
-        title="Back"
+        title={parentPage === "/" ? "Back to Home" : "Back"}
       >
         <IconChevronLeft size={20} strokeWidth={2.75} />
       </Link>

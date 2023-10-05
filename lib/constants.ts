@@ -6,6 +6,8 @@ export const DATE_FORMAT_SHORT = "D MMM";
 
 export const ID_PLACEHOLDER = "---- ---- ---- ---- ----";
 
+export const NOOKIPEDIA_WIKI_LINK = "https://nookipedia.com/wiki";
+
 export const STAR_SIGNS = [
   "Capricorn",
   "Aquarius",

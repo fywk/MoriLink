@@ -3,9 +3,9 @@
 import clsx from "clsx";
 
 import { useMusicContext } from "@/lib/hooks";
+import { urlize } from "@/lib/utils/urlize";
 
 import type { Audio } from "@/lib/types/miscellaneous";
-import { urlize } from "@/lib/utils/urlize";
 
 type Props = {
   music: Audio;
@@ -40,7 +40,7 @@ export default function KKMusic({ music, playingBadge, children }: Props) {
       id={urlize(music.title)}
       type="button"
     >
-      {isPlaying && audioTitle === music.title && playingBadge}
+      {isPlaying && audioTitle === music.title ? playingBadge : null}
       {children}
     </button>
   );

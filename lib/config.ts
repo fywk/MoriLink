@@ -38,7 +38,6 @@ export const island: Readonly<IslandConfig> = {
   residents: {
     current: [
       "Stitches",
-      "Maddie",
       "Merengue",
       "Sasha",
       "Ketchup",
@@ -47,6 +46,7 @@ export const island: Readonly<IslandConfig> = {
       "Marshal",
       "Alice",
       "Marlo",
+      "Fuchsia",
     ],
     former: [
       "Sterling",
@@ -59,6 +59,7 @@ export const island: Readonly<IslandConfig> = {
       "Norma",
       "Marina",
       "Angus",
+      "Maddie",
     ],
   },
 };

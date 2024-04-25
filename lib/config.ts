@@ -46,6 +46,7 @@ export const island: Readonly<IslandConfig> = {
       "Marshal",
       "Alice",
       "Marlo",
+      "Fuchsia",
     ],
     former: [
       "Sterling",

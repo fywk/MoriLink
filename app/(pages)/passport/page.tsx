@@ -10,9 +10,9 @@ import VillagerAvatar from "@/components/VillagerAvatar";
 import { island, player } from "@/lib/config";
 import { DATE_FORMAT_MEDIUM, DATE_FORMAT_SHORT, ID_PLACEHOLDER } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
-import { getVillager } from "@/lib/utils/get-villager";
 import { getPassportPhoto } from "@/lib/utils/image";
 import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
+import { getVillager } from "@/lib/utils/villagers";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
 import type { Metadata } from "next";

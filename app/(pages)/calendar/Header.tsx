@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="flex h-5 items-end justify-between font-[750] tracking-tight text-beaver transition-opacity">
+    <div className="flex h-5 items-end justify-between font-[750] tracking-tight text-beaver">
       <div className="flex items-center gap-x-1">
         {date && (
           <span className="flex h-5 items-center justify-center rounded-full bg-beaver px-2 text-xs/none tracking-normal text-white">

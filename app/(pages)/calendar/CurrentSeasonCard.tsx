@@ -41,7 +41,7 @@ export default function CurrentSeasonCard() {
           height={200}
           alt=""
           unoptimized
-          className="absolute left-0.5 top-0.5 h-7 w-7"
+          className="absolute left-0.5 top-0.5 size-7"
           draggable={false}
         />
         <Image
@@ -50,7 +50,7 @@ export default function CurrentSeasonCard() {
           height={128}
           alt=""
           unoptimized
-          className="absolute bottom-0 right-0 h-7.5 w-7.5"
+          className="absolute bottom-0 right-0 size-7.5"
           draggable={false}
         />
       </div>

@@ -19,14 +19,14 @@ export default function PageLayout({
 }: Props) {
   return (
     <div
-      className="relative grid h-full min-h-[100dvh] grid-rows-[auto_1fr]"
+      className="relative grid h-full min-h-dvh grid-rows-[auto_1fr]"
       style={{
         ["--theme-color" as any]: themeColor,
         ["--main-background" as any]: mainBackground,
       }}
     >
       <Navbar title={title} parentPage={parentPage} />
-      <main className={clsx("h-full w-full [background:var(--main-background)]")} id="content">
+      <main className={clsx("size-full [background:var(--main-background)]")} id="content">
         {children}
       </main>
     </div>

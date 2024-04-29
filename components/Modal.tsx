@@ -22,7 +22,7 @@ export default function Modal({ isOpen, setIsOpen, children }: Props) {
         <Dialog.Panel className="grid w-full max-w-xl grid-rows-[auto_auto_45px] rounded-[2.75rem] bg-alabaster p-5 shadow-md">
           <button
             onClick={() => setIsOpen(false)}
-            className="h-fit w-fit rounded-full p-2 ring-tiffany-blue hover:bg-[#ece5d4] focus:outline-none active:bg-[#ece5d4] ui-focus-visible:ring-3"
+            className="size-fit rounded-full p-2 ring-tiffany-blue hover:bg-[#ece5d4] focus:outline-none active:bg-[#ece5d4] ui-focus-visible:ring-3"
             type="button"
             title="Close"
           >

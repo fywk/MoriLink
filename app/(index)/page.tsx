@@ -34,7 +34,7 @@ function AppGridItem({ item }: { item: Item }) {
       {...linkProps}
     >
       <div
-        className="h-full w-full transform overflow-hidden rounded-[10cqw] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-105"
+        className="size-full transform overflow-hidden rounded-[10cqw] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-105"
         style={{ backgroundColor: item.bgColour }}
       >
         {item.name === "Calendar" ? (
@@ -45,7 +45,7 @@ function AppGridItem({ item }: { item: Item }) {
               src={item.icon}
               alt=""
               loading="eager"
-              className="h-full w-full rounded-[10cqw]"
+              className="size-full rounded-[10cqw]"
               draggable={false}
             />
           )

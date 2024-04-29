@@ -58,7 +58,7 @@ export default function PatternPage({ params }: Props) {
               <h2 className="text-[22px]/none font-[750] text-dark-bronze-coin">{pattern.name}</h2>
               <p className="font-[750] leading-none text-[#f36f7d]">{pattern.id}</p>
             </div>
-            <div className="aspect-square h-14 w-14">
+            <div className="aspect-square size-14">
               <Image
                 src={generatePatternThumbnailURL(`patterns/${pattern.id}`)}
                 width={154}

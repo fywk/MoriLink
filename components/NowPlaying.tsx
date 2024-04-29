@@ -29,7 +29,7 @@ export default function NowPlaying() {
       >
         <div
           className={clsx(
-            "flex h-7 w-7 items-center justify-center transition delay-100",
+            "flex size-7 items-center justify-center transition delay-100",
             isPlaying && "animate-pulse",
           )}
         >

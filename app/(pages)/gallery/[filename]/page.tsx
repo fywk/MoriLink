@@ -57,7 +57,7 @@ export default async function GalleryImagePage({ params }: Props) {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             priority
-            className="h-full w-full rounded object-cover"
+            className="size-full rounded object-cover"
           />
           <figcaption className="flex items-center gap-x-0.5 text-sm font-medium tracking-tight text-beaver">
             {imageTakenDate}

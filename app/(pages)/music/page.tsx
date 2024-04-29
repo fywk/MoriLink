@@ -64,7 +64,7 @@ export default function MusicPage() {
 function HourlyPlayingBadge() {
   return (
     <div className="absolute -left-2.5 -top-2.5 z-10 flex h-5.5 w-9 items-center justify-center rounded-full bg-[#f96549] text-[#f8ee8f]">
-      <IconPlayerPlayFilled className="h-4 w-4" />
+      <IconPlayerPlayFilled className="size-4" />
     </div>
   );
 }
@@ -72,7 +72,7 @@ function HourlyPlayingBadge() {
 function KKPlayingBadge() {
   return (
     <div className="absolute -left-1 -top-1 z-10 flex h-5.5 w-9 items-center justify-center rounded-br-2xl rounded-tl-xl bg-[#48c058] text-alabaster">
-      <IconPlayerPlayFilled className="h-4 w-4" />
+      <IconPlayerPlayFilled className="size-4" />
     </div>
   );
 }

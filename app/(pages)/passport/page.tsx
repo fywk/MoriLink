@@ -86,7 +86,7 @@ async function CardSection() {
             </div>
             {player.isResidentRep && (
               <div className="absolute -bottom-5 right-2 flex w-max rotate-[4deg] items-center gap-x-1 rounded border-[3px] border-double border-[#98744e] p-[3px]">
-                <div className="flex h-3 w-3 items-center justify-center rounded-sm bg-[#98744e] text-[#faf7da]">
+                <div className="flex size-3 items-center justify-center rounded-sm bg-[#98744e] text-[#faf7da]">
                   <IconPennantFilled size={10} />
                 </div>
                 <span className="pr-1 text-[9px]/none font-[750] tracking-tight text-[#98744e]">
@@ -101,13 +101,13 @@ async function CardSection() {
             </p>
             <div className="flex text-xs/none font-bold">
               <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin">
-                <div className="h-4 w-4">
+                <div className="size-4">
                   <Image src={spriteTownIsland} alt="" unoptimized draggable={false} />
                 </div>
                 {island.name}
               </div>
               <div className="flex basis-1/2 items-center gap-x-0.5 text-dark-bronze-coin/60">
-                <div className="h-4 w-4">
+                <div className="size-4">
                   <Image
                     src={`/images/sprites/fruit/${island.nativeFruit}.png`}
                     width={64}

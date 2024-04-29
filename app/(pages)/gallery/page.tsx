@@ -26,7 +26,7 @@ export default async function GalleryPage() {
         {images.map((image, index) => (
           <Link
             href={`/gallery/${image.filename}`}
-            className="aspect-square h-full w-full rounded sm:aspect-video"
+            className="aspect-square size-full rounded sm:aspect-video"
             key={image.filename}
           >
             <Image
@@ -37,7 +37,7 @@ export default async function GalleryPage() {
               placeholder="blur"
               blurDataURL={image.blurDataURL}
               loading={index < 3 ? "eager" : "lazy"}
-              className="h-full w-full rounded object-cover"
+              className="size-full rounded object-cover"
             />
           </Link>
         ))}

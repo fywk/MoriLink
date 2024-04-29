@@ -4,15 +4,18 @@ import PageLayout from "@/components/PageLayout";
 import { app } from "@/lib/config";
 import morilinkLogo from "@/public/images/MoriLink_Logo.svg";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const title = "Credits";
 const themeColor = "#dacca7";
 
 export const metadata: Metadata = {
   title,
-  themeColor,
 };
+
+export const viewport: Viewport = {
+  themeColor
+}
 
 export default function CreditsPage() {
   return (

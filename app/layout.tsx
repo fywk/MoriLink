@@ -6,7 +6,7 @@ import { Nunito } from "next/font/google";
 import MusicProvider from "@/components/MusicProvider";
 import { app } from "@/lib/config";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -18,11 +18,6 @@ export const metadata: Metadata = {
     template: `%s - ${app.name}`,
   },
   description: app.description,
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    viewportFit: "cover",
-  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -31,8 +26,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  themeColor: app.themeColor,
 };
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: app.themeColor,
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

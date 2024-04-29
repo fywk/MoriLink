@@ -4,15 +4,18 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const title = "Gallery";
 const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
   title,
-  themeColor,
 };
+
+export const viewport: Viewport = {
+  themeColor
+}
 
 export default async function GalleryPage() {
   const images = await getGalleryImages();

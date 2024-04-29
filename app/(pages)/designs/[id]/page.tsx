@@ -6,7 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import { patterns } from "@/lib/config";
 import { generateImageURL, generatePatternThumbnailURL } from "@/lib/utils/image";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import type { Pattern } from "@/lib/types/miscellaneous";
 
@@ -17,6 +17,10 @@ type Props = {
 const themeColor = "#fecad1";
 
 export const dynamicParams = false; // dynamic segments not included in generateStaticParams will return a 404
+
+export const viewport: Viewport = {
+  themeColor
+}
 
 function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);
@@ -29,7 +33,6 @@ export function generateMetadata({ params }: Props): Metadata {
 
   const metadata: Metadata = {
     title: pattern.name,
-    themeColor,
   };
 
   return metadata;

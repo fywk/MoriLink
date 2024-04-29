@@ -27,8 +27,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor
-}
+  themeColor,
+};
+
 export default function MapPage() {
   const dreamAddress = island.dreamAddress ?? ID_PLACEHOLDER;
   const mapUpdateDate = dayjs(map.created_at).format(DATE_FORMAT_MEDIUM);

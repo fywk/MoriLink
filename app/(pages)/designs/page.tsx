@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor
-}
+  themeColor,
+};
 
 export default async function CustomDesignsPage() {
   return (

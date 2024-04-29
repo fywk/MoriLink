@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor
-}
+  themeColor,
+};
 
 export default async function GalleryPage() {
   const images = await getGalleryImages();

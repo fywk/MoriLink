@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor
-}
+  themeColor,
+};
 
 export async function generateStaticParams() {
   const images = await getGalleryImages();

@@ -19,8 +19,8 @@ const themeColor = "#fecad1";
 export const dynamicParams = false; // dynamic segments not included in generateStaticParams will return a 404
 
 export const viewport: Viewport = {
-  themeColor
-}
+  themeColor,
+};
 
 function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);

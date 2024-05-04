@@ -82,7 +82,7 @@ export default function HourlyMusic({ playingBadge, children }: Props) {
     <button
       onClick={() => handleClick()}
       className={clsx(
-        "group relative m-auto h-full max-h-[7.25rem] w-full max-w-[7.25rem] scroll-mt-44 rounded-3xl bg-[#f3fede] focus:outline-none",
+        "group relative m-auto size-full max-h-[7.25rem] max-w-[7.25rem] scroll-mt-44 rounded-3xl bg-[#f3fede] focus:outline-none",
         audioTitle === musicTitle
           ? "ring-5 ring-[#48c058]"
           : "focus-visible:ring-4 focus-visible:ring-tiffany-blue/90",

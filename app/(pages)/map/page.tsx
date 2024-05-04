@@ -7,7 +7,7 @@ import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getLatestMap, getMapBackgroundColor } from "@/lib/utils/image";
 
 import type { TransformationOptions } from "cloudinary";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const title = "Map";
 
@@ -24,6 +24,9 @@ const themeColor = await getMapBackgroundColor(mapImageURL);
 
 export const metadata: Metadata = {
   title,
+};
+
+export const viewport: Viewport = {
   themeColor,
 };
 

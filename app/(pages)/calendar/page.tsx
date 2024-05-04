@@ -10,13 +10,16 @@ import PlaceholderCard from "./PlaceholderCard";
 import ResidentBirthdaysCard from "./ResidentBirthdaysCard";
 import ZodiacSeasonCard from "./ZodiacSeasonCard";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const title = "Calendar";
 const themeColor = "#f9db97";
 
 export const metadata: Metadata = {
   title,
+};
+
+export const viewport: Viewport = {
   themeColor,
 };
 
@@ -28,7 +31,7 @@ export default function CalendarPage() {
         <div className="flex flex-col gap-y-1.5">
           <Section
             title="Seasonal Announcements"
-            icon={<MegaphoneIcon className="h-4 w-4 -rotate-12" />}
+            icon={<MegaphoneIcon className="size-4 -rotate-12" />}
           >
             <div className="grid grid-cols-[1fr_auto_1fr]">
               <CurrentSeasonCard />
@@ -39,7 +42,7 @@ export default function CalendarPage() {
             <PlaceholderCard withText />
           </Section>
           <Divider axis="Y" />
-          <Section title="Birthdays" icon={<GiftIcon className="h-4 w-4" />}>
+          <Section title="Birthdays" icon={<GiftIcon className="size-4" />}>
             <ResidentBirthdaysCard />
           </Section>
         </div>

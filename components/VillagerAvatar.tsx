@@ -11,7 +11,7 @@ export default function VillagerAvatar({ src, extraClasses }: Props) {
     <div
       className={clsx("relative flex aspect-square items-center justify-center p-1", extraClasses)}
     >
-      <div className="absolute h-full w-full rounded-full border-4 border-[#faf7da] bg-pearl"></div>
+      <div className="absolute size-full rounded-full border-4 border-[#faf7da] bg-pearl"></div>
       <Image
         src={src}
         width={128}

@@ -28,7 +28,7 @@ export default function ResidentBirthdaysCard() {
       <div className="grid grid-cols-4 justify-center gap-x-6 gap-y-4 tracking-tight md:grid-cols-5">
         {sortedResidents.map((resident) => (
           <div className="flex flex-col items-center gap-y-1" key={resident.name}>
-            <VillagerAvatar src={resident.iconImage} extraClasses="max-w-[5rem]" />
+            <VillagerAvatar src={resident.iconImage} extraClasses="max-w-20" />
             <h4 className="text-[13px]/none font-bold text-dark-bronze-coin">{resident.name}</h4>
             <h5 className="rounded-full bg-rose-400 px-2 py-1 text-xs/none font-bold text-white">
               {dayjs()

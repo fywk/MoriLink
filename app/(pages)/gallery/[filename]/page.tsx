@@ -6,7 +6,7 @@ import { DATE_FORMAT_FULL } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 type Props = {
   params: { filename: string };
@@ -17,6 +17,9 @@ const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
   title,
+};
+
+export const viewport: Viewport = {
   themeColor,
 };
 
@@ -54,7 +57,7 @@ export default async function GalleryImagePage({ params }: Props) {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             priority
-            className="h-full w-full rounded object-cover"
+            className="size-full rounded object-cover"
           />
           <figcaption className="flex items-center gap-x-0.5 text-sm font-medium tracking-tight text-beaver">
             {imageTakenDate}

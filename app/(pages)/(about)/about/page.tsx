@@ -3,13 +3,16 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import { app } from "@/lib/config";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 const title = "About";
 const themeColor = "#dacca7";
 
 export const metadata: Metadata = {
   title,
+};
+
+export const viewport: Viewport = {
   themeColor,
 };
 
@@ -40,9 +43,11 @@ export default function AboutPage() {
             Source code
           </a>
         </div>
-        <div className="text-center text-xs/none font-bold text-beaver">
+        <div className="text-center text-[13px]/none font-bold text-beaver">
           {"Made with ♥ by "}
-          <a href={githubProfileLink}>{"@fywk"}</a>
+          <a href={githubProfileLink} className="underline">
+            {"@fywk"}
+          </a>
         </div>
       </div>
     </PageLayout>

@@ -6,7 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import { patterns } from "@/lib/config";
 import { generateImageURL, generatePatternThumbnailURL } from "@/lib/utils/image";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import type { Pattern } from "@/lib/types/miscellaneous";
 
@@ -17,6 +17,10 @@ type Props = {
 const themeColor = "#fecad1";
 
 export const dynamicParams = false; // dynamic segments not included in generateStaticParams will return a 404
+
+export const viewport: Viewport = {
+  themeColor,
+};
 
 function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);
@@ -29,7 +33,6 @@ export function generateMetadata({ params }: Props): Metadata {
 
   const metadata: Metadata = {
     title: pattern.name,
-    themeColor,
   };
 
   return metadata;
@@ -55,7 +58,7 @@ export default function PatternPage({ params }: Props) {
               <h2 className="text-[22px]/none font-[750] text-dark-bronze-coin">{pattern.name}</h2>
               <p className="font-[750] leading-none text-[#f36f7d]">{pattern.id}</p>
             </div>
-            <div className="aspect-square h-14 w-14">
+            <div className="aspect-square size-14">
               <Image
                 src={generatePatternThumbnailURL(`patterns/${pattern.id}`)}
                 width={154}

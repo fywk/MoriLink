@@ -27,7 +27,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
             <>
               <div
                 className={clsx(
-                  "flex h-5.5 w-5.5 items-center justify-center",
+                  "flex size-5.5 items-center justify-center",
                   selected ? "text-white" : "text-beaver",
                 )}
               >
@@ -49,7 +49,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
             <>
               <div
                 className={clsx(
-                  "flex h-5.5 w-5.5 items-center justify-center",
+                  "flex size-5.5 items-center justify-center",
                   selected ? "text-white" : "text-beaver",
                 )}
               >

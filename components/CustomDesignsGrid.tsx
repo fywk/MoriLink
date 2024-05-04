@@ -28,11 +28,11 @@ export default function PatternsGrid({ category }: Props) {
       {filteredPatterns.map((pattern, index) => (
         <Link
           href={`/designs/${pattern.id}`}
-          className="relative flex aspect-square h-full w-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105 focus-visible:ring-4"
+          className="relative flex aspect-square size-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105 focus-visible:ring-4"
           title={pattern.name}
           key={pattern.id}
         >
-          <div className="aspect-square h-5.5 w-5.5 rounded-full bg-bone"></div>
+          <div className="aspect-square size-5.5 rounded-full bg-bone"></div>
           <Image
             src={generatePatternThumbnailURL(`patterns/${pattern.id}`)}
             width={154}
@@ -46,8 +46,8 @@ export default function PatternsGrid({ category }: Props) {
         </Link>
       ))}
       {[...Array<undefined>(placeholderCount)].map((_, i) => (
-        <div className="flex aspect-square h-full w-full items-center justify-center" key={i}>
-          <div className="aspect-square h-5.5 w-5.5 rounded-full bg-bone"></div>
+        <div className="flex aspect-square size-full items-center justify-center" key={i}>
+          <div className="aspect-square size-5.5 rounded-full bg-bone"></div>
         </div>
       ))}
     </div>

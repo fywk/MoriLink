@@ -26,7 +26,7 @@ export default function KKMusic({ music, playingBadge, children }: Props) {
       setAudioTitle(music.title);
       setAudioSrc(music.src);
       setAudioImage(`/_next/image?url=${encodeURIComponent(music.image!)}&w=640&q=75`);
-      console.log(`🎵 Playing ${music.title}, source: ${music.src}`);
+      console.log(`🎵 Playing ${music.title}`);
     }
   };
 

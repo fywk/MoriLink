@@ -7,11 +7,9 @@ import dayjs from "@/lib/utils/dayjs";
 import type { Dayjs } from "dayjs";
 
 export default function Header() {
-  const [date, setDate] = useState<Dayjs>();
+  const [date, setDate] = useState<Dayjs>(() => dayjs());
 
   useEffect(() => {
-    setDate(dayjs());
-
     const interval = setInterval(() => {
       setDate(dayjs());
     }, 1000);

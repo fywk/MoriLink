@@ -32,7 +32,7 @@ export default function KKMusic({ music, playingBadge, children }: Props) {
     <button
       onClick={() => handleClick()}
       className={clsx(
-        "group relative z-10 flex scroll-mt-36 items-center justify-center rounded transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105",
+        "group relative z-10 flex scroll-mt-36 items-center justify-center rounded-sm transition-transform hover:scale-105 focus:outline-hidden focus-visible:scale-105",
         audioTitle === music.title
           ? "ring-5 ring-[#48c058]"
           : "ring-tiffany-blue/90 focus-visible:ring-4",

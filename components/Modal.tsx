@@ -12,7 +12,7 @@ export default function Modal({ isOpen, setIsOpen, children }: Props) {
     <Dialog open={isOpen} onClose={() => {}} className="relative z-50">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-dutch-white/75 bg-[radial-gradient(#f4ecca_15%,_transparent_15%),_radial-gradient(#f4ecca_14%,_transparent_14%)] bg-[length:25px_25px] bg-[position:0_0,12.5px_12.5px] bg-repeat"
+        className="fixed inset-0 bg-dutch-white/75 bg-[radial-gradient(#f4ecca_15%,transparent_15%),radial-gradient(#f4ecca_14%,transparent_14%)] bg-size-[25px_25px] bg-position-[0_0,12.5px_12.5px] bg-repeat"
         aria-hidden="true"
       ></div>
 
@@ -22,7 +22,7 @@ export default function Modal({ isOpen, setIsOpen, children }: Props) {
         <Dialog.Panel className="grid w-full max-w-xl grid-rows-[auto_auto_45px] rounded-[2.75rem] bg-alabaster p-5 shadow-md">
           <button
             onClick={() => setIsOpen(false)}
-            className="size-fit rounded-full p-2 ring-tiffany-blue hover:bg-[#ece5d4] focus:outline-none active:bg-[#ece5d4] ui-focus-visible:ring-3"
+            className="ui-focus-visible:ring-3 size-fit rounded-full p-2 ring-tiffany-blue hover:bg-[#ece5d4] focus:outline-hidden active:bg-[#ece5d4]"
             type="button"
             title="Close"
           >

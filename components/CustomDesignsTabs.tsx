@@ -14,11 +14,11 @@ type Props = {
 export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
   return (
     <Tab.Group>
-      <Tab.List className="flex gap-x-2.5 font-bold leading-none">
+      <Tab.List className="flex gap-x-2.5 leading-none font-bold">
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[var(--theme-color)] focus:outline-none ui-focus-visible:ring-3",
+              "ui-focus-visible:ring-3 flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-(--theme-color) focus:outline-hidden",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
@@ -40,7 +40,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[var(--theme-color)] focus:outline-none ui-focus-visible:ring-3",
+              "ui-focus-visible:ring-3 flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-(--theme-color) focus:outline-hidden",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
@@ -61,10 +61,10 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         </Tab>
       </Tab.List>
       <Tab.Panels className="pt-6">
-        <Tab.Panel className="ring-[var(--theme-color)] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
+        <Tab.Panel className="ui-focus-visible:ring-3 ring-(--theme-color) ring-offset-4 ring-offset-alabaster focus:outline-hidden">
           {normalPanel}
         </Tab.Panel>
-        <Tab.Panel className="ring-[var(--theme-color)] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
+        <Tab.Panel className="ui-focus-visible:ring-3 ring-(--theme-color) ring-offset-4 ring-offset-alabaster focus:outline-hidden">
           {proPanel}
         </Tab.Panel>
       </Tab.Panels>

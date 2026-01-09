@@ -28,7 +28,7 @@ export default function PatternsGrid({ category }: Props) {
       {filteredPatterns.map((pattern, index) => (
         <Link
           href={`/designs/${pattern.id}`}
-          className="relative flex aspect-square size-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-none focus-visible:scale-105 focus-visible:ring-4"
+          className="relative flex aspect-square size-full items-center justify-center rounded-[1px] ring-tiffany-blue transition-transform hover:scale-105 focus:outline-hidden focus-visible:scale-105 focus-visible:ring-4"
           title={pattern.name}
           key={pattern.id}
         >

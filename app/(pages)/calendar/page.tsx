@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 export default function CalendarPage() {
   return (
     <PageLayout title={title} themeColor={themeColor} mainBackground="#fdfdf5">
-      <div className="mx-auto flex max-w-xl flex-col gap-y-2.5 px-3 pb-[calc(5rem+env(safe-area-inset-bottom))] pt-[15px]">
+      <div className="mx-auto flex max-w-xl flex-col gap-y-2.5 px-3 pt-3.75 pb-[calc(5rem+env(safe-area-inset-bottom))]">
         <Header />
         <div className="flex flex-col gap-y-1.5">
           <Section
@@ -68,7 +68,7 @@ function Section({
 }) {
   return (
     <section className="group flex flex-col gap-y-2">
-      <h2 className="flex items-end gap-x-1 rounded-sm bg-[#e7ddc6] px-1.5 py-[7px] text-[15px]/none font-bold tracking-tight text-[#4d3906] group-first:text-base/none">
+      <h2 className="flex items-end gap-x-1 rounded-xs bg-[#e7ddc6] px-1.5 py-1.75 text-[15px]/none font-bold tracking-tight text-dark-bronze-coin group-first:text-base/none">
         {icon}
         {title}
       </h2>

@@ -9,7 +9,7 @@ import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 import type { Metadata, Viewport } from "next";
 
 type Props = {
-  params: { filename: string };
+  params: Promise<{ filename: string }>;
 };
 
 const title = "Gallery";
@@ -31,7 +31,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function GalleryImagePage({ params }: Props) {
+export default async function GalleryImagePage(props: Props) {
+  const params = await props.params;
   const images = await getGalleryImages();
   const image = images.find((image) => image.filename === params.filename);
 

@@ -11,7 +11,7 @@ import type { Metadata, Viewport } from "next";
 import type { Pattern } from "@/lib/types/miscellaneous";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 const themeColor = "#fecad1";
@@ -26,7 +26,8 @@ function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();
@@ -44,7 +45,8 @@ export function generateStaticParams() {
   }));
 }
 
-export default function PatternPage({ params }: Props) {
+export default async function PatternPage(props: Props) {
+  const params = await props.params;
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();

@@ -27,7 +27,7 @@ export default function Header() {
         )}
         <p className="text-sm/none">{date?.format("D MMMM")}</p>
       </div>
-      <div className="flex items-baseline gap-x-[3px]">
+      <div className="flex items-baseline gap-x-0.75">
         <p className="text-xl/none">{date?.format("h:mm")}</p>
         <p className="text-xs/none">{date?.format("A")}</p>
       </div>

@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export default function CreditsPage() {
   return (
     <PageLayout title={title} themeColor={themeColor} parentPage="/about">
-      <div className="mx-auto flex max-w-xl flex-col justify-between px-5 pb-12 pt-6">
+      <div className="mx-auto flex max-w-xl flex-col justify-between px-5 pt-6 pb-12">
         <Image
           src={morilinkLogo}
           alt={`${app.name} logo`}

@@ -66,13 +66,13 @@ async function CardSection() {
     >
       <div className="grid grid-cols-1 overflow-hidden rounded-2xl">
         <div className="bg-[rgb(var(--star-sign-colour)/.05)]">
-          <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold uppercase tracking-tight text-[rgb(var(--star-sign-colour))] brightness-[.85] saturate-[.75] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
+          <span className="mx-auto flex w-32 justify-center py-2 text-[9px]/none font-bold tracking-tight text-[rgb(var(--star-sign-colour))] uppercase brightness-[.85] saturate-[.75] before:m-auto before:mr-2 before:flex-1 before:border-b before:border-[rgb(var(--star-sign-colour))] after:m-auto after:ml-2 after:flex-1 after:border-b after:border-[rgb(var(--star-sign-colour))]">
             Passport
           </span>
         </div>
         <div className="relative flex gap-x-3.5 bg-[rgb(var(--star-sign-colour)/.15)] px-5 py-3">
           <div className="relative h-fit basis-1/5">
-            <div className="aspect-square h-fit w-full min-w-[5.75rem] rounded-xl bg-[#faf7da] p-1.5">
+            <div className="aspect-square h-fit w-full min-w-23 rounded-xl bg-[#faf7da] p-1.5">
               <Image
                 src={passportPhoto.url}
                 width={passportPhoto.width}
@@ -85,8 +85,8 @@ async function CardSection() {
               />
             </div>
             {player.isResidentRep && (
-              <div className="absolute -bottom-5 right-2 flex w-max rotate-[4deg] items-center gap-x-1 rounded border-[3px] border-double border-[#98744e] p-[3px]">
-                <div className="flex size-3 items-center justify-center rounded-sm bg-[#98744e] text-[#faf7da]">
+              <div className="absolute right-2 -bottom-5 flex w-max rotate-[4deg] items-center gap-x-1 rounded-sm border-[3px] border-double border-[#98744e] p-0.75">
+                <div className="flex size-3 items-center justify-center rounded-xs bg-[#98744e] text-[#faf7da]">
                   <IconPennantFilled size={10} />
                 </div>
                 <span className="pr-1 text-[9px]/none font-[750] tracking-tight text-[#98744e]">
@@ -95,8 +95,8 @@ async function CardSection() {
               </div>
             )}
           </div>
-          <div className="z-10 flex flex-grow basis-4/5 flex-col gap-y-2">
-            <p className="w-fit max-w-[24ch] overflow-hidden text-ellipsis whitespace-nowrap rounded-full bg-[#faf7da] px-2.5 py-1.5 text-[13px]/none font-bold text-dark-bronze-coin/70">
+          <div className="z-10 flex grow basis-4/5 flex-col gap-y-2">
+            <p className="w-fit max-w-[24ch] overflow-hidden rounded-full bg-[#faf7da] px-2.5 py-1.5 text-[13px]/none font-bold text-ellipsis whitespace-nowrap text-dark-bronze-coin/70">
               {player.comment}
             </p>
             <div className="flex text-xs/none font-bold">
@@ -138,11 +138,11 @@ async function CardSection() {
               <p className="text-[13px]/none font-bold text-dark-bronze-coin/60">{`Birthday: ${birthday}`}</p>
             </div>
           </div>
-          <div className="absolute bottom-2 right-2 aspect-square w-1/4 text-[#faf7da]">
+          <div className="absolute right-2 bottom-2 aspect-square w-1/4 text-[#faf7da]">
             <NookIncEmblem />
           </div>
         </div>
-        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/.05)] px-5 pb-3.5 pt-5 text-dark-bronze-coin/70">
+        <div className="flex items-center justify-between bg-[rgb(var(--star-sign-colour)/.05)] px-5 pt-5 pb-3.5 text-dark-bronze-coin/70">
           <p className="text-[11px]/none font-bold tracking-tight">{`Registered on: ${registrationDate}`}</p>
           <div className="flex -space-x-0.5">
             {[...Array<undefined>(12)].map((_, i) => (
@@ -188,11 +188,11 @@ function DisclosureWidget({
 }) {
   return (
     <details className="px-2 text-[15.5px]/none font-bold" open={true}>
-      <summary className="select-none tracking-tight text-dark-bronze-coin/70">{title}</summary>
-      <div className="ml-3 mt-5.5 flex h-7.5 items-center justify-between">
+      <summary className="tracking-tight text-dark-bronze-coin/70 select-none">{title}</summary>
+      <div className="mt-5.5 ml-3 flex h-7.5 items-center justify-between">
         <p className={clsx("font-[750]", descColour)}>{description}</p>
         <CopyToClipboardButton text={description}>
-          <div className="flex h-full items-center gap-x-[3px] border-l-2 border-dark-bronze-coin/[.15] pl-2 text-dark-bronze-coin/75">
+          <div className="flex h-full items-center gap-x-0.75 border-l-2 border-dark-bronze-coin/15 pl-2 text-dark-bronze-coin/75">
             <IconCopy size={19} stroke={2.25} />
             Copy
           </div>
@@ -215,7 +215,7 @@ function ResidentsSection() {
       </div>
       {"former" in island.residents && (
         <>
-          <h3 className="mb-6 mt-10 font-bold leading-none tracking-tight">Former residents</h3>
+          <h3 className="mt-10 mb-6 leading-none font-bold tracking-tight">Former residents</h3>
           <div className="grid grid-cols-4 gap-x-8 gap-y-5.5 px-1">
             {island.residents.former?.map((resident, i) => (
               <ModalOpener modalContent={<ResidentModal name={resident} />} key={i}>
@@ -256,11 +256,11 @@ function ResidentModal({ name }: { name: string }) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-3 tracking-tight">
-      <VillagerAvatar src={villager.iconImage} extraClasses="max-w-[7.5rem]" />
+      <VillagerAvatar src={villager.iconImage} extraClasses="max-w-30" />
       <h1>
         <a
           href={`https://nookipedia.com/wiki/${villager.name}`}
-          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 ring-tiffany-blue hover:underline focus:outline-none focus-visible:ring-3"
+          className="text-[22px] font-bold text-dark-bronze-coin decoration-dotted underline-offset-4 ring-tiffany-blue hover:underline focus:outline-hidden focus-visible:ring-3"
           title={`Nookipedia: ${villager.name}`}
           target="_blank"
         >
@@ -270,15 +270,15 @@ function ResidentModal({ name }: { name: string }) {
       <div className="grid w-full max-w-sm grid-cols-3 divide-x-4 divide-alabaster overflow-hidden rounded-xl text-center text-[15px]">
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Species</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.species}</div>
+          <div className="bg-pearl/35 py-0.5 text-dark-bronze-coin">{villager.species}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Personality</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{villager.personality}</div>
+          <div className="bg-pearl/35 py-0.5 text-dark-bronze-coin">{villager.personality}</div>
         </div>
         <div className="flex flex-col divide-y-4 divide-alabaster font-bold">
           <div className="bg-pearl py-0.5 text-beaver">Birthday</div>
-          <div className="bg-pearl/[.35] py-0.5 text-dark-bronze-coin">{birthday}</div>
+          <div className="bg-pearl/35 py-0.5 text-dark-bronze-coin">{birthday}</div>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ import type { Metadata, Viewport } from "next";
 import type { Pattern } from "@/lib/types/miscellaneous";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 const themeColor = "#fecad1";
@@ -26,7 +26,8 @@ function getPattern(id: string): Pattern | undefined {
   return patterns.find((pattern) => pattern.id === id);
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();
@@ -44,7 +45,8 @@ export function generateStaticParams() {
   }));
 }
 
-export default function PatternPage({ params }: Props) {
+export default async function PatternPage(props: Props) {
+  const params = await props.params;
   const pattern = getPattern(params.id);
 
   if (!pattern) notFound();
@@ -56,7 +58,7 @@ export default function PatternPage({ params }: Props) {
           <div className="flex items-center justify-between gap-x-2.5">
             <div className="flex flex-col gap-y-2">
               <h2 className="text-[22px]/none font-[750] text-dark-bronze-coin">{pattern.name}</h2>
-              <p className="font-[750] leading-none text-[#f36f7d]">{pattern.id}</p>
+              <p className="leading-none font-[750] text-[#f36f7d]">{pattern.id}</p>
             </div>
             <div className="aspect-square size-14">
               <Image
@@ -66,7 +68,7 @@ export default function PatternPage({ params }: Props) {
                 alt=""
                 quality={95}
                 loading="eager"
-                className="bg-[var(--theme-color)]"
+                className="bg-(--theme-color)"
               />
             </div>
           </div>
@@ -77,7 +79,7 @@ export default function PatternPage({ params }: Props) {
             alt=""
             quality={85}
             priority
-            className="rounded-2xl bg-[var(--theme-color)]"
+            className="rounded-2xl bg-(--theme-color)"
           />
           {Array.isArray(pattern.pictures) &&
             pattern.pictures.length > 0 &&
@@ -88,7 +90,7 @@ export default function PatternPage({ params }: Props) {
                 height={720}
                 alt=""
                 quality={85}
-                className="rounded-2xl bg-[var(--theme-color)]"
+                className="rounded-2xl bg-(--theme-color)"
                 key={index}
               />
             ))}

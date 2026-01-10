@@ -1,8 +1,9 @@
 import { createContext, useContext } from "react";
 
+import type { RefObject } from "react";
+
 type MusicContextType = {
-  audio: HTMLAudioElement | null;
-  setAudio(value: HTMLAudioElement): void;
+  audioRef: RefObject<HTMLAudioElement | null>;
   audioTitle: string;
   setAudioTitle(value: string): void;
   audioSrc: string;
@@ -14,8 +15,7 @@ type MusicContextType = {
 };
 
 export const MusicContext = createContext<MusicContextType>({
-  audio: null,
-  setAudio: () => {},
+  audioRef: { current: null },
   audioTitle: "",
   setAudioTitle: () => {},
   audioSrc: "",

@@ -4,6 +4,8 @@ export const DATE_FORMAT_MEDIUM = "D MMM YYYY";
 
 export const DATE_FORMAT_SHORT = "D MMM";
 
+export const HOURLY_MUSIC_TITLE_PATTERN = /^(1[0-2]|[1-9])\s?(AM|PM)\s?\((Rainy|Snowy|Sunny)\)$/i;
+
 export const ID_PLACEHOLDER = "---- ---- ---- ---- ----";
 
 export const STAR_SIGNS = [

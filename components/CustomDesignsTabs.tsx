@@ -1,6 +1,6 @@
 "use client";
 
-import { Tab } from "@headlessui/react";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import clsx from "clsx";
 
 import NormalCustomDesignsIcon from "./icons/NormalCustomDesignsIcon";
@@ -13,12 +13,12 @@ type Props = {
 
 export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
   return (
-    <Tab.Group>
-      <Tab.List className="flex gap-x-2.5 font-bold leading-none">
+    <TabGroup>
+      <TabList className="flex gap-x-2.5 leading-none font-bold">
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[var(--theme-color)] focus:outline-none ui-focus-visible:ring-3",
+              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-(--theme-color) focus:outline-hidden focus-visible:ring-3",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
@@ -40,7 +40,7 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
         <Tab
           className={({ selected }) =>
             clsx(
-              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-[var(--theme-color)] focus:outline-none ui-focus-visible:ring-3",
+              "flex w-full items-center justify-center gap-x-1 rounded-2xl py-2.5 tracking-tight ring-(--theme-color) focus:outline-hidden focus-visible:ring-3",
               selected ? "bg-tiffany-blue text-white" : "bg-pearl text-beaver",
             )
           }
@@ -59,15 +59,15 @@ export default function CustomDesingsTabs({ normalPanel, proPanel }: Props) {
             </>
           )}
         </Tab>
-      </Tab.List>
-      <Tab.Panels className="pt-6">
-        <Tab.Panel className="ring-[var(--theme-color)] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
+      </TabList>
+      <TabPanels className="pt-6">
+        <TabPanel className="ring-(--theme-color) ring-offset-4 ring-offset-alabaster focus:outline-hidden focus-visible:ring-3">
           {normalPanel}
-        </Tab.Panel>
-        <Tab.Panel className="ring-[var(--theme-color)] ring-offset-4 ring-offset-alabaster focus:outline-none ui-focus-visible:ring-3">
+        </TabPanel>
+        <TabPanel className="ring-(--theme-color) ring-offset-4 ring-offset-alabaster focus:outline-hidden focus-visible:ring-3">
           {proPanel}
-        </Tab.Panel>
-      </Tab.Panels>
-    </Tab.Group>
+        </TabPanel>
+      </TabPanels>
+    </TabGroup>
   );
 }

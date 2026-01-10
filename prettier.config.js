@@ -19,4 +19,5 @@ module.exports = {
   ],
   // prettier-plugin-tailwindcss
   tailwindFunctions: ["clsx"],
+  tailwindStylesheet: "./app/globals.css",
 };

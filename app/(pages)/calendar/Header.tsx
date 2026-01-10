@@ -7,11 +7,9 @@ import dayjs from "@/lib/utils/dayjs";
 import type { Dayjs } from "dayjs";
 
 export default function Header() {
-  const [date, setDate] = useState<Dayjs>();
+  const [date, setDate] = useState<Dayjs>(() => dayjs());
 
   useEffect(() => {
-    setDate(dayjs());
-
     const interval = setInterval(() => {
       setDate(dayjs());
     }, 1000);
@@ -29,7 +27,7 @@ export default function Header() {
         )}
         <p className="text-sm/none">{date?.format("D MMMM")}</p>
       </div>
-      <div className="flex items-baseline gap-x-[3px]">
+      <div className="flex items-baseline gap-x-0.75">
         <p className="text-xl/none">{date?.format("h:mm")}</p>
         <p className="text-xs/none">{date?.format("A")}</p>
       </div>

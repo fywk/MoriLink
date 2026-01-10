@@ -10,7 +10,7 @@ type Item = (typeof apps)[number];
 
 export default function HomePage() {
   return (
-    <div className="grid grid-cols-3 gap-4 text-dark-bronze-coin @container">
+    <div className="@container grid grid-cols-3 gap-4 text-dark-bronze-coin">
       {apps.map((app) => (
         <AppGridItem item={app} key={app.name} />
       ))}
@@ -30,11 +30,11 @@ function AppGridItem({ item }: { item: Item }) {
 
   return (
     <LinkComponent
-      className="group flex flex-col items-center gap-y-2 focus:outline-none"
+      className="group flex flex-col items-center gap-y-2 focus:outline-hidden"
       {...linkProps}
     >
       <div
-        className="size-full transform overflow-hidden rounded-[10cqw] p-px transition-transform duration-100 hover:scale-105 active:scale-90 group-focus-visible:scale-105"
+        className="size-full transform overflow-hidden rounded-[10cqw] p-px transition-transform duration-100 group-focus-visible:scale-105 hover:scale-105 active:scale-90"
         style={{ backgroundColor: item.bgColour }}
       >
         {item.name === "Calendar" ? (
@@ -54,7 +54,7 @@ function AppGridItem({ item }: { item: Item }) {
       <span
         className={clsx(
           isExternalLink && "flex items-center",
-          "whitespace-nowrap text-[11px]/none font-bold tracking-tighter ring-pearl-aqua ring-offset-1 group-focus-visible:ring-2",
+          "text-[11px]/none font-bold tracking-tighter whitespace-nowrap ring-pearl-aqua ring-offset-1 group-focus-visible:ring-2",
         )}
       >
         {item.name}

@@ -36,7 +36,7 @@ export default function MapPage() {
 
   return (
     <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
-      <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-y-9 px-5 pb-[calc(5rem+env(safe-area-inset-bottom))] pt-12 tracking-tight">
+      <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-y-9 px-5 pt-12 pb-[calc(5rem+env(safe-area-inset-bottom))] tracking-tight">
         <h2 className="relative px-6 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 before:absolute before:inset-0 before:[border-left:0.1875rem_solid_transparent] before:[border-right:0.1875rem_solid_transparent] before:[border-top:40px_solid_#faea4a] sm:text-[1.375rem]/none sm:before:[border-top:42px_solid_#faea4a] md:px-8 md:py-3 md:text-2xl/none md:before:[border-top:48px_solid_#faea4a]">
           <span className="relative">{island.name}</span>
         </h2>
@@ -54,7 +54,7 @@ export default function MapPage() {
           {`Dream Address : ${dreamAddress}`}
         </h3>
       </div>
-      <p className="mb-safe absolute inset-x-0 bottom-3.5 mx-auto w-max text-xs/none font-bold leading-none tracking-tight text-[#23776c] md:bottom-3 md:left-[unset] md:right-3 md:text-sm/none">
+      <p className="absolute inset-x-0 bottom-3.5 mx-auto mb-safe w-max text-xs/none leading-none font-bold tracking-tight text-[#23776c] md:right-3 md:bottom-3 md:left-[unset] md:text-sm/none">
         {`Map updated on: ${mapUpdateDate}`}
       </p>
     </PageLayout>

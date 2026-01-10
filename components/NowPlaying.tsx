@@ -20,10 +20,10 @@ export default function NowPlaying() {
   }, []);
 
   return (
-    <div className="fixed inset-x-0 top-[4.5rem] z-20 mx-auto max-w-3xl pl-[max(1.25rem,_env(safe-area-inset-left))] pr-[max(1.25rem,_env(safe-area-inset-right))]">
+    <div className="fixed inset-x-0 top-18 z-20 mx-auto max-w-3xl pr-[max(1.25rem,env(safe-area-inset-right))] pl-[max(1.25rem,env(safe-area-inset-left))]">
       <div
         className={clsx(
-          "flex max-w-lg items-center gap-x-2 rounded-full bg-white px-3.5 py-2 shadow-sm",
+          "flex max-w-lg items-center gap-x-2 rounded-full bg-white px-3.5 py-2 shadow-xs",
           isPlaying ? "text-tiffany-blue" : "text-tiffany-blue/25",
         )}
       >
@@ -41,7 +41,7 @@ export default function NowPlaying() {
               onClick={() =>
                 document.getElementById(urlize(audioTitle))?.scrollIntoView({ behavior: "smooth" })
               }
-              className="focus:outline-none focus-visible:outline-dotted focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-tiffany-blue/90"
+              className="focus:outline-hidden focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-tiffany-blue/90 focus-visible:outline-dotted"
               type="button"
             >
               {audioTitle}

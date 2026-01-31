@@ -64,9 +64,9 @@ export default function AboutPage() {
               Source code
             </a>
           </div>
-          <div className="flex flex-col gap-y-2 text-center text-xs/none font-[650] text-beaver">
-            <span className="text-[13px]/none">{`Made with ♥ by ${player.name}.`}</span>
-            <span>{`Built with Next.js v${nextjsVersion} on React ${reactVersion}.`}</span>
+          <div className="flex flex-col gap-y-1.5 text-center text-xs/none font-[650] text-beaver">
+            <p>{`Made with ♥ by ${player.name}.`}</p>
+            <p>{`Built with Next.js v${nextjsVersion} on React ${reactVersion}.`}</p>
           </div>
         </div>
       </div>

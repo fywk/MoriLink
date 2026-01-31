@@ -24,6 +24,7 @@ function getCleanVersionNumber(packageVersion: string): string {
 }
 
 export default function AboutPage() {
+  const websiteLink = "https://fywk.dev";
   const githubProfileLink = "https://github.com/fywk";
 
   const { react, next } = packageJSON.dependencies;
@@ -42,7 +43,7 @@ export default function AboutPage() {
         <div className="flex flex-col justify-between">
           <div className="flex flex-col divide-y-2 divide-dashed divide-bone">
             <a
-              href="https://fywk.dev"
+              href={websiteLink}
               className="px-2.25 py-3.5 text-lg font-bold text-dark-bronze-coin hover:bg-[#ece5d4] active:bg-[#ece5d4]"
               target="_blank"
             >

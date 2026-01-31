@@ -33,8 +33,11 @@ export default function AboutPage() {
   return (
     <PageLayout title={title} themeColor={themeColor}>
       <div className="mx-auto grid h-full max-w-xl grid-rows-[auto_1fr] gap-y-6 px-5 py-12">
-        <div className="flex justify-center">
-          <Image src={morilinkLogo} alt={`${app.name} logo`} width={192} draggable={false} />
+        <div className="flex flex-col items-center gap-y-3">
+          <Image src={morilinkLogo} alt={`${app.name} logo`} width={208} draggable={false} />
+          <div className="max-w-md text-center text-sm font-bold text-pretty text-beaver">
+            {app.description}
+          </div>
         </div>
         <div className="flex flex-col justify-between">
           <div className="flex flex-col divide-y-2 divide-dashed divide-bone">

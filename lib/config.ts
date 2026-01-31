@@ -2,7 +2,8 @@ import type { AppConfig, IslandConfig, PatternsConfig, PlayerConfig } from "./ty
 
 export const app: Readonly<AppConfig> = {
   name: "MoriLink",
-  description: `A web app inspired by NookPhone and NookLink from the Animal Crossing: New Horizons game`,
+  description:
+    "A personal diary app documenting my journey in Animal Crossing: New Horizons, inspired by the NookPhone and NookLink apps.",
   themeColor: "#82d7aa",
   location: {
     latitude: "3.1415",

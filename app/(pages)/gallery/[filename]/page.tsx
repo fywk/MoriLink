@@ -6,7 +6,7 @@ import { DATE_FORMAT_FULL } from "@/lib/constants";
 import dayjs from "@/lib/utils/dayjs";
 import { generateImageURL, getGalleryImages } from "@/lib/utils/image";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ filename: string }>;
@@ -17,10 +17,6 @@ const themeColor = "#ffd0ae";
 
 export const metadata: Metadata = {
   title,
-};
-
-export const viewport: Viewport = {
-  themeColor,
 };
 
 export async function generateStaticParams() {

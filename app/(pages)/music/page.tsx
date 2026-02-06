@@ -8,17 +8,13 @@ import PageLayout from "@/components/PageLayout";
 import Tooltips from "@/components/Tooltips";
 import kkSongs from "@/data/music/kk_slider.json";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 const title = "Music";
 const themeColor = "#def4b9";
 
 export const metadata: Metadata = {
   title,
-};
-
-export const viewport: Viewport = {
-  themeColor,
 };
 
 export default function MusicPage() {

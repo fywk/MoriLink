@@ -10,7 +10,7 @@ import PlaceholderCard from "./PlaceholderCard";
 import ResidentBirthdaysCard from "./ResidentBirthdaysCard";
 import ZodiacSeasonCard from "./ZodiacSeasonCard";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 const title = "Calendar";
 const themeColor = "#f9db97";
@@ -18,10 +18,6 @@ const backgroundColor = "#fdfdf5";
 
 export const metadata: Metadata = {
   title,
-};
-
-export const viewport: Viewport = {
-  themeColor,
 };
 
 export default function CalendarPage() {

@@ -23,7 +23,12 @@ export const viewport: Viewport = {
 
 export default function MusicPage() {
   return (
-    <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
+    <PageLayout
+      title={title}
+      themeColor={themeColor}
+      bodyBackground={themeColor}
+      mainBackground={themeColor}
+    >
       <div className="px-safe pb-safe">
         <NowPlaying />
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 px-7 pt-22 pb-14 sm:grid-cols-3 sm:px-9 md:grid-cols-4 md:px-11">

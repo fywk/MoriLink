@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 type Props = {
   title: string;
   themeColor: string;
+  bodyBackground?: string;
   mainBackground?: string;
   parentPage?: string;
   children: React.ReactNode;
@@ -13,12 +14,13 @@ type Props = {
 export default function PageLayout({
   title,
   themeColor,
-  mainBackground = "transparent",
+  bodyBackground = "#f4f1e3", // bg-alabaster
+  mainBackground = "#f4f1e3", // bg-alabaster
   parentPage = "/",
   children,
 }: Props) {
   return (
-    <body>
+    <body style={{ backgroundColor: bodyBackground }}>
       <div
         className="relative grid h-full min-h-dvh grid-rows-[auto_1fr]"
         style={{

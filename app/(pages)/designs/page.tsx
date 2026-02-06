@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 
 export default async function CustomDesignsPage() {
   return (
-    <PageLayout title={title} themeColor={themeColor}>
+    <PageLayout title={title} themeColor={themeColor} bodyBackground={themeColor}>
       <div className="flex h-full flex-col justify-between gap-y-16">
         <div className="mx-auto w-full max-w-2xl px-5 pt-8">
           <CustomDesingsTabs

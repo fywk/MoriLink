@@ -35,7 +35,12 @@ export default function MapPage() {
   const mapUpdateDate = dayjs(map.created_at).format(DATE_FORMAT_MEDIUM);
 
   return (
-    <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
+    <PageLayout
+      title={title}
+      themeColor={themeColor}
+      bodyBackground={themeColor}
+      mainBackground={themeColor}
+    >
       <div className="mx-auto flex h-full max-w-2xl flex-col items-center justify-center gap-y-9 px-5 pt-9 pb-[calc(4.5rem+env(safe-area-inset-bottom))] tracking-tight">
         <h2 className="relative px-6 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 before:absolute before:inset-0 before:[border-inline:3px_solid_transparent] before:[border-top:40px_solid_#faea4a] sm:text-[1.375rem]/none sm:before:[border-top:42px_solid_#faea4a] md:px-8 md:py-3 md:text-2xl/none md:before:[border-top:48px_solid_#faea4a]">
           <span className="relative">{island.name}</span>

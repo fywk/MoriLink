@@ -36,8 +36,8 @@ export default function MapPage() {
 
   return (
     <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
-      <div className="mx-auto flex h-full max-w-2xl flex-col items-center justify-center gap-y-9 px-5 pt-12 pb-[calc(5rem+env(safe-area-inset-bottom))] tracking-tight">
-        <h2 className="relative px-6 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 before:absolute before:inset-0 before:[border-left:0.1875rem_solid_transparent] before:[border-right:0.1875rem_solid_transparent] before:[border-top:40px_solid_#faea4a] sm:text-[1.375rem]/none sm:before:[border-top:42px_solid_#faea4a] md:px-8 md:py-3 md:text-2xl/none md:before:[border-top:48px_solid_#faea4a]">
+      <div className="mx-auto flex h-full max-w-2xl flex-col items-center justify-center gap-y-9 px-5 pt-9 pb-[calc(4.5rem+env(safe-area-inset-bottom))] tracking-tight">
+        <h2 className="relative px-6 py-2.5 text-xl/none font-bold text-dark-bronze-coin/75 before:absolute before:inset-0 before:[border-inline:3px_solid_transparent] before:[border-top:40px_solid_#faea4a] sm:text-[1.375rem]/none sm:before:[border-top:42px_solid_#faea4a] md:px-8 md:py-3 md:text-2xl/none md:before:[border-top:48px_solid_#faea4a]">
           <span className="relative">{island.name}</span>
         </h2>
         <Image
@@ -47,7 +47,7 @@ export default function MapPage() {
           height={534}
           quality={85}
           priority
-          className="mx-auto w-full pl-10"
+          className="mx-auto w-full pl-[5%]"
           draggable={false}
         />
         <h3 className="mx-auto w-full max-w-sm border-b-2 border-dashed border-white/50 text-center text-[17px] font-bold text-[#23776c] sm:text-lg md:text-xl">

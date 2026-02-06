@@ -99,7 +99,7 @@ export async function getLatestMap() {
 }
 
 /**
- * Get the background color of the map from a pixel located at 320, 205.
+ * Get the background color of the map from a pixel located at 0, 0.
  *
  * @param input - The path to the map image
  * @returns A string representing the RGB values in CSS `rgb(R G B)` format
@@ -108,7 +108,7 @@ export async function getMapBackgroundColor(input: string): Promise<string> {
   const response = await fetch(input);
   const buffer = await response.arrayBuffer();
   const data = await sharp(Buffer.from(buffer))
-    .extract({ left: 320, top: 205, width: 1, height: 1 })
+    .extract({ left: 0, top: 0, width: 1, height: 1 })
     .raw()
     .toBuffer();
   const [r, g, b] = data;

@@ -5,17 +5,13 @@ import { app, player } from "@/lib/config";
 import packageJSON from "@/package.json";
 import morilinkLogo from "@/public/images/MoriLink_Logo.svg";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 const title = "About";
 const themeColor = "#dacca7";
 
 export const metadata: Metadata = {
   title,
-};
-
-export const viewport: Viewport = {
-  themeColor,
 };
 
 // Remove the leading caret (^) and tilde (~) notations from the version string

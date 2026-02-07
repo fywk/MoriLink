@@ -8,7 +8,7 @@ import PageLayout from "@/components/PageLayout";
 import Tooltips from "@/components/Tooltips";
 import kkSongs from "@/data/music/kk_slider.json";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 const title = "Music";
 const themeColor = "#def4b9";
@@ -17,13 +17,14 @@ export const metadata: Metadata = {
   title,
 };
 
-export const viewport: Viewport = {
-  themeColor,
-};
-
 export default function MusicPage() {
   return (
-    <PageLayout title={title} themeColor={themeColor} mainBackground={themeColor}>
+    <PageLayout
+      title={title}
+      themeColor={themeColor}
+      bodyBackground={themeColor}
+      mainBackground={themeColor}
+    >
       <div className="px-safe pb-safe">
         <NowPlaying />
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-4 px-7 pt-22 pb-14 sm:grid-cols-3 sm:px-9 md:grid-cols-4 md:px-11">

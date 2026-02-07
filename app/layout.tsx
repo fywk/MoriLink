@@ -1,6 +1,5 @@
 import "./globals.css";
 
-import clsx from "clsx";
 import { Nunito } from "next/font/google";
 
 import MusicProvider from "@/components/MusicProvider";
@@ -32,15 +31,12 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: app.themeColor,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={clsx(nunito.className, "bg-alabaster")}>
-      <body>
-        <MusicProvider>{children}</MusicProvider>
-      </body>
+    <html lang="en" className={nunito.className}>
+      <MusicProvider>{children}</MusicProvider>
     </html>
   );
 }

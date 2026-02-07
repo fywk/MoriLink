@@ -15,17 +15,13 @@ import { getStarSign, getStarSignColour } from "@/lib/utils/star-sign";
 import { getVillager } from "@/lib/utils/villagers";
 import spriteTownIsland from "@/public/images/sprites/Town_Island.png";
 
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 
 const title = "Passport";
 const themeColor = "#b4e4b5";
 
 export const metadata: Metadata = {
   title,
-};
-
-export const viewport: Viewport = {
-  themeColor,
 };
 
 export default function PassportPage() {
